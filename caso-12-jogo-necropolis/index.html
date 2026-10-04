@@ -31,8 +31,7 @@
   </svg>
 
   <!--
-    IMAGENS: cada .ph tem data-photo="assets/fotos/<nome>.jpg". Coloque o arquivo com esse
-    nome em assets/fotos/ e ele substitui a composição em CSS automaticamente (app.js).
+    IMAGENS: arquivos .webp em assets/fotos/ (geradas no Codex, convertidas e otimizadas).
   -->
 
   <div class="wrap">
@@ -42,13 +41,11 @@
     <!-- ============ HERO ============ -->
     <header class="hero" id="inicio">
       <p class="game-logo">NECRÓP<span>☠</span>LIS <b>2</b></p>
-      <figure class="ph hero-art" data-photo="assets/fotos/hero-zumbi.jpg">
-        <i class="zface"></i><i class="zeyes"></i>
-        <i class="claw l"></i><i class="claw r"></i>
-        <i class="x-slash"></i>
-        <i class="survivor"></i>
-        <i class="horde"></i>
-        <span class="ph-tag">hero-zumbi.jpg</span>
+      <figure class="hero-art">
+        <img class="h-face" src="assets/fotos/hero-zumbi.webp" alt="Rosto de zumbi com olhos vermelhos e mãos com garras" decoding="async">
+        <i class="x-slash" aria-hidden="true"></i>
+        <img class="h-survivor" src="assets/fotos/hero-sobrevivente.webp" alt="Sobrevivente gritando" decoding="async">
+        <img class="h-horde" src="assets/fotos/hero-horda.webp" alt="Horda de zumbis" decoding="async">
       </figure>
       <div class="hero-title">
         <h1><span class="red">ZUMBI</span><span class="grey">COMANDANTE</span></h1>
@@ -79,9 +76,9 @@
         </div>
         <div class="b01-right reveal">
           <div class="slider" data-slider>
-            <figure class="ph beast beast-1 is-on" data-photo="assets/fotos/criatura-01.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">criatura-01.jpg</span></figure>
-            <figure class="ph beast beast-2" data-photo="assets/fotos/criatura-02.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">criatura-02.jpg</span></figure>
-            <figure class="ph beast beast-3" data-photo="assets/fotos/criatura-03.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">criatura-03.jpg</span></figure>
+            <figure class="ph pic beast is-on fit-cover"><img src="assets/fotos/criatura-gelo.webp" alt="Fera de gelo com a boca aberta" decoding="async"></figure>
+            <figure class="ph pic beast fit-contain"><img src="assets/fotos/lobisomem.webp" alt="Lobisomem zumbi agachado" decoding="async"></figure>
+            <figure class="ph pic beast fit-cover"><img src="assets/fotos/espectro.webp" alt="Espectro de fumaça estendendo as garras" decoding="async"></figure>
             <p class="t3 cap"><b class="red">Comandante zumbi:</b> até 32 jogadores no modo comandante. Depois que o comandante entra, a horda inteira passa a seguir as ordens dele — e a próxima onda já está a caminho.</p>
           </div>
           <div class="dots" role="tablist" aria-label="Imagens">
@@ -95,7 +92,7 @@
       <!-- ============ 02 · NOVO MAPA ============ -->
       <section class="block b02" id="novo-mapa" aria-labelledby="t02">
         <div class="b02-top">
-          <figure class="ph beast beast-tall reveal" data-photo="assets/fotos/mapa-criatura.jpg"><i class="maw"></i><i class="eyes"></i><i class="fur"></i><span class="ph-tag">mapa-criatura.jpg</span></figure>
+          <figure class="ph pic beast-tall reveal fit-cover"><img src="assets/fotos/mapa-caverna.webp" alt="Caverna de gelo do novo mapa" loading="lazy" decoding="async"></figure>
           <span class="num">02</span>
           <div class="brush reveal">
             <h2 class="h2" id="t02">Novo mapa</h2>
@@ -111,16 +108,16 @@
               <div class="share-icons"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="X">𝕏</a></div>
             </div>
           </div>
-          <figure class="ph ruin reveal" data-photo="assets/fotos/mapa-ruina.jpg"><i class="pillar"></i><span class="ph-tag">mapa-ruina.jpg</span></figure>
+          <figure class="ph pic ruin reveal fit-cover"><img src="assets/fotos/mapa-ruina.webp" alt="Ruínas de um castelo sob nuvens" loading="lazy" decoding="async"></figure>
           <p class="t2 tag-box">Resistiu, matou<br>e morreu de vez</p>
-          <figure class="ph beast beast-wolf reveal" data-photo="assets/fotos/mapa-lobisomem.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">mapa-lobisomem.jpg</span></figure>
+          <figure class="ph pic beast-wolf reveal fit-contain"><img src="assets/fotos/lobisomem.webp" alt="Lobisomem zumbi" loading="lazy" decoding="async"></figure>
         </div>
       </section>
 
       <!-- ============ 03 · OITO ZUMBIS ============ -->
       <section class="block b03" id="oito-zumbis" aria-labelledby="t03">
         <div class="red-band">
-          <figure class="ph soldier reveal" data-photo="assets/fotos/soldado.png"><i class="helmet"></i><i class="armor"></i><i class="gun"></i><span class="ph-tag">soldado.png</span></figure>
+          <figure class="ph pic soldier reveal fit-contain"><img src="assets/fotos/soldado.webp" alt="Soldado zumbi de armadura avançando" loading="lazy" decoding="async"></figure>
           <div class="b03-text reveal">
             <span class="num">03</span>
             <h2 class="h2" id="t03">Oito zumbis,<br>um a um, abrem<br>a porta para<br>a aventura</h2>
@@ -160,14 +157,14 @@
         <div class="present" id="apresentacao">
           <span class="btn3">Apresentação dos zumbis</span>
           <ul class="zgal">
-            <li class="reveal"><figure class="ph beast beast-1 mini" data-photo="assets/fotos/zumbi-01.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">zumbi-01.jpg</span></figure><p class="t3">Mandíbula</p></li>
-            <li class="reveal"><figure class="ph beast beast-2 mini" data-photo="assets/fotos/zumbi-02.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">zumbi-02.jpg</span></figure><p class="t3">Espectro</p></li>
-            <li class="reveal"><figure class="ph beast beast-3 mini" data-photo="assets/fotos/zumbi-03.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">zumbi-03.jpg</span></figure><p class="t3">Couraça</p></li>
-            <li class="reveal"><figure class="ph beast beast-wolf mini" data-photo="assets/fotos/zumbi-04.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">zumbi-04.jpg</span></figure><p class="t3">Uivo</p></li>
-            <li class="reveal"><figure class="ph beast beast-tall mini" data-photo="assets/fotos/zumbi-05.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">zumbi-05.jpg</span></figure><p class="t3">Gelo</p></li>
-            <li class="reveal"><figure class="ph beast beast-1 mini alt" data-photo="assets/fotos/zumbi-06.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">zumbi-06.jpg</span></figure><p class="t3">Carniça</p></li>
-            <li class="reveal"><figure class="ph beast beast-2 mini alt" data-photo="assets/fotos/zumbi-07.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">zumbi-07.jpg</span></figure><p class="t3">Sombra</p></li>
-            <li class="reveal"><figure class="ph beast beast-3 mini alt" data-photo="assets/fotos/zumbi-08.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">zumbi-08.jpg</span></figure><p class="t3">Comandante</p></li>
+            <li class="reveal"><figure class="ph pic mini fit-contain"><img src="assets/fotos/medalhao-mandibula.webp" alt="Mandíbula" loading="lazy" decoding="async"></figure><p class="t3">Mandíbula</p></li>
+            <li class="reveal"><figure class="ph pic mini fit-cover"><img src="assets/fotos/espectro.webp" alt="Espectro" loading="lazy" decoding="async"></figure><p class="t3">Espectro</p></li>
+            <li class="reveal"><figure class="ph pic mini fit-contain"><img src="assets/fotos/medalhao-couraca.webp" alt="Couraça" loading="lazy" decoding="async"></figure><p class="t3">Couraça</p></li>
+            <li class="reveal"><figure class="ph pic mini fit-contain"><img src="assets/fotos/medalhao-uivo.webp" alt="Uivo" loading="lazy" decoding="async"></figure><p class="t3">Uivo</p></li>
+            <li class="reveal"><figure class="ph pic mini fit-cover"><img src="assets/fotos/criatura-gelo.webp" alt="Gelo" loading="lazy" decoding="async"></figure><p class="t3">Gelo</p></li>
+            <li class="reveal"><figure class="ph pic mini fit-cover-top"><img src="assets/fotos/hero-sobrevivente.webp" alt="Carniça" loading="lazy" decoding="async"></figure><p class="t3">Carniça</p></li>
+            <li class="reveal"><figure class="ph pic mini fit-cover"><img src="assets/fotos/lobisomem.webp" alt="Sombra" loading="lazy" decoding="async"></figure><p class="t3">Sombra</p></li>
+            <li class="reveal"><figure class="ph pic mini fit-cover-top"><img src="assets/fotos/soldado.webp" alt="Comandante" loading="lazy" decoding="async"></figure><p class="t3">Comandante</p></li>
           </ul>
         </div>
       </section>
