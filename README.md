@@ -14,6 +14,8 @@ Portfólios e cases de projetos web.
 | `caso-07-fotografia-helena-moraes/` | Case — portfólio da fotógrafa Helena Moraes |
 | `caso-08-design-grafico-livia-sato/` | Case — portfólio de design gráfico Lívia Sato |
 | `caso-09-estudio-fotografia-reflexo/` | Case — estúdio de fotografia Reflexo |
+| `caso-10-editorial-augusto-landau/` | Case — página editorial do fotógrafo Augusto Landau |
+| `caso-11-jogo-armadilha/` | Case — lançamento do jogo de terror ARMADILHA |
 | `portfolio-de-servicos/` | Portfólio de serviços (cases em markdown) |
 
 Cada site abre direto pelo `index.html` da pasta.

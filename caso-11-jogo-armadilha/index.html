@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARMADILHA — Versão V | Lançamento 31.10.2026</title>
+  <meta name="description" content="ARMADILHA: Versão V — o novo capítulo da saga do Relojoeiro chega no Halloween. Trailer, armadilhas e pré-venda.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:wght@400;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+
+  <!-- filtros SVG: spray de tinta e estática de TV -->
+  <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <filter id="spray" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="16" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feGaussianBlur in="d" stdDeviation="2.6"/>
+    </filter>
+    <filter id="static">
+      <feTurbulence type="fractalNoise" baseFrequency=".95" numOctaves="1" seed="1" data-static/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 1"/></feComponentTransfer>
+    </filter>
+  </svg>
+
+  <!--
+    FOTOS: cada .ph tem data-photo="assets/fotos/<nome>.jpg". Coloque o arquivo com esse
+    nome em assets/fotos/ e ele substitui a composição em CSS automaticamente (app.js).
+  -->
+
+  <!-- ============ 1 · HERO ============ -->
+  <header class="hero" id="inicio">
+    <svg class="graffiti g-left" viewBox="0 0 300 400" aria-hidden="true"><text x="10" y="330">A</text><text x="150" y="170" class="small">9</text></svg>
+    <svg class="graffiti g-right" viewBox="0 0 300 400" aria-hidden="true"><text x="40" y="320">R</text><text x="10" y="120" class="small">e</text></svg>
+
+    <div class="target" aria-hidden="true"><i></i></div>
+
+    <figure class="ph tv-man" data-photo="assets/fotos/hero-relojoeiro.png">
+      <span class="coat"></span>
+      <span class="arm a1"></span><span class="arm a2"></span>
+      <span class="tv"><svg class="static" viewBox="0 0 100 80" preserveAspectRatio="none"><rect width="100" height="80" filter="url(#static)"/></svg><i class="face"></i></span>
+      <span class="hands"></span>
+      <span class="ph-tag">hero-relojoeiro.png</span>
+    </figure>
+
+    <div class="hero-left">
+      <p class="t2"><b>ARMADILHA:</b></p>
+      <p class="t2">A nova capa<br>de Halloween</p>
+      <p class="bubble">VERSÃO V</p>
+      <p class="t3 micro">20 1 · 0 31.10 ▮▮▯▮ 関係者以外<br>立入禁止 · LOTE 05/26</p>
+    </div>
+
+    <div class="hero-right">
+      <h1 class="logo glitch" data-text="ARMA"><span>ARMA</span><span class="o">DILHA</span></h1>
+      <p class="bubble b2">RELOJOEIRO / RJ</p>
+      <p class="t2 saga"><b>A SAGA</b><br>do vilão<br>Relojoeiro</p>
+    </div>
+
+    <a class="scroll-cue t3" href="#saga">↓ role se tiver coragem</a>
+  </header>
+
+  <main>
+
+    <!-- ============ 2 · A SAGA ============ -->
+    <section class="section saga-sec" id="saga" aria-labelledby="saga-title">
+      <div class="saga-head">
+        <h2 class="h2 glitch" id="saga-title" data-text="A SAGA">A SAGA</h2>
+        <p class="t1 type" data-type>Cinco jogos. Cinco cidades. Um relógio que nunca para. O Relojoeiro escolhe quem desperdiçou o próprio tempo e devolve a essa pessoa a única coisa que ela nunca valorizou: os últimos minutos. Você tem até o alarme tocar.</p>
+      </div>
+      <ol class="timeline">
+        <li class="step reveal"><span class="h3">I</span><p class="t2">2018</p><p class="t3">O despertador — o porão de uma relojoaria no Saara, Rio.</p></li>
+        <li class="step reveal"><span class="h3">II</span><p class="t2">2019</p><p class="t3">Hora extra — um escritório trancado às 23h59.</p></li>
+        <li class="step reveal"><span class="h3">III</span><p class="t2">2021</p><p class="t3">Fuso — um hotel onde cada quarto vive num horário.</p></li>
+        <li class="step reveal"><span class="h3">IV</span><p class="t2">2023</p><p class="t3">Ampulheta — a areia sobe em vez de descer.</p></li>
+        <li class="step reveal is-now"><span class="h3">V</span><p class="t2">2026</p><p class="t3">Halloween — o Relojoeiro tira a máscara. Ou só troca de tela.</p></li>
+      </ol>
+    </section>
+
+    <!-- ============ 3 · AS ARMADILHAS ============ -->
+    <section class="section traps" id="armadilhas" aria-labelledby="traps-title">
+      <h2 class="h2" id="traps-title">As armadilhas</h2>
+      <ul class="trap-grid">
+        <li class="trap reveal">
+          <figure class="ph ph-t1" data-photo="assets/fotos/armadilha-01.jpg"><i class="gear"></i><span class="ph-tag">armadilha-01.jpg</span></figure>
+          <span class="stamp">NÍVEL 2</span>
+          <p class="t2">O pêndulo</p><p class="t3">Responda antes que ele volte. Cada erro encurta a corda.</p>
+        </li>
+        <li class="trap reveal">
+          <figure class="ph ph-t2" data-photo="assets/fotos/armadilha-02.jpg"><i class="cage"></i><span class="ph-tag">armadilha-02.jpg</span></figure>
+          <span class="stamp">NÍVEL 3</span>
+          <p class="t2">A gaiola de ponteiros</p><p class="t3">As grades giram como um relógio. A saída só abre ao meio-dia.</p>
+        </li>
+        <li class="trap reveal">
+          <figure class="ph ph-t3" data-photo="assets/fotos/armadilha-03.jpg"><i class="sand"></i><span class="ph-tag">armadilha-03.jpg</span></figure>
+          <span class="stamp">NÍVEL 4</span>
+          <p class="t2">Ampulheta invertida</p><p class="t3">A areia sobe. Quando chegar ao topo, a sala vira de cabeça para baixo.</p>
+        </li>
+        <li class="trap reveal">
+          <figure class="ph ph-t4" data-photo="assets/fotos/armadilha-04.jpg"><i class="screens"></i><span class="ph-tag">armadilha-04.jpg</span></figure>
+          <span class="stamp red">NÍVEL 5</span>
+          <p class="t2">Sala das telas</p><p class="t3">Cem TVs, um só canal ao vivo. Encontre-o antes que ele encontre você.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ 4 · TRAILER ============ -->
+    <section class="section trailer" id="trailer" aria-labelledby="trailer-title">
+      <div class="trailer-head">
+        <h2 class="h2 glitch" id="trailer-title" data-text="TRAILER">TRAILER</h2>
+        <p class="t3">01:47 · legendado · 18+</p>
+      </div>
+      <div class="player" data-player>
+        <svg class="static big" viewBox="0 0 160 90" preserveAspectRatio="none" aria-hidden="true"><rect width="160" height="90" filter="url(#static)"/></svg>
+        <div class="player-scan" aria-hidden="true"></div>
+        <button class="play" type="button" aria-label="Assistir ao trailer" data-play><span>▶</span></button>
+        <p class="t2 player-msg" data-player-msg>SINAL PERDIDO — aperte play</p>
+        <span class="rec t3">● REC 00:00:13</span>
+      </div>
+      <ul class="frames">
+        <li class="ph ph-f1" data-photo="assets/fotos/frame-01.jpg"><span class="ph-tag">frame-01.jpg</span></li>
+        <li class="ph ph-f2" data-photo="assets/fotos/frame-02.jpg"><span class="ph-tag">frame-02.jpg</span></li>
+        <li class="ph ph-f3" data-photo="assets/fotos/frame-03.jpg"><span class="ph-tag">frame-03.jpg</span></li>
+      </ul>
+      <p class="t3 platforms">Disponível para PC · PlayStation 5 · Xbox Series X|S</p>
+    </section>
+
+  </main>
+
+  <!-- ============ 5 · PRÉ-VENDA ============ -->
+  <footer class="section preorder" id="pre-venda">
+    <svg class="graffiti g-foot" viewBox="0 0 600 300" aria-hidden="true"><text x="20" y="250">V</text></svg>
+    <p class="t2">Lançamento</p>
+    <h2 class="h2 date">31.10.2026</h2>
+    <dl class="countdown" data-countdown="2026-10-31T00:00:00-03:00">
+      <div><dt class="h3" data-d>00</dt><dd class="t3">dias</dd></div>
+      <div><dt class="h3" data-h>00</dt><dd class="t3">horas</dd></div>
+      <div><dt class="h3" data-m>00</dt><dd class="t3">min</dd></div>
+      <div><dt class="h3" data-s>00</dt><dd class="t3">seg</dd></div>
+    </dl>
+
+    <div class="editions">
+      <article class="edition">
+        <p class="t2">Edição padrão</p>
+        <p class="h3 price">R$ 199</p>
+        <p class="t3">Jogo base · fase bônus “Meia-noite”</p>
+        <a class="btn ghost" href="#">Reservar</a>
+      </article>
+      <article class="edition hot">
+        <p class="t2">Edição Relojoeiro</p>
+        <p class="h3 price">R$ 289</p>
+        <p class="t3">Jogo base · 2 DLCs · trilha sonora · capa de Halloween</p>
+        <a class="btn" href="#">Reservar</a>
+      </article>
+    </div>
+
+    <form class="notify" data-notify>
+      <label class="sr-only" for="email">Seu e-mail</label>
+      <input class="in" id="email" type="email" placeholder="seu e-mail" required>
+      <button class="btn" type="submit">Me avise</button>
+      <p class="t3 notify-ok" data-notify-ok hidden>Anotado. O Relojoeiro também.</p>
+    </form>
+
+    <div class="foot">
+      <span class="rating">18</span>
+      <p class="t3">Contém violência, terror psicológico e linguagem imprópria.</p>
+      <p class="t3">© 2026 Estúdio Ferrugem · ARMADILHA é uma obra de ficção</p>
+    </div>
+  </footer>
+
+</body>
+</html>

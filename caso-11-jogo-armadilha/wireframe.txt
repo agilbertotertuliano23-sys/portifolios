@@ -1,0 +1,29 @@
+caso-11 · ARMADILHA — página de lançamento de jogo de terror
+referência: reference.jpg (banner branco granulado, grafite vermelho em spray, alvo vermelho, figura P&B com TV na cabeça, texto de máquina de escrever)
+5 seções: 1 hero (banner) · 2 a saga · 3 as armadilhas · 4 trailer · 5 pré-venda
+
++-------------------------------------------------------------------------------------+
+| hero                                                                                 |
+| [img: grafite "A"] (esq.)                                    [img: grafite "R"] (dir.) |
+| [t2: ARMADILHA:]  [t2: A nova capa / de Halloween]           [h1: ARMA] [h1 vazado: DILHA] |
+| [btn2: VERSÃO V] (balão)        [img: alvo vermelho + figura com TV]  [btn2: RELOJOEIRO / RJ] |
+| [t3: 20 1 …] (microtexto)                                     [t2: A SAGA] [t2: do vilão Relojoeiro] |
++-------------------------------------------------------------------------------------+
+| section — a saga                                                                     |
+| [h2: A SAGA]  [t2: texto de máquina de escrever]                                     |
+| linha do tempo [h3: I] [t3: 2018 · O despertador] … [h3: V] [t3: 2026 · Halloween]   |
++-------------------------------------------------------------------------------------+
+| section2 — as armadilhas                                                             |
+| [h2: AS ARMADILHAS]                                                                  |
+| card [img P&B] [btn2: NÍVEL 1..5] [t2: nome] [t3: regra] × 4                         |
++-------------------------------------------------------------------------------------+
+| section3 — trailer                                                                   |
+| [h2: TRAILER]  [img: tela com estática] [btn: ▶]                                     |
+| [img] [img] [img] (frames)   [t3: PC · PlayStation · Xbox]                           |
++-------------------------------------------------------------------------------------+
+| section4 — pré-venda                                                                 |
+| [h2: 31.10.2026]  contagem [h3: dias] [h3: horas] [h3: min] [h3: seg]                |
+| edição [t2: Padrão] [h3: R$ 199]   edição [t2: Deluxe] [h3: R$ 289] [btn: RESERVAR]  |
+| [in: seu e-mail] [btn: ME AVISE]                                                     |
+| footer [t3: 18 — classificação] [t3: © 2026 Estúdio Ferrugem]                        |
++-------------------------------------------------------------------------------------+
