@@ -61,6 +61,10 @@ skillBtns.forEach((btn) => {
     skillBtns.forEach((b) => b.classList.toggle('is-on', b === btn));
     skillName.textContent = btn.dataset.skill;
     skillText.textContent = btn.dataset.text;
+    const role = document.querySelector('[data-skill-role]');
+    const avatar = document.querySelector('[data-skill-img]');
+    if (role) role.textContent = btn.dataset.role;
+    if (avatar) { avatar.src = btn.dataset.img; avatar.classList.remove('swap'); void avatar.offsetWidth; avatar.classList.add('swap'); }
   });
 });
 

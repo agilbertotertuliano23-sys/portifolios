@@ -212,7 +212,7 @@ a.btn3:hover { background: var(--red); color: #fff; }
 .soldier::after { display: none; }
 .b03-text { display: flex; flex-direction: column; gap: 12px; }
 .b03-text .t3 { color: #f1d6d6; }
-.dark-card { width: var(--col); margin: 10px auto 0; margin-right: calc((100% - var(--col)) / 2); max-width: min(560px, 100% - 32px); padding: 20px 22px; background: linear-gradient(135deg, rgba(30, 30, 30, .6), rgba(10, 10, 10, .85)), url("fotos/fumaca-paisagem.webp") center / cover; }
+.dark-card { width: var(--col); margin: 10px auto 0; margin-right: calc((100% - var(--col)) / 2); max-width: min(560px, 100% - 32px); padding: 20px 22px; background: linear-gradient(135deg, rgba(30, 30, 30, .45), rgba(10, 10, 10, .8)), url("fotos/espectro.webp") center / cover; }
 
 /* 04 */
 .b04-title { display: flex; align-items: center; gap: 12px; margin-left: 20%; margin-bottom: 20px; }
@@ -224,8 +224,12 @@ a.btn3:hover { background: var(--red); color: #fff; }
 .skill-card .strong { color: #fff; }
 .skills { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
 .skill-bar { width: 6px; height: 34px; background: var(--red); }
-.skills button { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; border: 2px solid #777; color: #ccc; font-size: 15px; transition: border-color .2s, color .2s, box-shadow .2s; }
-.skills button:hover, .skills button.is-on { border-color: var(--red-glow); color: #fff; box-shadow: 0 0 12px rgba(255, 42, 42, .6); }
+.skills button { display: grid; place-items: center; width: clamp(48px, 4.4vw, 70px); height: clamp(48px, 4.4vw, 70px); padding: 0; border-radius: 50%; border: 2px solid transparent; transition: border-color .2s, box-shadow .2s, transform .2s, filter .2s; filter: grayscale(.7) brightness(.75); }
+.skills button img { width: 100%; height: 100%; object-fit: contain; }
+.skills button:hover { transform: translateY(-3px); filter: none; }
+.skills button.is-on { filter: none; border-color: var(--red-glow); box-shadow: 0 0 16px rgba(255, 42, 42, .7); }
+.skill-avatar.swap { animation: swap .45s ease; }
+@keyframes swap { from { opacity: 0; transform: scale(.85) rotate(-8deg); } }
 .brush.tall { justify-content: center; align-items: center; text-align: center; gap: 18px; padding: 34px 28px; }
 
 .present { margin-top: clamp(40px, 6vw, 70px); text-align: center; }
