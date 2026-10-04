@@ -16,6 +16,8 @@ Portfólios e cases de projetos web.
 | `caso-09-estudio-fotografia-reflexo/` | Case — estúdio de fotografia Reflexo |
 | `caso-10-editorial-augusto-landau/` | Case — página editorial do fotógrafo Augusto Landau |
 | `caso-11-jogo-armadilha/` | Case — lançamento do jogo de terror ARMADILHA |
+| `caso-12-jogo-necropolis/` | Case — modo de jogo NECRÓPOLIS: Comandante Zumbi |
+| `caso-13-revista-luminancia/` | Case — revista de moda LUMINÂNCIA |
 | `portfolio-de-servicos/` | Portfólio de serviços (cases em markdown) |
 
 Cada site abre direto pelo `index.html` da pasta.

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NECRÓPOLIS 2 — Comandante Zumbi</title>
+  <meta name="description" content="Comandante Zumbi: o novo modo de NECRÓPOLIS 2. Ataque bioquímico em 12 de dezembro.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+
+  <!-- filtro SVG: borda irregular de tinta -->
+  <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <filter id="ink" x="-10%" y="-2%" width="120%" height="104%">
+      <feTurbulence type="fractalNoise" baseFrequency=".012 .03" numOctaves="4" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="90" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="brush" x="-8%" y="-15%" width="116%" height="130%">
+      <feTurbulence type="fractalNoise" baseFrequency=".04 .18" numOctaves="3" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="34" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </svg>
+
+  <!--
+    IMAGENS: cada .ph tem data-photo="assets/fotos/<nome>.jpg". Coloque o arquivo com esse
+    nome em assets/fotos/ e ele substitui a composição em CSS automaticamente (app.js).
+  -->
+
+  <div class="wrap">
+    <!-- coluna de tinta preta com respingos -->
+    <div class="ink" aria-hidden="true"><i class="ink-body"></i><i class="drips"></i><i class="splat s1"></i><i class="splat s2"></i><i class="splat s3"></i></div>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero" id="inicio">
+      <p class="game-logo">NECRÓP<span>☠</span>LIS <b>2</b></p>
+      <figure class="ph hero-art" data-photo="assets/fotos/hero-zumbi.jpg">
+        <i class="zface"></i><i class="zeyes"></i>
+        <i class="claw l"></i><i class="claw r"></i>
+        <i class="x-slash"></i>
+        <i class="survivor"></i>
+        <i class="horde"></i>
+        <span class="ph-tag">hero-zumbi.jpg</span>
+      </figure>
+      <div class="hero-title">
+        <h1><span class="red">ZUMBI</span><span class="grey">COMANDANTE</span></h1>
+        <button class="play" type="button" aria-label="Assistir ao trailer" data-trailer><span>▶</span></button>
+        <p class="tagline">A equipe de elite se tornou o maior obstáculo da sobrevivência humana.<br>Comande a horda — ou seja comandado por ela.</p>
+        <p class="badge"><span class="bio" aria-hidden="true">☣</span><span><small>Ataque bioquímico · primeira jogada</small>12 de dezembro</span></p>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- ============ 01 · INTRODUÇÃO ============ -->
+      <section class="block b01" id="introducao" aria-labelledby="t01">
+        <div class="b01-left">
+          <div class="brush reveal">
+            <h2 class="h2" id="t01">Comandante<br>Zumbi</h2>
+            <p class="t3">A equipe original de elite virou o maior obstáculo da sobrevivência humana.</p>
+            <a class="btn2" href="#novo-mapa">Ler mais</a>
+          </div>
+          <div class="num-row reveal">
+            <span class="btn3">Introdução ao jogo</span>
+            <span class="num">01</span>
+          </div>
+          <p class="t3 red-line reveal">Comandante Zumbi é jogado com um líder que controla os zumbis, num modo de estratégia em tempo real.</p>
+          <p class="t3 reveal"><b class="red">Zumbis:</b> o comandante é escolhido entre os jogadores e controla a horda. Conforme o tipo de mapa, surgem tarefas diferentes. <b class="red">Humanos:</b> os sobreviventes restantes se unem contra os zumbis…</p>
+          <button class="btn2 grey" type="button" data-zoom>Ver imagem maior</button>
+        </div>
+        <div class="b01-right reveal">
+          <div class="slider" data-slider>
+            <figure class="ph beast beast-1 is-on" data-photo="assets/fotos/criatura-01.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">criatura-01.jpg</span></figure>
+            <figure class="ph beast beast-2" data-photo="assets/fotos/criatura-02.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">criatura-02.jpg</span></figure>
+            <figure class="ph beast beast-3" data-photo="assets/fotos/criatura-03.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">criatura-03.jpg</span></figure>
+            <p class="t3 cap"><b class="red">Comandante zumbi:</b> até 32 jogadores no modo comandante. Depois que o comandante entra, a horda inteira passa a seguir as ordens dele — e a próxima onda já está a caminho.</p>
+          </div>
+          <div class="dots" role="tablist" aria-label="Imagens">
+            <button type="button" class="is-on" aria-label="Imagem 1" data-dot="0"></button>
+            <button type="button" aria-label="Imagem 2" data-dot="1"></button>
+            <button type="button" aria-label="Imagem 3" data-dot="2"></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 02 · NOVO MAPA ============ -->
+      <section class="block b02" id="novo-mapa" aria-labelledby="t02">
+        <div class="b02-top">
+          <figure class="ph beast beast-tall reveal" data-photo="assets/fotos/mapa-criatura.jpg"><i class="maw"></i><i class="eyes"></i><i class="fur"></i><span class="ph-tag">mapa-criatura.jpg</span></figure>
+          <span class="num">02</span>
+          <div class="brush reveal">
+            <h2 class="h2" id="t02">Novo mapa</h2>
+            <p class="t3">Para romper o ponto mais alto do último jogo, o mapa Comandante Zumbi foi transformado. Os jogadores podem tirar vantagem do terreno.</p>
+          </div>
+        </div>
+        <p class="t3 lead reveal"><b class="red">Zumbis</b> nas mãos do comandante: o grupo vai dobrar de tamanho, e os zumbis ficarão mais fortes.</p>
+        <div class="b02-bottom">
+          <div class="b02-side reveal">
+            <button class="btn2 outline" type="button" data-zoom>Ver imagem maior</button>
+            <div class="share">
+              <p class="t3 red">Compartilhe com o esquadrão</p>
+              <div class="share-icons"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="X">𝕏</a></div>
+            </div>
+          </div>
+          <figure class="ph ruin reveal" data-photo="assets/fotos/mapa-ruina.jpg"><i class="pillar"></i><span class="ph-tag">mapa-ruina.jpg</span></figure>
+          <p class="t2 tag-box">Resistiu, matou<br>e morreu de vez</p>
+          <figure class="ph beast beast-wolf reveal" data-photo="assets/fotos/mapa-lobisomem.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">mapa-lobisomem.jpg</span></figure>
+        </div>
+      </section>
+
+      <!-- ============ 03 · OITO ZUMBIS ============ -->
+      <section class="block b03" id="oito-zumbis" aria-labelledby="t03">
+        <div class="red-band">
+          <figure class="ph soldier reveal" data-photo="assets/fotos/soldado.png"><i class="helmet"></i><i class="armor"></i><i class="gun"></i><span class="ph-tag">soldado.png</span></figure>
+          <div class="b03-text reveal">
+            <span class="num">03</span>
+            <h2 class="h2" id="t03">Oito zumbis,<br>um a um, abrem<br>a porta para<br>a aventura</h2>
+            <p class="t3">A equipe original de elite se tornou o maior obstáculo da sobrevivência humana…</p>
+            <a class="btn2 grey" href="#habilidades">Ler mais</a>
+          </div>
+        </div>
+        <div class="dark-card reveal">
+          <p class="t3">Cada zumbi tem habilidades únicas: <b class="red">salto longo, regeneração, camuflagem, grito</b> — escolha qual liberar no momento certo do ataque.</p>
+        </div>
+      </section>
+
+      <!-- ============ 04 · HABILIDADES HUMANAS ============ -->
+      <section class="block b04" id="habilidades" aria-labelledby="t04">
+        <h2 class="h2 b04-title" id="t04"><span class="num">04</span><span>Habilidades<br>humanas</span></h2>
+        <div class="b04-grid">
+          <div class="skill-card reveal">
+            <h3 class="h3 red" data-skill-name>Zumbi forte</h3>
+            <p class="t3" data-skill-text>Habilidade de proteção: absorve dano por alguns segundos. Ideal para segurar o corredor.</p>
+            <p class="t3 strong">Enquanto a produção de fogo continua, a vida diminui.</p>
+            <div class="skills" role="tablist" aria-label="Habilidades">
+              <span class="skill-bar"></span>
+              <button type="button" class="is-on" data-skill="Zumbi forte" data-text="Habilidade de proteção: absorve dano por alguns segundos. Ideal para segurar o corredor.">⛨</button>
+              <button type="button" data-skill="Corredor" data-text="Velocidade dobrada por 5 segundos. Perfeito para flanquear sobreviventes isolados.">➶</button>
+              <button type="button" data-skill="Saltador" data-text="Salto longo que alcança telhados e janelas altas do mapa.">⤴</button>
+              <button type="button" data-skill="Gritador" data-text="Grito que atordoa humanos num raio de 6 metros.">◎</button>
+              <button type="button" data-skill="Regenerador" data-text="Recupera vida aos poucos enquanto estiver parado nas sombras.">✚</button>
+            </div>
+          </div>
+          <div class="brush tall reveal">
+            <p class="t3">O súbito surgimento dos zumbis. O acampamento humano se armou até os dentes, naturalmente.</p>
+            <a class="btn3" href="#apresentacao">Ver detalhes</a>
+            <p class="t3">Cada zumbi também ganha uma pontuação de acordo com a variedade de sobreviventes que alcançar.</p>
+          </div>
+        </div>
+
+        <div class="present" id="apresentacao">
+          <span class="btn3">Apresentação dos zumbis</span>
+          <ul class="zgal">
+            <li class="reveal"><figure class="ph beast beast-1 mini" data-photo="assets/fotos/zumbi-01.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">zumbi-01.jpg</span></figure><p class="t3">Mandíbula</p></li>
+            <li class="reveal"><figure class="ph beast beast-2 mini" data-photo="assets/fotos/zumbi-02.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">zumbi-02.jpg</span></figure><p class="t3">Espectro</p></li>
+            <li class="reveal"><figure class="ph beast beast-3 mini" data-photo="assets/fotos/zumbi-03.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">zumbi-03.jpg</span></figure><p class="t3">Couraça</p></li>
+            <li class="reveal"><figure class="ph beast beast-wolf mini" data-photo="assets/fotos/zumbi-04.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">zumbi-04.jpg</span></figure><p class="t3">Uivo</p></li>
+            <li class="reveal"><figure class="ph beast beast-tall mini" data-photo="assets/fotos/zumbi-05.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">zumbi-05.jpg</span></figure><p class="t3">Gelo</p></li>
+            <li class="reveal"><figure class="ph beast beast-1 mini alt" data-photo="assets/fotos/zumbi-06.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">zumbi-06.jpg</span></figure><p class="t3">Carniça</p></li>
+            <li class="reveal"><figure class="ph beast beast-2 mini alt" data-photo="assets/fotos/zumbi-07.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">zumbi-07.jpg</span></figure><p class="t3">Sombra</p></li>
+            <li class="reveal"><figure class="ph beast beast-3 mini alt" data-photo="assets/fotos/zumbi-08.jpg"><i class="maw"></i><i class="eyes"></i><span class="ph-tag">zumbi-08.jpg</span></figure><p class="t3">Comandante</p></li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="foot">
+      <p class="t3">© 2026 Estúdio Ferrugem · NECRÓPOLIS é uma obra de ficção</p>
+      <span class="age">16</span>
+    </footer>
+  </div>
+
+  <!-- visualizador de imagem ampliada -->
+  <div class="lightbox" data-lightbox hidden>
+    <button class="lb-close" type="button" aria-label="Fechar" data-lb-close>×</button>
+    <div class="lb-frame" data-lb-frame></div>
+  </div>
+
+</body>
+</html>

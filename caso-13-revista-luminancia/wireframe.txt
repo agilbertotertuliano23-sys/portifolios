@@ -1,0 +1,31 @@
+caso-13 · LUMINÂNCIA — revista de moda (editora Obsidiana)
+referência: reference.jpg (página branca sobre fundo vinho; hero vinho com modelo na frente do título; seção P&B; cards de tendências)
+5 seções: 1 hero · 2 sobre a revista · 3 um estilo que inspira · 4 últimas tendências · 5 assinatura + rodapé (nova)
+
++-------------------------------------------------------------------------------------+
+| hero (vinho)                                                                         |
+| nav [t3: OBSIDIANA] [lnk: SOBRE A REVISTA] [lnk: EDIÇÕES] [lnk: TENDÊNCIAS] [lnk: ENSAIOS] [t3: +55 11 …] |
+| [h1: LUMINÂNCIA] (branco, atrás da modelo)  [img: modelo central]                    |
+| [t2: UMA REVISTA MODERNA QUE ABRE UM DIÁLOGO…]      [t3: Unindo tradições elegantes…] |
+| box [h3: DESIGN ÚNICO] [t3: …]                      box [h3: 30K+] [t3: …]            |
+|                                                     [btn: ASSINE JÁ]                 |
++-------------------------------------------------------------------------------------+
+| section — sobre a revista (branco)                                                   |
+| [h2: SOBRE A] [h2 vinho: REVISTA]                    [t3: Nossa revista é um espaço…] |
+| card [t2: CONTEÚDO EXCLUSIVO] [img] [t3]   card(vinho) [t2: ENTREVISTAS] [img] [t3]   |
+| card [t2: ESTILO REFINADO] [img] [t3]      card [t2: INSPIRAÇÃO MENSAL] [img] [t3]    |
++-------------------------------------------------------------------------------------+
+| section2 — um estilo que inspira (preto)                                             |
+| [img P&B: olhos sob o chapéu]  [h2: UM ESTILO QUE] [h2 vinho: INSPIRA]  [t3: …]      |
+| row [t2: SÓ TENDÊNCIAS ATUAIS] [t3: …] [av ×4]                                       |
+| row [t2: ABORDAGEM PESSOAL] [t3: …] [av ×4]                                          |
++-------------------------------------------------------------------------------------+
+| section3 — últimas tendências (branco)                                               |
+| [h2: DESCUBRA AS ÚLTIMAS] [h2: TENDÊNCIAS DE MODA]                   [btn2: ASSINE JÁ] |
+| card [img] [t2: DESTAQUES OUSADOS] [t3] · [img inclinada] [t2: ESTÉTICA RETRÔ] · …   |
++-------------------------------------------------------------------------------------+
+| section4 — assinatura (vinho)                                                        |
+| [h2: RECEBA A LUMINÂNCIA EM CASA]  plano [t2: DIGITAL] [h3: R$ 19] · [t2: IMPRESSA] [h3: R$ 39] |
+| [in: e-mail] [btn: ASSINAR]                                                          |
+| footer [t3: OBSIDIANA] [lnk…] [t3: © 2026]                                           |
++-------------------------------------------------------------------------------------+

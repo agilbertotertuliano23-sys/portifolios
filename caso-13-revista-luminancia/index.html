@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMINÂNCIA — revista de moda | Obsidiana</title>
+  <meta name="description" content="LUMINÂNCIA — revista de moda que abre um diálogo entre luz e sombra, numa paleta monocromática e expressiva.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;800&family=Barlow+Condensed:wght@500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+
+  <!--
+    FOTOS: cada .ph tem data-photo="assets/fotos/<nome>.jpg". Coloque o arquivo com esse
+    nome em assets/fotos/ e ele substitui a composição em CSS automaticamente (app.js).
+    As modelas em CSS são montadas com .model (cabelo, corpo, pescoço, rosto, olhos, boca).
+  -->
+
+  <div class="page">
+
+    <!-- ============ 1 · HERO ============ -->
+    <header class="hero" id="inicio">
+      <nav class="nav">
+        <a class="t3 brand" href="#inicio">Obsidiana</a>
+        <ul class="nav-links">
+          <li><a class="lnk" href="#sobre">Sobre a revista</a></li>
+          <li><a class="lnk" href="#tendencias">Edições</a></li>
+          <li><a class="lnk" href="#estilo">Tendências</a></li>
+          <li><a class="lnk" href="#tendencias">Ensaios</a></li>
+        </ul>
+        <a class="t3 phone" href="tel:+5511912345678">+55 11 91234 5678</a>
+      </nav>
+
+      <h1 class="hero-title">Luminância</h1>
+
+      <figure class="ph hero-model" data-photo="assets/fotos/capa-modelo.png">
+        <span class="model m-hero"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="ph-tag">capa-modelo.png</span>
+      </figure>
+
+      <div class="hero-left">
+        <p class="t2 manifesto">Uma <b>revista moderna</b> que abre um diálogo entre luz e sombra <b>através</b> da estética do contraste. <b>Personagens com emoções expressivas</b> numa paleta monocromática.</p>
+        <div class="glass">
+          <p class="h3">Design único</p>
+          <p class="t3">Acesso a conteúdo exclusivo, entrevistas e projetos visuais.</p>
+        </div>
+      </div>
+      <div class="hero-right">
+        <p class="t3">Unindo tradições elegantes e tendências modernas, contamos histórias por meio de imagens e conversas pessoais.</p>
+        <div class="glass">
+          <p class="h3 big" data-count="30" data-suffix="K+">30K+</p>
+          <p class="t3">entusiastas de estilo se inspiram nos nossos ensaios e histórias todo mês.</p>
+        </div>
+        <a class="btn outline-w" href="#assinatura">Assine já</a>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- ============ 2 · SOBRE A REVISTA ============ -->
+      <section class="section about" id="sobre" aria-labelledby="sobre-title">
+        <div class="about-head">
+          <h2 class="h2" id="sobre-title">Sobre a <span class="wine">revista</span></h2>
+          <p class="t3">Nossa revista é um espaço onde a moda vira arte e as tendências ganham individualidade. Contamos histórias com imagens e palavras, unindo estética, criatividade e profundidade emocional.</p>
+        </div>
+        <ul class="cards">
+          <li class="card reveal">
+            <p class="t2">Conteúdo exclusivo</p>
+            <figure class="ph c-1" data-photo="assets/fotos/sobre-01.jpg"><span class="model"><i></i><i></i><i></i><i></i><i></i><i></i></span><i class="shades"></i><span class="ph-tag">sobre-01.jpg</span></figure>
+            <p class="t3">ensaios raros e colunas exclusivas de autores.</p>
+          </li>
+          <li class="card is-wine reveal">
+            <p class="t2">Entrevistas com experts</p>
+            <figure class="ph c-2" data-photo="assets/fotos/sobre-02.jpg"><span class="model"><i></i><i></i><i></i><i></i><i></i><i></i></span><i class="nails"></i><span class="ph-tag">sobre-02.jpg</span></figure>
+            <p class="t3">conversas com estilistas, modelos e artistas.</p>
+          </li>
+          <li class="card reveal">
+            <p class="t2">Estilo refinado</p>
+            <figure class="ph c-3" data-photo="assets/fotos/sobre-03.jpg"><span class="model"><i></i><i></i><i></i><i></i><i></i><i></i></span><i class="gloves"></i><span class="ph-tag">sobre-03.jpg</span></figure>
+            <p class="t3">uma mistura de estilo, tendências e inspiração a cada edição.</p>
+          </li>
+          <li class="card reveal">
+            <p class="t2">Inspiração mensal</p>
+            <figure class="ph c-4" data-photo="assets/fotos/sobre-04.jpg"><span class="model"><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="ph-tag">sobre-04.jpg</span></figure>
+            <p class="t3">para quem valoriza arte de verdade e autoexpressão.</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ============ 3 · UM ESTILO QUE INSPIRA ============ -->
+      <section class="style" id="estilo" aria-labelledby="estilo-title">
+        <figure class="ph eyes-shot" data-photo="assets/fotos/estilo-olhar.jpg">
+          <i class="hat"></i><i class="brow l"></i><i class="brow r"></i><i class="eye l"></i><i class="eye r"></i><i class="glove"></i>
+          <span class="ph-tag">estilo-olhar.jpg</span>
+        </figure>
+        <p class="t3 style-note">Descubra a moda onde a ousadia encontra a elegância. Mostramos as últimas tendências, destacamos a individualidade em cada look e ajudamos você a seguir em frente com estilo.</p>
+        <h2 class="h2 style-title" id="estilo-title"><span>Um estilo que</span><span class="wine">inspira</span></h2>
+
+        <div class="rows">
+          <div class="row reveal">
+            <p class="t2">Só tendências atuais<br>e estilosas</p>
+            <p class="t3">Só as ideias mais frescas, direto das passarelas e das ruas das capitais da moda. Selecionamos as tendências com cuidado para você estar sempre no centro — inspirada pelos melhores designs — e acrescentar novos elementos ao guarda-roupa com facilidade.</p>
+            <ul class="avs">
+              <li class="ph av" data-photo="assets/fotos/av-01.jpg"><span class="model"><i></i><i></i><i></i><i></i><i></i><i></i></span></li>
+              <li class="ph av" data-photo="assets/fotos/av-02.jpg"><span class="model"><i></i><i></i><i></i><i></i><i></i><i></i></span></li>
+              <li class="ph av" data-photo="assets/fotos/av-03.jpg"><span class="model"><i></i><i></i><i></i><i></i><i></i><i></i></span></li>
+              <li class="ph av" data-photo="assets/fotos/av-04.jpg"><span class="model"><i></i><i></i><i></i><i></i><i></i><i></i></span></li>
+            </ul>
+          </div>
+          <div class="row reveal">
+            <p class="t2">Abordagem pessoal<br>de estilo</p>
+            <p class="t3">Cada estilo é adaptado a diferentes rotinas e personalidades para oferecer soluções que destacam suas qualidades únicas e ajudam você a se sentir confiante em qualquer situação.</p>
+            <ul class="avs">
+              <li class="ph av" data-photo="assets/fotos/av-05.jpg"><span class="model"><i></i><i></i><i></i><i></i><i></i><i></i></span></li>
+              <li class="ph av" data-photo="assets/fotos/av-06.jpg"><span class="model"><i></i><i></i><i></i><i></i><i></i><i></i></span></li>
+              <li class="ph av" data-photo="assets/fotos/av-07.jpg"><span class="model"><i></i><i></i><i></i><i></i><i></i><i></i></span></li>
+              <li class="ph av" data-photo="assets/fotos/av-08.jpg"><span class="model"><i></i><i></i><i></i><i></i><i></i><i></i></span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 4 · ÚLTIMAS TENDÊNCIAS ============ -->
+      <section class="section trends" id="tendencias" aria-labelledby="trend-title">
+        <div class="trends-head">
+          <h2 class="h2" id="trend-title">Descubra as últimas<br><span class="wine">tendências</span> de moda</h2>
+          <a class="btn2" href="#assinatura">Assine já</a>
+        </div>
+        <ul class="trend-row">
+          <li class="trend reveal">
+            <figure class="ph t-1" data-photo="assets/fotos/tendencia-01.jpg"><span class="model"><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="ph-tag">tendencia-01.jpg</span></figure>
+            <p class="t2">Destaques<br>ousados</p>
+            <p class="t3">combinações incomuns de cor e textura que fazem você se destacar e dão estilo até ao look mais básico.</p>
+          </li>
+          <li class="trend tilt reveal">
+            <figure class="ph t-2" data-photo="assets/fotos/tendencia-02.jpg"><span class="model"><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="ph-tag">tendencia-02.jpg</span></figure>
+            <p class="t2">Estética<br>retrô</p>
+            <p class="t3">o clássico volta — ombros volumosos, joias vintage e silhuetas familiares estão em alta de novo.</p>
+          </li>
+          <li class="trend reveal">
+            <figure class="ph t-3" data-photo="assets/fotos/tendencia-03.jpg"><span class="model"><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="ph-tag">tendencia-03.jpg</span></figure>
+            <p class="t2">Minimalismo<br>nos detalhes</p>
+            <p class="t3">formas concisas, linhas simples e materiais de qualidade tornam o minimalismo versátil e elegante.</p>
+          </li>
+          <li class="trend low reveal">
+            <figure class="ph t-4" data-photo="assets/fotos/tendencia-04.jpg"><span class="model"><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="ph-tag">tendencia-04.jpg</span></figure>
+            <p class="t2">Moda<br>sustentável</p>
+            <p class="t3">tecidos sustentáveis, reuso criativo e escolhas conscientes estão moldando a moda moderna.</p>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- ============ 5 · ASSINATURA ============ -->
+    <footer class="sub" id="assinatura">
+      <div class="sub-grid">
+        <h2 class="h2">Receba a<br>Luminância<br>em casa</h2>
+        <div class="plans">
+          <label class="plan">
+            <input type="radio" name="plano" value="digital" checked>
+            <span class="t2">Digital</span><span class="h3">R$ 19<small>/mês</small></span><span class="t3">todas as edições no app + arquivo completo</span>
+          </label>
+          <label class="plan">
+            <input type="radio" name="plano" value="impressa">
+            <span class="t2">Impressa + digital</span><span class="h3">R$ 39<small>/mês</small></span><span class="t3">a revista na sua porta todo mês, sem frete</span>
+          </label>
+          <form class="sub-form" data-sub>
+            <label class="sr-only" for="sub-email">Seu e-mail</label>
+            <input class="in" id="sub-email" type="email" placeholder="seu e-mail" required>
+            <button class="btn" type="submit">Assinar</button>
+            <p class="t3 sub-ok" data-sub-ok hidden>Bem-vinda à Luminância. Confira seu e-mail.</p>
+          </form>
+        </div>
+      </div>
+      <div class="foot">
+        <span class="t3 brand">Obsidiana</span>
+        <ul class="foot-links">
+          <li><a class="lnk" href="#">Instagram</a></li>
+          <li><a class="lnk" href="#">Pinterest</a></li>
+          <li><a class="lnk" href="#">Contato</a></li>
+        </ul>
+        <p class="t3">© 2026 Editora Obsidiana — LUMINÂNCIA</p>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
