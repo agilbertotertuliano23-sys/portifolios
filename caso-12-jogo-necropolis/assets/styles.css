@@ -129,21 +129,22 @@ a.btn3:hover { background: var(--red); color: #fff; }
 .h-horde { position: absolute; left: 50%; bottom: 7%; width: max(100%, 760px); height: auto; transform: translateX(-50%); opacity: .85; -webkit-mask: linear-gradient(180deg, #000 60%, transparent); mask: linear-gradient(180deg, #000 60%, transparent); }
 .x-slash { left: 50%; top: 36%; width: 80%; height: 50%; transform: translateX(-50%); background: linear-gradient(35deg, transparent 47%, rgba(196, 22, 28, .85) 47% 53%, transparent 53%), linear-gradient(-35deg, transparent 47%, rgba(196, 22, 28, .85) 47% 53%, transparent 53%); filter: blur(1.5px); }
 
-.hero-title { position: absolute; left: 0; right: 0; top: 30%; z-index: 3; text-align: center; }
+.hero-title { position: absolute; inset: 0; z-index: 3; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: clamp(70px, 10vh, 110px) 16px clamp(20px, 5vh, 56px); text-align: center; }
 .hero-title h1 { display: flex; flex-direction: column; align-items: center; font-family: var(--f-head); font-weight: 700; line-height: .9; text-transform: uppercase; }
-.hero-title .red { font-size: clamp(40px, 7.4vw, 130px); color: var(--red); text-shadow: 0 0 20px rgba(255, 0, 0, .35); }
-.hero-title .grey { font-size: clamp(46px, 9.4vw, 170px); color: #c9c9c9; letter-spacing: .02em; text-shadow: 0 4px 18px #000; }
-.play { display: grid; place-items: center; width: clamp(58px, 5.4vw, 92px); height: clamp(58px, 5.4vw, 92px); margin: 22px auto 0; border-radius: 50%; border: 2px solid var(--red); background: rgba(0, 0, 0, .5); color: #fff; font-size: 18px; box-shadow: 0 0 0 8px rgba(196, 22, 28, .18); transition: transform .2s ease, background .2s ease; }
+.hero-title .red { font-size: clamp(36px, min(7.4vw, 12vh), 130px); color: var(--red); text-shadow: 0 0 20px rgba(255, 0, 0, .35); }
+.hero-title .grey { font-size: clamp(42px, min(9.4vw, 15.5vh), 170px); color: #c9c9c9; letter-spacing: .02em; text-shadow: 0 4px 18px #000; }
+.play { display: grid; place-items: center; width: clamp(54px, min(5.4vw, 9vh), 92px); height: clamp(54px, min(5.4vw, 9vh), 92px); margin: clamp(10px, 2.4vh, 26px) auto 0; border-radius: 50%; border: 2px solid var(--red); background: rgba(0, 0, 0, .5); color: #fff; font-size: 18px; box-shadow: 0 0 0 8px rgba(196, 22, 28, .18); transition: transform .2s ease, background .2s ease; }
 .play:hover { transform: scale(1.1); background: var(--red); }
 .play span { transform: translateX(2px); }
-.tagline { margin: 22px auto 0; max-width: min(760px, 90%); color: var(--red-glow); font-size: clamp(11px, 1vw, 16px); line-height: 1.5; text-transform: uppercase; letter-spacing: .04em; opacity: .85; }
-.badge { display: inline-flex; align-items: center; gap: 10px; margin-top: 26px; padding: 4px 14px 4px 4px; border: 1px solid rgba(255, 255, 255, .35); background: rgba(0, 0, 0, .55); font-family: var(--f-head); text-transform: uppercase; color: #fff; text-align: left; line-height: 1.1; }
+.tagline { margin: clamp(10px, 2.4vh, 24px) auto 0; max-width: min(760px, 90%); color: var(--red-glow); font-size: clamp(11px, 1vw, 16px); line-height: 1.5; text-transform: uppercase; letter-spacing: .04em; opacity: .85; }
+.badge { display: inline-flex; align-items: center; gap: 10px; margin-top: clamp(12px, 2.6vh, 26px); padding: 4px 14px 4px 4px; border: 1px solid rgba(255, 255, 255, .35); background: rgba(0, 0, 0, .55); font-family: var(--f-head); text-transform: uppercase; color: #fff; text-align: left; line-height: 1.1; }
 .badge small { display: block; font-size: 9px; opacity: .75; letter-spacing: .05em; }
 .bio { display: grid; place-items: center; width: 34px; height: 34px; background: var(--red); font-size: 22px; }
 
 /* bordas de tinta ao vivo (ink.js): o canvas desenha a borda, a coluna fica lisa e recuada */
 .ink-canvas { position: fixed; inset: 0; z-index: 1; width: 100%; height: 100%; pointer-events: none; }
-.ink-live .ink-body { filter: none; left: calc(clamp(10px, 3.5vw, 72px) + 30px); right: calc(clamp(10px, 3.5vw, 72px) + 30px); }
+.ink-live .hero { background: #070707; }
+.ink-live .ink-body { top: calc(var(--hero-h) - 2px); filter: none; left: calc(clamp(10px, 3.5vw, 72px) + 30px); right: calc(clamp(10px, 3.5vw, 72px) + 30px); }
 
 /* fumaça interativa: fica entre o fundo (tinta/arte do hero) e o conteúdo */
 .smoke { position: fixed; inset: 0; z-index: 2; width: 100%; height: 100%; pointer-events: none; }

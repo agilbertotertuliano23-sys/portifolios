@@ -130,19 +130,17 @@ if (nav) {
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
   onScroll();
 
-  // seção ativa
+  // seção ativa: a que cruza o meio da tela (nenhuma enquanto o topo está à vista)
   const spies = [...document.querySelectorAll('[data-spy]')];
   const targets = spies.map((a) => document.querySelector(a.getAttribute('href')));
-  if ('IntersectionObserver' in window) {
-    const spy = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const i = targets.indexOf(entry.target);
-        spies.forEach((a, k) => a.classList.toggle('is-active', k === i));
-      });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    targets.forEach((t) => t && spy.observe(t));
-  }
+  const spy = () => {
+    const mid = innerHeight * 0.5;
+    const i = targets.findIndex((t) => { if (!t) return false; const r = t.getBoundingClientRect(); return r.top <= mid && r.bottom > mid; });
+    spies.forEach((a, k) => a.classList.toggle('is-active', k === i));
+  };
+  addEventListener('scroll', () => requestAnimationFrame(spy), { passive: true });
+  addEventListener('resize', spy);
+  spy();
 
   // menu do celular
   const setOpen = (open) => {

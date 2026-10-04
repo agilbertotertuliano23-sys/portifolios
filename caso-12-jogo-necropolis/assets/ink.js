@@ -8,6 +8,7 @@
 (() => {
   const canvas = document.querySelector('[data-ink]');
   const inkBody = document.querySelector('.ink-body');
+  const hero = document.querySelector('.hero');
   if (!canvas || !inkBody || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
@@ -159,7 +160,9 @@
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, W, H);
       ctx.fillStyle = COLOR;
-      const top = Math.max(r.top, -STEP);
+      // não desenha por cima da arte do topo: a borda só começa onde o hero termina
+      const heroBottom = hero ? hero.getBoundingClientRect().bottom - 4 : r.top;
+      const top = Math.max(r.top, heroBottom, -STEP);
       const bottom = Math.min(r.bottom, H + STEP);
       if (bottom > top) {
         drawSide(sides.left, r.left, -1, top, bottom);
