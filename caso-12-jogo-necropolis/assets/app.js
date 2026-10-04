@@ -4,6 +4,7 @@
 // 3. carrossel de criaturas (pontinhos + troca automática)
 // 4. habilidades humanas (ícones trocam nome e texto)
 // 5. "ver imagem maior" e trailer em um visualizador
+// 6. vídeos cinemáticos em loop: tocam só quando aparecem na tela
 // (a névoa em fluido fica em assets/fluid.js)
 
 document.documentElement.classList.add('js');
@@ -78,14 +79,36 @@ document.querySelectorAll('[data-zoom]').forEach((btn) => {
 const trailer = document.querySelector('[data-trailer]');
 if (trailer) {
   trailer.addEventListener('click', () => {
-    const msg = document.createElement('p');
-    msg.className = 'h2';
-    msg.style.textAlign = 'center';
-    msg.textContent = 'Trailer em breve — 12 de dezembro';
-    open(msg);
+    const video = document.createElement('video');
+    [['webm', 'video/webm'], ['mp4', 'video/mp4']].forEach(([ext, type]) => {
+      const source = document.createElement('source');
+      source.src = `assets/videos/trailer.${ext}`;
+      source.type = type;
+      video.append(source);
+    });
+    video.poster = 'assets/videos/trailer.jpg';
+    video.controls = true;
+    video.autoplay = true;
+    video.playsInline = true;
+    open(video);
+    video.play().catch(() => {});
   });
 }
 document.querySelector('[data-lb-close]').addEventListener('click', close);
 lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !lb.hidden) close(); });
 
+
+/* ---------- 6. vídeos em loop ---------- */
+// sem som, tocam só enquanto visíveis (economiza bateria); com movimento reduzido fica o pôster
+const loops = document.querySelectorAll('video[data-autoplay]');
+if (!reduceMotion && 'IntersectionObserver' in window) {
+  const vio = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const v = entry.target;
+      if (entry.isIntersecting) v.play().catch(() => {});
+      else v.pause();
+    });
+  }, { threshold: 0.2 });
+  loops.forEach((v) => vio.observe(v));
+}

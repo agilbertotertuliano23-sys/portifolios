@@ -123,6 +123,7 @@ a.btn3:hover { background: var(--red); color: #fff; }
   -webkit-mask: linear-gradient(180deg, #000 80%, transparent);
           mask: linear-gradient(180deg, #000 80%, transparent);
 }
+.h-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .6; mix-blend-mode: screen; }
 .h-face { position: absolute; left: 50%; top: -2%; width: max(100%, 760px); height: auto; transform: translateX(-50%); -webkit-mask: linear-gradient(180deg, #000 55%, transparent 96%); mask: linear-gradient(180deg, #000 55%, transparent 96%); }
 .h-survivor { position: absolute; left: 50%; top: 9%; height: 60%; width: auto; transform: translateX(-50%); filter: drop-shadow(0 10px 30px rgba(0, 0, 0, .8)); }
 .h-horde { position: absolute; left: 50%; bottom: 7%; width: max(100%, 760px); height: auto; transform: translateX(-50%); opacity: .85; -webkit-mask: linear-gradient(180deg, #000 60%, transparent); mask: linear-gradient(180deg, #000 60%, transparent); }
@@ -144,6 +145,15 @@ a.btn3:hover { background: var(--red); color: #fff; }
 .smoke { position: fixed; inset: 0; z-index: 2; width: 100%; height: 100%; pointer-events: none; }
 .smoke-hint { margin-top: 14px; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255, 255, 255, .45); animation: hint 3s ease-in-out infinite; }
 @keyframes hint { 50% { color: rgba(255, 80, 80, .8); } }
+
+/* vídeos cinemáticos (assets/videos) */
+.cine { position: relative; margin: 4px 0 28px; aspect-ratio: 16 / 9; overflow: hidden; background: #000; box-shadow: 0 0 0 1px #2a2a2a, 0 24px 50px rgba(0, 0, 0, .6); }
+.cine video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.cine figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 30px 16px 12px; background: linear-gradient(180deg, transparent, rgba(0, 0, 0, .85)); color: #cfcfcf; text-align: left; }
+.cine .rec { margin-right: 8px; color: var(--red-glow); animation: rec 1.4s steps(1) infinite; }
+@keyframes rec { 50% { opacity: .2; } }
+.cine.wide { margin: 24px 0 8px; }
+.lb-frame video { display: block; width: 100%; max-height: 80vh; background: #000; }
 
 /* =========================================================
    BLOCOS
