@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lívia Sato | Design Gráfico — Portfólio 2026</title>
+  <meta name="description" content="Lívia Sato — designer gráfica: pôsteres, ilustrações, logotipos, branding e social media.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Manrope:wght@400;500;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+
+  <!-- gradientes cromados usados por todos os objetos 3D em SVG -->
+  <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#ffffff"/>
+        <stop offset=".18" stop-color="#9aa6bb"/>
+        <stop offset=".36" stop-color="#2a3142"/>
+        <stop offset=".5" stop-color="#e9eef7"/>
+        <stop offset=".66" stop-color="#5d6880"/>
+        <stop offset=".82" stop-color="#1c2230"/>
+        <stop offset="1" stop-color="#cfd8e6"/>
+      </linearGradient>
+      <linearGradient id="chrome2" x1="1" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#e8eef8"/>
+        <stop offset=".3" stop-color="#3a4357"/>
+        <stop offset=".55" stop-color="#ffffff"/>
+        <stop offset=".75" stop-color="#6b7790"/>
+        <stop offset="1" stop-color="#161b26"/>
+      </linearGradient>
+      <radialGradient id="chromeR" cx=".35" cy=".3" r=".8">
+        <stop offset="0" stop-color="#ffffff"/>
+        <stop offset=".35" stop-color="#b9c4d6"/>
+        <stop offset=".6" stop-color="#3b4458"/>
+        <stop offset=".85" stop-color="#d9e1ee"/>
+        <stop offset="1" stop-color="#5a6580"/>
+      </radialGradient>
+    </defs>
+  </svg>
+
+  <!--
+    FOTOS: cada .ph tem data-photo="assets/fotos/<nome>.jpg". Coloque o arquivo com esse
+    nome em assets/fotos/ e ele substitui a composição em CSS automaticamente (app.js).
+  -->
+
+  <!-- ============ 1 · HERO ============ -->
+  <header class="hero" id="inicio">
+    <nav class="nav">
+      <p class="t3 nav-who"><b>São Paulo (26)</b><br>liviasato.design</p>
+      <p class="t3 nav-mid">Portfólio © · design · 2026</p>
+      <svg class="nav-mark" viewBox="0 0 40 40" aria-label="Marca Lívia Sato"><circle cx="20" cy="20" r="17"/><path d="M13 27V13l14 14V13"/></svg>
+      <a class="lnk nav-proj" href="#projetos">Projetos <span aria-hidden="true">↘</span></a>
+    </nav>
+
+    <div class="hero-center">
+      <p class="t3 hero-kicker"><span>Design gráfico</span><i></i></p>
+      <h1 class="h1 glow">Portfolio</h1>
+      <ul class="chips" aria-label="Áreas">
+        <li class="btn2">Pôsteres</li>
+        <li class="btn2">Ilustrações</li>
+        <li class="btn2">Logotipos</li>
+        <li class="btn2">Branding</li>
+        <li class="btn2">Social</li>
+        <li class="year">2026</li>
+      </ul>
+      <i class="hero-line"></i>
+    </div>
+
+    <!-- objetos cromados -->
+    <svg class="chrome c-knot float" viewBox="0 0 200 200" aria-hidden="true">
+      <ellipse cx="100" cy="100" rx="70" ry="36" transform="rotate(25 100 100)"/>
+      <ellipse cx="100" cy="100" rx="70" ry="36" transform="rotate(-35 100 100)"/>
+      <ellipse cx="100" cy="100" rx="46" ry="62" transform="rotate(80 100 100)"/>
+      <ellipse class="hl" cx="100" cy="100" rx="70" ry="36" transform="rotate(25 100 100)"/>
+    </svg>
+    <svg class="chrome c-curl float slow" viewBox="0 0 240 240" aria-hidden="true">
+      <path d="M150 40c-60-30-130 20-110 90 18 62 110 70 140 20 26-44-10-96-60-84-40 10-50 64-14 80 26 12 50-8 44-30"/>
+      <path class="hl" d="M150 40c-60-30-130 20-110 90 18 62 110 70 140 20"/>
+      <polygon class="spike" points="176,96 236,40 190,110"/>
+    </svg>
+  </header>
+
+  <main>
+
+    <!-- ============ 2 · SOBRE MIM ============ -->
+    <section class="about" id="sobre" aria-labelledby="sobre-title">
+      <a class="lnk proj-link" href="#projetos">Projetos <span aria-hidden="true">↘</span></a>
+      <h2 class="h2 pill-title" id="sobre-title">Sobre mim</h2>
+
+      <svg class="chrome c-ring float" viewBox="0 0 200 200" aria-hidden="true">
+        <ellipse cx="100" cy="100" rx="64" ry="54" transform="rotate(-20 100 100)"/>
+        <ellipse cx="100" cy="100" rx="64" ry="30" transform="rotate(50 100 100)"/>
+        <ellipse class="hl" cx="100" cy="100" rx="64" ry="54" transform="rotate(-20 100 100)"/>
+      </svg>
+
+      <div class="about-grid">
+        <div class="polaroid-wrap reveal">
+          <span class="paper" aria-hidden="true"></span>
+          <figure class="polaroid">
+            <div class="ph portrait ph-livia" data-photo="assets/fotos/livia-retrato.jpg"><span class="ph-tag">livia-retrato.jpg</span></div>
+          </figure>
+          <svg class="chrome c-star" viewBox="0 0 120 120" aria-hidden="true">
+            <path d="M60 4c4 30 10 44 18 50-8 6-14 20-18 62-4-42-10-56-18-62 8-6 14-20 18-50z"/>
+            <path d="M4 58c30-4 44-6 52-14 8 8 22 10 60 14-38 4-52 6-60 14-8-8-22-10-52-14z"/>
+          </svg>
+          <div class="name-tag">
+            <p class="t3"><b>Hello</b><br>my name is</p>
+            <p class="hand">Lívia Sato</p>
+          </div>
+        </div>
+
+        <div class="about-text">
+          <div class="reveal">
+            <h3 class="h3">Oi!</h3>
+            <p class="t1">Sou a Lívia, designer gráfica e uma pessoa criativa de verdade, que cria visuais marcantes e funcionais — do pôster ao feed.</p>
+          </div>
+          <div class="reveal">
+            <h3 class="h3 pill-sm">Formação</h3>
+            <dl class="timeline">
+              <div><dt class="t2">2024 –</dt><dd class="t1">Escola de design gráfico “Digital School”</dd></div>
+              <div><dt class="t2">2026 –</dt><dd class="t1">Curso “E aí, como é o design?”</dd></div>
+            </dl>
+          </div>
+          <div class="reveal">
+            <h3 class="h3 pill-sm">Experiência</h3>
+            <dl class="timeline">
+              <div><dt class="t2">2025 –</dt><dd class="t1">Social media freelancer</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      <div class="soft reveal">
+        <h3 class="h3">Soft skills</h3>
+        <ul class="soft-list">
+          <li class="btn">Criatividade</li>
+          <li class="btn2 light">Senso de composição e estilo</li>
+          <li class="btn2 light">Cumprimento de prazos</li>
+          <li class="btn2 light">Comunicação</li>
+        </ul>
+      </div>
+
+      <svg class="chrome c-ball float" viewBox="0 0 160 160" aria-hidden="true">
+        <circle class="fill" cx="80" cy="80" r="44"/>
+        <ellipse cx="80" cy="80" rx="70" ry="22" transform="rotate(-25 80 80)"/>
+        <ellipse class="hl" cx="80" cy="80" rx="70" ry="22" transform="rotate(-25 80 80)"/>
+      </svg>
+    </section>
+
+    <!-- ============ 3 · HARD SKILLS ============ -->
+    <section class="skills" id="skills" aria-labelledby="skills-title">
+      <div class="skills-head">
+        <h2 class="h3 skills-title" id="skills-title">Hard skills</h2>
+        <a class="lnk proj-link dark" href="#projetos">Projetos <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="skills-grid">
+        <ul class="bars">
+          <li class="bar-row reveal"><span class="app app-fig" aria-label="Figma"><i></i><i></i><i></i><i></i><i></i></span><span class="bar"><b></b></span><span class="t3">86%</span></li>
+          <li class="bar-row reveal"><span class="app app-ps">Ps</span><span class="bar"><b></b></span><span class="t3">80%</span></li>
+          <li class="bar-row reveal"><span class="app app-ai">Ai</span><span class="bar"><b></b></span><span class="t3">68%</span></li>
+          <li class="bar-row reveal"><span class="app app-ae">Ae</span><span class="bar"><b></b></span><span class="t3">45%</span></li>
+        </ul>
+
+        <div class="vhs reveal" aria-label="Fita VHS: Minhas skills? Nível de domínio dos programas">
+          <div class="vhs-top"><i></i></div>
+          <div class="vhs-window">
+            <span class="reel"><i></i></span>
+            <span class="tape"></span>
+            <span class="reel"><i></i></span>
+          </div>
+          <div class="vhs-label">
+            <span class="vhs-stripe"></span>
+            <p class="hand blue">Minhas skills?</p>
+            <p class="hand">Nível de domínio dos programas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4 · PROJETOS ============ -->
+    <section class="projects" id="projetos" aria-labelledby="proj-title">
+      <div class="projects-head">
+        <h2 class="h2 pill-title" id="proj-title">Projetos</h2>
+        <div class="filters" role="group" aria-label="Filtrar projetos">
+          <button class="btn2 light is-on" type="button" data-filter="all">Todos</button>
+          <button class="btn2 light" type="button" data-filter="poster">Pôsteres</button>
+          <button class="btn2 light" type="button" data-filter="brand">Branding</button>
+          <button class="btn2 light" type="button" data-filter="ilustra">Ilustração</button>
+        </div>
+      </div>
+      <ul class="proj-grid">
+        <li class="proj reveal" data-cat="poster">
+          <div class="art art-1"><b>NOITE<br>AZUL</b><small>festival · 03.26</small></div>
+          <p class="t2">Noite Azul</p><p class="t3">Pôster · 2026</p>
+        </li>
+        <li class="proj reveal" data-cat="brand">
+          <div class="art art-2"><span class="logo-k">k</span><small>Kumo Café — identidade</small></div>
+          <p class="t2">Kumo Café</p><p class="t3">Branding · 2025</p>
+        </li>
+        <li class="proj reveal" data-cat="ilustra">
+          <div class="art art-3"><i class="sun"></i><i class="hill"></i><i class="hill h2"></i></div>
+          <p class="t2">Verão Infinito</p><p class="t3">Ilustração · 2025</p>
+        </li>
+        <li class="proj reveal" data-cat="poster">
+          <div class="art art-4"><b>CROMO</b><svg class="chrome" viewBox="0 0 200 200" aria-hidden="true"><ellipse cx="100" cy="100" rx="64" ry="34" transform="rotate(25 100 100)"/><ellipse cx="100" cy="100" rx="64" ry="34" transform="rotate(-35 100 100)"/></svg></div>
+          <p class="t2">Cromo</p><p class="t3">Pôster · 2026</p>
+        </li>
+        <li class="proj reveal" data-cat="brand">
+          <div class="art art-5"><b>sopro</b><small>estúdio de yoga</small></div>
+          <p class="t2">Sopro</p><p class="t3">Branding · 2026</p>
+        </li>
+        <li class="proj reveal" data-cat="ilustra">
+          <div class="art art-6"><i></i><i></i><i></i><b>Y2K</b></div>
+          <p class="t2">Coleção Y2K</p><p class="t3">Ilustração · 2026</p>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============ 5 · CONTATO ============ -->
+  <footer class="contact" id="contato">
+    <svg class="chrome c-knot2 float" viewBox="0 0 200 200" aria-hidden="true">
+      <ellipse cx="100" cy="100" rx="70" ry="36" transform="rotate(25 100 100)"/>
+      <ellipse cx="100" cy="100" rx="46" ry="62" transform="rotate(80 100 100)"/>
+      <ellipse class="hl" cx="100" cy="100" rx="46" ry="62" transform="rotate(80 100 100)"/>
+    </svg>
+    <p class="t3 hero-kicker"><span>Vamos trabalhar juntos</span><i></i></p>
+    <h2 class="h1 glow contact-title">Vamos criar?</h2>
+    <div class="contact-row">
+      <a class="btn big" href="mailto:oi@liviasato.design">oi@liviasato.design ↗</a>
+      <ul class="contact-links">
+        <li><a class="btn2" href="#">Behance</a></li>
+        <li><a class="btn2" href="#">Instagram</a></li>
+        <li><a class="btn2" href="#">Telegram</a></li>
+      </ul>
+    </div>
+    <p class="t3 copy">© 2026 Lívia Sato — design gráfico · São Paulo</p>
+  </footer>
+
+</body>
+</html>

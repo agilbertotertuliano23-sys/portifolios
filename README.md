@@ -12,6 +12,8 @@ Portfólios e cases de projetos web.
 | `caso-05-estetica-jasmim/` | Case — landing page Jasmim Estética |
 | `caso-06-designer-theo-andrade/` | Case — portfólio do designer multimídia Theo Andrade |
 | `caso-07-fotografia-helena-moraes/` | Case — portfólio da fotógrafa Helena Moraes |
+| `caso-08-design-grafico-livia-sato/` | Case — portfólio de design gráfico Lívia Sato |
+| `caso-09-estudio-fotografia-reflexo/` | Case — estúdio de fotografia Reflexo |
 | `portfolio-de-servicos/` | Portfólio de serviços (cases em markdown) |
 
 Cada site abre direto pelo `index.html` da pasta.
