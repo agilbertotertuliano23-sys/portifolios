@@ -1,0 +1,42 @@
++-------------------------------------------------------------------------------------+
+| hero                                                                                |
+| [badge: MÉTODO InovFit]                                                             |
+| +-------------------------------------------------------+ +-------------------------+ |
+| | [h1: Transforme já o seu corpo e sua vida com...]     | | [img: alex_hero_arms]  | |
+| | [t1: Descubra como alcançar a sua melhor forma...]    | | [badge: +2000 Alunos] | |
+| | [in: Insira o seu melhor e-mail aqui]                 | | [badge: +8 anos area] | |
+| | [btn: QUERO PARTICIPAR DO MÉTODO INOVFIT]            | |                         | |
+| | [t3: DE 10 A 13 DE MAIO ÀS 19H | EVENTO ONLINE E ...]  | |                         | |
+| +-------------------------------------------------------+ +-------------------------+ |
++-------------------------------------------------------------------------------------+
+| section_schedule (Cronograma do Evento)                                              |
+| [t3: CRONOGRAMA DO EVENTO]                                                          |
+| [h2: O que você aprenderá]                                                          |
+| +-----------------------+ +-----------------------+ +-------------------------------+ |
+| | card_aula1            | | card_aula2            | | card_aula3                    | |
+| | [badge: AULA 1]       | | [badge: AULA 2]       | | [badge: AULA 3]             | |
+| | [img: class1_eval]    | | [img: class2_hiit]    | | [img: class3_supplements]    | |
+| | [t3: EM BREVE 10/05]  | | [t3: EM BREVE 11/05]  | | [t3: EM BREVE 12/05 19h00]   | |
+| | [h3: Avaliação...]    | | [h3: Treino HIIT...]  | | [h3: Suplementação...]      | |
+| | [t2: Saiba como...]   | | [t2: Aprenda como...] | | [t2: Descubra como...]      | |
+| +-----------------------+ +-----------------------+ +-------------------------------+ |
++-------------------------------------------------------------------------------------+
+| banner_capture (Full-width Purple Callout)                                          |
+| +-------------------------------------------------------+ +-------------------------+ |
+| | [t1: Não perca mais tempo! Acesse agora o Método...]  | | [in: E-mail aqui]     | |
+| |                                                       | | [btn: ENVIAR]           | |
+| |                                                       | | [t3: DE 10 A 13 ...]  | |
+| +-------------------------------------------------------+ +-------------------------+ |
++-------------------------------------------------------------------------------------+
+| section_instructor (Quem te ensinará)                                               |
+| +-------------------------------------------------------+ +-------------------------+ |
+| | [t3: QUEM TE ENSINARÁ]                                | | [img: alex_instructor]  | |
+| | [h2: Professor Alex Rizzo]                            | |                         | |
+| | [t1: No Método InovFit, você aprenderá com Alex...]  | |                         | |
+| | [t1: Ao se inscrever no Método InovFit, você terá...]| |                         | |
+| | [btn: QUERO ME INSCREVER NO MÉTODO INOVFIT]          | |                         | |
+| +-------------------------------------------------------+ +-------------------------+ |
++-------------------------------------------------------------------------------------+
+| footer                                                                              |
+| [t3: ALEX RIZZO - TODOS OS DIREITOS RESERVADOS]   [lnk: POLÍTICA DE PRIVACIDADE ...] |
++-------------------------------------------------------------------------------------+

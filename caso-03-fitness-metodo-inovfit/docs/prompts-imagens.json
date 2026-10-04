@@ -1,0 +1,71 @@
+[
+  {
+    "key": "hero",
+    "file": "hero-alex-v2.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\inovfit-landing-page\\assets\\hero_alex.png",
+      "C:\\Users\\agilb\\Downloads\\web\\inovfit-landing-page\\assets\\instructor_alex.png"
+    ],
+    "transparent": true,
+    "prompt": "Use case: identity-preserve.\nAsset type: transparent hero portrait cutout for the InovFit fitness event landing page, portrait 4:5 composition.\nInput image 1: edit target, same-person identity, clothing and pose reference. Input image 2: supporting identity reference of the same man.\nPrimary request: recreate the man in image 1 as a crisp high-resolution photorealistic cutout. Preserve this exact man's facial identity: short dark brown side-parted hair, thick neat dark beard, strong eyebrows, muscular build, medium-light skin. Preserve fitted plain black crew-neck sports T-shirt, folded arms, direct confident serious gaze at camera. Frame from complete head with margin through hips, both shoulders and crossed elbows entirely visible, subject centered. Soft bright studio daylight, realistic skin texture and beard strands, natural arms and hands, authentic black fabric folds.\nConstraints: remove all background gray shapes and the purple corner; remove the student and years badges entirely. Genuinely transparent background and clean antialiased edges; no opaque rectangle, no checkerboard painted into image, no cast shadow outside silhouette, no text, logo, badge, watermark, UI, border or collage. Keep identity and pose faithful; do not invent a different person."
+  },
+  {
+    "key": "instructor",
+    "file": "instructor-alex-v2.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\inovfit-landing-page\\assets\\instructor_alex.png",
+      "C:\\Users\\agilb\\Downloads\\web\\inovfit-landing-page\\assets\\hero_alex.png"
+    ],
+    "transparent": true,
+    "prompt": "Use case: identity-preserve.\nAsset type: transparent instructor portrait cutout for InovFit website, portrait 4:5 composition.\nInput image 1: edit target, same-person identity, smiling pose and clothing reference. Input image 2: supporting facial identity reference of the same man.\nPrimary request: recreate the man in image 1 as a crisp high-resolution photorealistic cutout. Preserve his exact face, short side-parted dark brown hair, neat thick dark beard, strong eyebrows, muscular build and medium-light skin. He wears the same fitted plain black crew-neck sports T-shirt. Friendly natural smile at camera, upper body slightly angled and head gently tilted, hands naturally loosely clasped together around lower chest/upper abdomen, like reference. Show complete head through hips, both shoulders, elbows and hands entirely inside image with a little margin. Soft bright studio daylight, natural pores and beard texture, realistic black fabric folds, correct hand anatomy.\nConstraints: remove all gray and white geometric background to genuine transparency; preserve same identity as both references. No opaque rectangle, no painted checkerboard, no outside cast shadow, no badge, text, logo, watermark, border, UI or collage."
+  },
+  {
+    "key": "class1",
+    "file": "class1-v2.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\inovfit-landing-page\\assets\\class1.png"
+    ],
+    "transparent": false,
+    "prompt": "Use case: photorealistic-natural.\nAsset type: full-bleed portrait 4:5 course cover photograph for InovFit, class on body assessment.\nInput image 1: low-resolution composition and scene reference, not a reference for typography.\nPrimary request: recreate the reference gym assessment scene as a clean high-resolution editorial photograph. A fit man with short dark hair in a black sleeveless training shirt and black shorts is viewed from behind at a slight angle, facing a pale wall assessment board beside a purple vertical measurement column. He raises his right arm with a bent elbow toward the board while a professional trainer in a gray sports shirt observes his posture from the far-left edge. Frame head to below knees as in reference, natural anatomy, gym environment, pale gray board and wall, muted purple equipment accents. Soft natural indoor light, realistic fabric and skin, calm coaching moment. Subjects and apparatus occupy central region; leave a little clear room near top for a separate HTML badge.\nConstraints: no AULA 1 banner or any labels baked into photo, no legible text, no logo, no watermark, no borders, no UI or collage; keep fitness assessment scene and viewpoint faithful to reference."
+  },
+  {
+    "key": "class2",
+    "file": "class2-v2.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\inovfit-landing-page\\assets\\class2.png"
+    ],
+    "transparent": false,
+    "prompt": "Use case: photorealistic-natural.\nAsset type: full-bleed portrait 4:5 course cover photograph for InovFit high-intensity training class.\nInput image 1: low-resolution scene and composition reference; disregard the purple AULA 2 label.\nPrimary request: recreate this gym workout photograph in crisp natural editorial quality. A muscular dark-haired adult man with short beard in a charcoal sleeveless athletic top and black training shorts holds the top of a push-up plank, gripping two separate black hexagonal dumbbells on a textured dark rubber gym floor. Straight aligned body extends diagonally backward toward the left, feet grounded, elbows straight, shoulders positioned over dumbbells, focused gaze down and forward. Three-quarter low camera angle as in reference, whole head and both hands and dumbbells visible, knees off floor. Gray brick gym wall and purple steel training rack softly blurred behind. Soft daylight with restrained purple ambient accents, realistic skin and fabric, authentic exercise photo.\nConstraints: correct human anatomy and physically plausible plank; no badge or label, no legible text, no brands, watermark, frame, collage or UI."
+  },
+  {
+    "key": "class3",
+    "file": "class3-v2.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\inovfit-landing-page\\assets\\class3.png"
+    ],
+    "transparent": false,
+    "prompt": "Use case: photorealistic-natural.\nAsset type: full-bleed portrait 4:5 course cover photograph for InovFit sports supplementation class.\nInput image 1: low-resolution visual composition reference, ignore the purple AULA 3 label.\nPrimary request: recreate the close-up photograph in high resolution. A muscular adult wearing a plain black athletic T-shirt, face outside the frame, extends one natural hand toward camera holding a matte charcoal-black sports shaker bottle at a slight diagonal just above a black weight plate on a dark gym surface. The cylindrical shaker has a realistic sealed lid and small drinking spout. Focus on forearm, hand wrapping naturally around the lower bottle and the shaker; other arm and torso fall softly out of focus behind. Dark gym interior with subtle purple equipment and reflected purple light matching reference, moody yet legible lighting, realistic skin and plastic texture. Keep the shaker and full gripping hand central and unobstructed, with room near top for a separate HTML badge.\nConstraints: no label or AULA 3 text baked in, no supplement brand, no logos or promises, no readable text, no watermark, UI, border or collage; correct finger anatomy and realistic bottle geometry."
+  },
+  {
+    "key": "orientacao",
+    "file": "orientacao-treino-v2.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\inovfit-landing-page\\assets\\hero_alex.png",
+      "C:\\Users\\agilb\\Downloads\\web\\inovfit-landing-page\\assets\\instructor_alex.png"
+    ],
+    "transparent": false,
+    "prompt": "Use case: identity-preserve.\nAsset type: additional wide editorial photograph for the InovFit section about training guidance, landscape 3:2.\nInput images 1 and 2: identity references for the male trainer only; discard their background, pose and graphic badges.\nPrimary request: create a natural photorealistic coaching moment in a bright contemporary gym with light gray walls, black rubber floor, and restrained purple steel equipment. The male trainer is the same man in both references: short dark side-parted hair, thick neat beard, muscular build, fitted plain black T-shirt. On the left he crouches slightly, explaining an exercise with an open natural hand gesture. On the right an adult woman with dark hair in a ponytail, plum-colored athletic top, black leggings and neutral shoes practices a controlled bodyweight squat with feet grounded and back neutral. Friendly attentive interaction, no touching. Show both full figures comfortably, with complete heads and feet inside frame and slight space around them. Soft window daylight, authentic skin and clothing texture, understated professional fitness editorial photography. Both subjects central enough for a moderate responsive crop.\nConstraints: preserve male trainer facial identity, anatomically correct arms and hands, realistic exercise posture, no before/after, no text, logo, watermark, brand signs, UI or collage."
+  },
+  {
+    "key": "materiais",
+    "file": "materiais-apoio-v2.png",
+    "transparent": false,
+    "prompt": "Use case: photorealistic-natural.\nAsset type: additional landscape 3:2 editorial photograph for an InovFit website section about supporting workout materials.\nPrimary request: overhead editorial photograph of an organized fitness planning workspace on a light gray matte tabletop. An open paper workout planner with a simple neatly spaced grid and indistinct handwritten marks sits in the center, slim black pen resting diagonally on the paper. At upper right a tablet shows a simple abstract weekly grid with a few purple accent blocks, no readable text or logos. At lower left a folded charcoal workout towel and a small resistance band in muted purple; a reusable matte black water bottle stands near far edge. A natural human hand enters slightly from the right to point at the planner. Calm useful everyday scene, realistic paper and fabric texture, soft window daylight, restrained white, charcoal and purple palette, plenty of breathing room. All important objects comfortably inside canvas for responsive crops.\nConstraints: illustrative materials only, no legible invented product interface, no text overlays, no brand, logo, watermark, nutrition claims, supplement product, collage or UI mockup."
+  },
+  {
+    "key": "comunidade",
+    "file": "comunidade-inovfit-v2.png",
+    "transparent": false,
+    "prompt": "Use case: photorealistic-natural.\nAsset type: additional landscape 3:2 editorial photograph for an InovFit fitness community website section.\nPrimary request: candid natural photograph of three adult friends after a workout in a bright contemporary gym, having a relaxed supportive conversation while standing beside a weight rack. One woman with medium-brown skin and curly hair tied back in a muted purple athletic top, one man with short dark hair in a charcoal T-shirt, and one woman with fair skin and a dark ponytail in a light gray athletic T-shirt. Varied ordinary healthy adult body types, approachable expressions and natural smiles, no exaggerated bodybuilder posing. One person holds a plain water bottle; others have relaxed natural hands. Framed from head to mid-thigh, all three subjects fully inside image, group in center with room around them. Background has blurred gray walls, dark rubber flooring and subtle purple gym structure. Soft bright window light, authentic skin and fabric texture, polished yet believable editorial photography.\nConstraints: fictional illustrative community scene, no testimonial signs, no claims, no badges or readable text, no logos, watermarks, borders, UI or collage, realistic hand anatomy."
+  }
+]

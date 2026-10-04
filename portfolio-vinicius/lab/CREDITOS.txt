@@ -1,0 +1,26 @@
+Créditos dos modelos e animações usados no laboratório (não exibidos na página).
+
+Óculos de sol — Eric Chadwick · CC-BY 4.0 · Khronos glTF Sample Assets
+Luminária iridescente — Eric Chadwick · CC-BY 4.0 · Khronos glTF Sample Assets
+Vaso com flores — Eric Chadwick, Rico Cilliers · CC0 · Khronos glTF Sample Assets
+Cadeira de veludo — Eric Chadwick · CC0 · Khronos glTF Sample Assets
+Raposa — PixelMannen, tomkranis · CC-BY 4.0 / CC0 · Khronos glTF Sample Assets
+Carrinho de brinquedo — Eric Chadwick, Guido Odendahl · CC0 · Khronos glTF Sample Assets
+Prato com azeitonas — Eric Chadwick · CC-BY 4.0 · Khronos glTF Sample Assets
+Relógio cronógrafo — Eric Chadwick · CC-BY 4.0 · Khronos glTF Sample Assets
+Tênis — Shopify · CC-BY 4.0 · Khronos glTF Sample Assets
+Abacate — Microsoft · CC0 · Khronos glTF Sample Assets
+Estrela neon — VashonG · MIT · Uiverse.io (github.com/uiverse-io/galaxy)
+Hélice neon — NlghtM4re · MIT · Uiverse.io (github.com/uiverse-io/galaxy)
+Olho rosa — StealthWorm · MIT · Uiverse.io (github.com/uiverse-io/galaxy)
+Anéis de cor — Dennyhml · MIT · Uiverse.io (github.com/uiverse-io/galaxy)
+Radar — Nawsome · MIT · Uiverse.io (github.com/uiverse-io/galaxy)
+Arco arco-íris — Nawsome · MIT · Uiverse.io (github.com/uiverse-io/galaxy)
+Ondulação — Pradeepsaranbishnoi · MIT · Uiverse.io (github.com/uiverse-io/galaxy)
+Poliedro — MrLegendGaming · MIT · Uiverse.io (github.com/uiverse-io/galaxy)
+Cubo de vidro — JkHuger · MIT · Uiverse.io (github.com/uiverse-io/galaxy)
+Cubo de arame — Nawsome · MIT · Uiverse.io (github.com/uiverse-io/galaxy)
+Barras de som — NlghtM4re · MIT · Uiverse.io (github.com/uiverse-io/galaxy)
+Pontos em onda — Z4drus · MIT · Uiverse.io (github.com/uiverse-io/galaxy)
+
+Elementos do Uiverse: licença MIT em lab/uiverse/LICENSE.txt

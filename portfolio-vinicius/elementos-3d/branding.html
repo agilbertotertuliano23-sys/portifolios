@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Direção de Marca · componente 3D</title>
+<style>
+/* =========================================================
+   Componente 3D · Direção de Marca (kit de UI cyberpunk neon — linha de cima, sem o personagem)
+   Modelo feito no Blender (voxels + placas chanfradas + texto 3D) em modelos/branding.glb,
+   exibido com three.js: luz roxa de ambiente, luz principal lavanda, recortes lima e bloom neon.
+   Interativo: o cursor inclina; hover acende; clique espalha os cubinhos; cada peça tem a sua ação (ver comentário no script).
+   ========================================================= */
+* { box-sizing: border-box; margin: 0; }
+html, body { height: 100%; }
+body { overflow: hidden; background: radial-gradient(50% 50% at 50% 45%, rgba(182, 255, 46, .18), transparent 70%), radial-gradient(90% 80% at 50% 40%, #4f2896 0%, #2a1458 55%, #150a2e 100%); }
+canvas { display: block; width: 100%; height: 100%; }
+.load { position: fixed; inset: 0; display: grid; place-items: center; color: #b6ff2e; font: 600 12px/1 ui-monospace, Consolas, monospace; letter-spacing: .2em; text-transform: uppercase; pointer-events: none; }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div class="load">carregando…</div>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.toneMapping = THREE.LinearToneMapping; renderer.toneMappingExposure = 1;   // ACES puxava o roxo para o azul
+document.body.append(renderer.domElement);
+const scene = new THREE.Scene();
+/* fundo dentro da cena (com fundo transparente o bloom espalhava o verde pelo quadro todo) */
+{ const c = document.createElement('canvas'); c.width = c.height = 512; const g = c.getContext('2d');
+  let gr = g.createRadialGradient(256, 236, 0, 256, 236, 380); gr.addColorStop(0, '#4f2896'); gr.addColorStop(.55, '#2a1458'); gr.addColorStop(1, '#130828');
+  g.fillStyle = gr; g.fillRect(0, 0, 512, 512);
+  gr = g.createRadialGradient(256, 236, 0, 256, 236, 200); gr.addColorStop(0, 'rgba(182,255,46,.16)'); gr.addColorStop(1, 'rgba(182,255,46,0)');
+  g.fillStyle = gr; g.fillRect(0, 0, 512, 512);
+  const tx = new THREE.CanvasTexture(c); tx.colorSpace = THREE.SRGBColorSpace; scene.background = tx; }
+const camera = new THREE.PerspectiveCamera(30, 1, .1, 50);
+camera.position.set(1.3, .45, 7.8); camera.lookAt(0, 0, 0);
+
+/* luzes como na cena do Blender: ambiente roxo, chave lavanda, dois recortes lima, preenchimento roxo */
+scene.add(new THREE.HemisphereLight(0x7a4ae0, 0x1a0a3a, 1.5));
+const key = new THREE.DirectionalLight(0xd2c2ff, 1.9); key.position.set(-2.5, 3.5, 4); scene.add(key);
+const rim1 = new THREE.PointLight(0xb6ff2e, 8, 9, 2); rim1.position.set(2.6, 1.8, -1.8); scene.add(rim1);
+const rim2 = new THREE.PointLight(0xb6ff2e, 5, 9, 2); rim2.position.set(-2.8, .6, -1.5); scene.add(rim2);
+const fill = new THREE.PointLight(0x7b4cf0, 6, 10, 2); fill.position.set(3, -1, 3); scene.add(fill);
+
+/* bloom neon */
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+const bloom = new UnrealBloomPass(new THREE.Vector2(1, 1), .45, .35, .92); composer.addPass(bloom);
+composer.addPass(new OutputPass());
+
+const holder = new THREE.Group(); scene.add(holder);
+const SLUG = 'branding';
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2(-9, -9);
+const bits = [], cubes = [], neons = [];
+let model = null, globe = null, gear = null, clap = null, cursor = null, ready = false;
+/* a compressão (meshopt) muda a origem das malhas: refaz o pivô de cada peça a partir da caixa dela */
+const pivotAt = (obj, pick) => {
+  const b = new THREE.Box3().setFromObject(obj), w = pick(b), par = obj.parent, p = new THREE.Group();
+  par.add(p); p.position.copy(par.worldToLocal(w)); p.updateMatrixWorld(true); p.attach(obj); p.name = obj.name + '_pivo'; return p;
+};
+const ripples = [];
+new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).load('modelos/branding.glb', g => {
+  model = g.scene;
+  model.traverse(o => {
+    if (!o.isMesh) return;
+    o.material.side = THREE.DoubleSide;
+    if (o.material.emissiveIntensity > 1) o.material.emissiveIntensity *= .55;
+    if (/^(bit|pixel)_/.test(o.name)) bits.push({ o, home: o.position.clone(), ph: Math.random() * 6 });
+    if (/^objeto_neon/.test(o.name)) { o.material = o.material.clone(); neons.push({ o, base: o.material.emissiveIntensity || 1 }); }
+  });
+  const box = new THREE.Box3().setFromObject(model), c = box.getCenter(new THREE.Vector3()), s = box.getSize(new THREE.Vector3());
+  model.position.sub(c); holder.add(model); holder.scale.setScalar(3.25 / Math.max(s.x, s.y)); holder.updateMatrixWorld(true);
+  const center = b => b.getCenter(new THREE.Vector3());
+  const found = []; model.traverse(o => { if (/^cubo_\d+$/.test(o.name)) found.push(o); });
+  found.forEach(o => {
+    const p = pivotAt(o, center);
+    o.material = new THREE.MeshStandardMaterial({ color: 0x2a1458, emissive: 0x000000, roughness: .35, metalness: .05 });   // cor animada (calor)
+    cubes.push({ o: p, mesh: o, home: p.position.clone(), lift: 0, ph: Math.random() * 6.28, sp: 1.4 + Math.random() * 2.2, name: o.name });
+  });
+  if (cubes.length && SLUG === 'web-3d') { makeCluster(cubes); makeSparks(cubes); cubes.forEach(q => { q.o.visible = false; }); cubes.length = 0; }
+  globe = model.getObjectByName('globo');
+  const g0 = model.getObjectByName('engrenagem'); if (g0) gear = pivotAt(g0, center);
+  const c0 = model.getObjectByName('claquete_haste'); if (c0) clap = pivotAt(c0, b => new THREE.Vector3(b.min.x, b.min.y, (b.min.z + b.max.z) / 2));   // dobradiça
+  const k0 = model.getObjectByName('cursor'); if (k0) { cursor = pivotAt(k0, b => new THREE.Vector3(b.min.x, b.max.y, b.max.z)); cursor.userData.home = cursor.position.clone(); }   // ponta da seta
+  const cc = new THREE.Vector3(); cubes.forEach(q => cc.add(q.home)); if (cubes.length) cc.divideScalar(cubes.length);
+  cubes.forEach(q => { q.dir = q.home.clone().sub(cc).normalize(); if (!isFinite(q.dir.x)) q.dir.set(0, 1, 0); });
+  document.querySelector('.load').remove(); ready = true;
+});
+
+const size = () => {
+  const w = innerWidth, h = innerHeight;
+  renderer.setSize(w, h, false); composer.setSize(w, h); bloom.setSize(w, h);
+  camera.aspect = w / h; camera.fov = w < h ? 30 * h / w * .9 : 30; camera.updateProjectionMatrix();
+};
+addEventListener('resize', size); size();
+
+/* ---------- interação ----------
+   todos: o cursor inclina; passar o mouse "acende" o componente; clicar espalha os cubinhos (voltam com mola)
+   web 3d: o cubo sob o cursor sobe e gira; clique explode a pilha · design web: o cursor segue o mouse e clica (onda de luz + globo gira) · web 3d: aglomerado de ~260 cubos que esquentam/brilham, tremem e somem/voltam; o cursor empurra e esquenta, o clique explode
+   design de movimento: a parte de cima da claquete abaixa e bate · direção de marca: a lâmpada tremula, clique apaga/acende
+   campanhas: o megafone pulsa como batida, clique solta uma onda · desenvolvimento criativo: arraste para girar a engrenagem */
+let tx = null, ty = null, rx = 0, ry = -.25, t = 0, prev = performance.now();
+let over = 0, overT = 0, hit = null, burst = 0, burstV = 0, spin = 0, clapT = 0, lightOn = true, wave = 0;
+let drag = false, lastX = 0, gearV = 0, gearA = 0;
+let press = 0, autoClick = 2, cx = 0, cy = 0, clapPh = 0, shake = 0, wasClosed = false;
+const nameOf = o => { while (o && !/^(cubo_\d+|globo|engrenagem|claquete_haste|cursor|objeto_neon|objeto)/.test(o.name) && o.parent) o = o.parent; return (o?.name || '').replace('_pivo', ''); };
+addEventListener('pointermove', e => {
+  tx = (e.clientX / innerWidth - .5) * .9; ty = (e.clientY / innerHeight - .5) * .5;
+  ndc.set(e.clientX / innerWidth * 2 - 1, -(e.clientY / innerHeight) * 2 + 1);
+  if (drag) { gearV += (e.clientX - lastX) * -.004; lastX = e.clientX; }
+});
+document.documentElement.addEventListener('pointerleave', () => { tx = ty = null; ndc.set(-9, -9); });
+addEventListener('pointerdown', e => {
+  burst = 1;
+  if (SLUG === 'web-design') clickCursor();
+  if (SLUG === 'motion-design') clapT = 1;
+  if (SLUG === 'branding') lightOn = !lightOn;
+  if (SLUG === 'campaigns') wave = 1;
+  if (SLUG === 'creative-dev' && hit && hit.startsWith('engrenagem')) { drag = true; lastX = e.clientX; }
+});
+addEventListener('pointerup', () => { drag = false; });
+
+/* design web: clique do cursor — aperta, solta uma onda de luz na ponta e faz o globo girar */
+function clickCursor() {
+  press = 1; spin = 10;
+  if (!cursor) return;
+  const r = new THREE.Mesh(new THREE.RingGeometry(.06, .1, 48), new THREE.MeshBasicMaterial({ color: 0xb6ff2e, transparent: true, opacity: .9, side: THREE.DoubleSide, blending: THREE.AdditiveBlending, depthWrite: false }));
+  r.position.copy(cursor.position); r.position.z += .05; cursor.parent.add(r); ripples.push({ r, a: 0 });
+}
+/* ---------- orbe de cubinhos (substitui o globo de linhas) ----------
+   ~150 cubos de tamanhos variados dentro de uma esfera; cada um "esquenta" no seu ritmo:
+   roxo escuro → roxo → lima → branco. Pulsam, respiram para fora e explodem no clique (burst). */
+let orb = null;
+function makeOrb(g) {
+  const box = new THREE.Box3().setFromObject(g), c = box.getCenter(new THREE.Vector3()), R = box.getSize(new THREE.Vector3()).x * .5;
+  g.visible = false;
+  const pivot = new THREE.Group(); g.parent.add(pivot); pivot.position.copy(g.parent.worldToLocal(c.clone()));
+  pivot.scale.setScalar(1 / g.parent.getWorldScale(new THREE.Vector3()).x);   // trabalha em unidades de mundo
+  const cells = [], n = 7, st = 2 * R / n;
+  for (let x = 0; x < n; x++) for (let y = 0; y < n; y++) for (let z = 0; z < n; z++) {
+    const p = new THREE.Vector3((x + .5) * st - R, (y + .5) * st - R, (z + .5) * st - R);
+    if (p.length() > R * (.82 + Math.random() * .25)) continue;
+    p.addScaledVector(new THREE.Vector3(Math.random() - .5, Math.random() - .5, Math.random() - .5), st * .35);
+    cells.push({ p, s: st * (.45 + Math.random() * .75), ph: Math.random() * 6.28, sp: 1.2 + Math.random() * 2.4, rot: new THREE.Euler(Math.random() * .4, Math.random() * .4, 0) });
+  }
+  for (let k = 0; k < 26; k++) {   // cubinhos soltos em volta (faíscas)
+    const d = new THREE.Vector3(Math.random() - .5, Math.random() - .5, Math.random() - .5).normalize();
+    cells.push({ p: d.multiplyScalar(R * (1.05 + Math.random() * .35)), s: st * (.15 + Math.random() * .25), ph: Math.random() * 6.28, sp: 2 + Math.random() * 3, rot: new THREE.Euler(), loose: true });
+  }
+  const mesh = new THREE.InstancedMesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshBasicMaterial({ color: 0xffffff }), cells.length);
+  mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+  for (let i = 0; i < cells.length; i++) mesh.setColorAt(i, new THREE.Color(0x2a1458));
+  pivot.add(mesh);
+  orb = { pivot, mesh, cells, R, m: new THREE.Matrix4(), q: new THREE.Quaternion(), v: new THREE.Vector3(), sc: new THREE.Vector3(), col: new THREE.Color() };
+  return pivot;
+}
+/* ---------- aglomerado de cubos (Web 3D) ---------- */
+let cluster = null;
+function makeCluster(cs) {
+  const box = new THREE.Box3(); cs.forEach(q => box.expandByObject(q.o));
+  const par = cs[0].o.parent, c = par.worldToLocal(box.getCenter(new THREE.Vector3()));
+  const half = par.worldToLocal(box.max.clone()).sub(c).length() * .5;   // meio lado do bloco
+  const cells = [], n = 8, st = 2 * half / n;
+  for (let x = 0; x < n; x++) for (let y = 0; y < n; y++) for (let z = 0; z < n; z++) {
+    const edge = Math.max(Math.abs(x - 3.5), Math.abs(y - 3.5), Math.abs(z - 3.5)) / 3.5;   // 1 = casca do cubo
+    if (Math.random() > .35 + edge * .55) continue;                                          // mais cheio na casca
+    const p = new THREE.Vector3((x + .5) * st - half, (y + .5) * st - half, (z + .5) * st - half)
+      .add(new THREE.Vector3(Math.random() - .5, Math.random() - .5, Math.random() - .5).multiplyScalar(st * .5));
+    cells.push({ p, s: st * (.5 + Math.random() * Math.random() * 1.6), ph: Math.random() * 6.28, sp: 1 + Math.random() * 2.6,
+      rot: new THREE.Euler((Math.random() - .5) * .5, (Math.random() - .5) * .5, (Math.random() - .5) * .3),
+      pop: Math.random() * 6.28, popSp: .3 + Math.random() * .9, push: 0, heat: 0 });
+  }
+  const mat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: .55, metalness: 0 });
+  mat.onBeforeCompile = sh => {   // o próprio calor vira brilho: quanto mais clara a cor, mais ela emite
+    sh.fragmentShader = sh.fragmentShader.replace('#include <emissivemap_fragment>',
+      '#include <emissivemap_fragment>\n  float hl = dot( vColor.rgb, vec3( .3, .59, .11 ) );\n  totalEmissiveRadiance += vColor.rgb * smoothstep( .42, 1., hl ) * 1.;');
+  };
+  const mesh = new THREE.InstancedMesh(new THREE.BoxGeometry(1, 1, 1), mat, cells.length);
+  mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+  for (let i = 0; i < cells.length; i++) mesh.setColorAt(i, new THREE.Color(0x1c0a3e));
+  const g = new THREE.Group(); g.position.copy(c); g.rotation.set(.32, .72, 0); g.add(mesh); par.add(g);
+  cluster = { g, mesh, cells, half, m: new THREE.Matrix4(), q: new THREE.Quaternion(), v: new THREE.Vector3(), w: new THREE.Vector3(), sc: new THREE.Vector3(), col: new THREE.Color() };
+}
+function drawCluster(t, dt, b) {
+  if (!cluster) return;
+  const { g, mesh, cells, half, m, q, v, w, sc, col } = cluster;
+  g.rotation.y += dt * (.25 + over * .5);
+  const breathe = 1 + Math.sin(t * 1.7) * .035 + Math.sin(t * 4.3) * .015;
+  const hasMouse = tx !== null;
+  mesh.updateMatrixWorld();
+  cells.forEach((c, i) => {
+    // cursor: distância na tela entre o cubo e o mouse
+    let near = 0;
+    if (hasMouse) { w.copy(c.p).applyMatrix4(mesh.matrixWorld).project(camera); near = Math.max(0, 1 - Math.hypot(w.x - ndc.x, (w.y - ndc.y) * camera.aspect) / .35); }
+    c.push += (near - c.push) * .15;
+    const base = Math.pow(.5 + .5 * Math.sin(t * c.sp + c.ph), 1.2);   // a maior parte do tempo fria; só alguns esquentam
+    const flash = Math.sin(t * 5 + c.ph * 3) > .993 ? .5 : 0;
+    c.heat += (Math.min(1, base * .85 + flash + c.push * .9 + over * .1) - c.heat) * .2;
+    const popK = Math.max(0, Math.sin(t * c.popSp + c.pop));             // às vezes o cubo some e volta
+    const life = popK < .08 ? popK / .08 : 1;
+    const jit = half * .03;
+    v.copy(c.p).multiplyScalar(breathe + b * 1.4 + c.push * .45)
+      .add(w.set(Math.sin(t * 9 + c.ph) * jit, Math.cos(t * 8 + c.ph * 2) * jit, Math.sin(t * 7 + c.ph * 1.3) * jit).multiplyScalar(.3 + c.heat));
+    q.setFromEuler(c.rot); sc.setScalar(c.s * life * (.75 + c.heat * .45));
+    m.compose(v, q, sc); mesh.setMatrixAt(i, m);
+    mesh.setColorAt(i, heatColor(Math.min(1, c.heat * 1.12), col));   // poucos cubos chegam ao lima/branco
+  });
+  mesh.instanceMatrix.needsUpdate = true; mesh.instanceColor.needsUpdate = true;
+}
+/* faíscas: cubinhos soltos que orbitam a pilha do Web 3D e piscam */
+let sparks = null;
+function makeSparks(cs) {
+  const box = new THREE.Box3(); cs.forEach(q => box.expandByObject(q.o));
+  const par = cs[0].o.parent, c = par.worldToLocal(box.getCenter(new THREE.Vector3())), R = par.worldToLocal(box.max.clone()).sub(c).length();
+  const n = 34, mesh = new THREE.InstancedMesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshBasicMaterial({ color: 0xffffff }), n);
+  mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+  const cells = Array.from({ length: n }, () => ({ d: new THREE.Vector3(Math.random() - .5, Math.random() - .5, Math.random() - .5).normalize(),
+    r: R * (.75 + Math.random() * .5), s: R * (.03 + Math.random() * .06), ph: Math.random() * 6.28, sp: 1.5 + Math.random() * 3 }));
+  for (let i = 0; i < n; i++) mesh.setColorAt(i, new THREE.Color(0xc6f432));
+  const g = new THREE.Group(); g.position.copy(c); g.add(mesh); par.add(g);
+  sparks = { g, mesh, cells, m: new THREE.Matrix4(), q: new THREE.Quaternion(), v: new THREE.Vector3(), sc: new THREE.Vector3(), col: new THREE.Color() };
+}
+function drawSparks(t, b) {
+  if (!sparks) return;
+  const { g, mesh, cells, m, q, v, sc, col } = sparks;
+  g.rotation.y = t * .35;
+  cells.forEach((c, i) => {
+    const h = .5 + .5 * Math.sin(t * c.sp + c.ph);
+    v.copy(c.d).multiplyScalar(c.r * (1 + b * 1.2 + Math.sin(t * 1.3 + c.ph) * .08));
+    q.setFromAxisAngle(c.d, t * c.sp); sc.setScalar(c.s * (.4 + h * .8));
+    m.compose(v, q, sc); mesh.setMatrixAt(i, m); mesh.setColorAt(i, heatColor(.3 + h * .48, col));   // faíscas sem branco
+  });
+  mesh.instanceMatrix.needsUpdate = true; mesh.instanceColor.needsUpdate = true;
+}
+const HEAT = [[0, 0x1c0a3e], [.35, 0x5b2fc2], [.62, 0x9b6cff], [.8, 0xc6f432], [1, 0xffffff]].map(([k, c]) => [k, new THREE.Color(c)]);
+function heatColor(h, out) {
+  for (let i = 1; i < HEAT.length; i++) if (h <= HEAT[i][0]) {
+    const [k0, c0] = HEAT[i - 1], [k1, c1] = HEAT[i];
+    return out.copy(c0).lerp(c1, (h - k0) / (k1 - k0));
+  }
+  return out.copy(HEAT[HEAT.length - 1][1]);
+}
+function drawOrb(t, b) {
+  if (!orb) return;
+  const { mesh, cells, m, q, v, sc, col } = orb;
+  const breathe = 1 + Math.sin(t * 2.1) * .04 + over * .06 + b * .9;
+  cells.forEach((c, i) => {
+    const h = Math.max(0, Math.min(1, .5 + .5 * Math.sin(t * c.sp + c.ph) + over * .15 + (Math.sin(t * 7 + c.ph * 3) > .96 ? .5 : 0)));   // às vezes um flash
+    v.copy(c.p).multiplyScalar(breathe + (c.loose ? Math.sin(t * c.sp + c.ph) * .12 : h * .05));
+    q.setFromEuler(c.rot); sc.setScalar(c.s * (.55 + h * .55));
+    m.compose(v, q, sc); mesh.setMatrixAt(i, m);
+    mesh.setColorAt(i, heatColor(c.loose ? Math.min(1, h + .3) : h, col));
+  });
+  mesh.instanceMatrix.needsUpdate = true; mesh.instanceColor.needsUpdate = true;
+}
+// a página-mãe avisa quando o card sai/entra na tela: fora dela o render para (economiza GPU e memória)
+let paused = false;
+addEventListener('message', e => { if (e.data?.el3d) paused = e.data.el3d === 'pause'; });
+const loop = now => {
+  requestAnimationFrame(loop);
+  if (paused) { prev = now; return; }
+  const dt = Math.min((now - prev) / 1000, .05); prev = now; if (!reduce) t += dt;
+  if (ready) {
+    ray.setFromCamera(ndc, camera);
+    const hits = ray.intersectObject(holder, true);
+    hit = hits.length ? nameOf(hits[0].object) : null; overT = hits.length ? 1 : 0;
+    document.body.style.cursor = SLUG === 'creative-dev' && hit?.startsWith('engrenagem') ? (drag ? 'grabbing' : 'grab') : hits.length ? 'pointer' : '';
+  }
+  over += (overT - over) * .1;
+  const gx = tx ?? Math.sin(t * .6) * .32 - .12, gy = ty ?? Math.cos(t * .5) * .06;
+  ry += (gx - ry) * .06; rx += (gy - rx) * .06;
+  holder.rotation.set(rx, ry, 0); holder.position.y = Math.sin(t * 1.1) * .04;
+  bloom.strength = .45 + over * .25;
+  // espalha e volta com mola (cubinhos e explosão da pilha)
+  burstV += (0 - burst) * .08; burstV *= .86; burst += burstV; const b = Math.max(0, burst);
+  bits.forEach(q => {
+    q.o.position.copy(q.home).addScaledVector(q.home.clone().normalize(), b * .5);
+    q.o.position.y += Math.sin(t * 2 + q.ph) * .06; q.o.rotation.y = t * .8 + q.ph + b * 4;
+  });
+  // web 3d: cubo sob o cursor sobe e gira; clique explode a pilha
+  cubes.forEach(q => {
+    const on = hit === q.name ? 1 : 0; q.lift += (on - q.lift) * .15;
+    q.o.position.copy(q.home).addScaledVector(q.dir, b * .55 + q.lift * .12);
+    q.o.position.z += Math.sin(t * 1.6 + q.ph) * .015 * (1 + over);
+    q.o.rotation.set(b * 2 * q.dir.y, q.lift * Math.PI / 2 + b * 3 * q.dir.x, 0);   // gira em volta do próprio centro (pivô refeito)
+    const h = Math.max(0, Math.min(1, .5 + .5 * Math.sin(t * q.sp + q.ph) + over * .15 + q.lift * .4 + (Math.sin(t * 6 + q.ph * 3) > .97 ? .5 : 0)));
+    heatColor(h, q.mesh.material.color); q.mesh.material.emissive.copy(q.mesh.material.color).multiplyScalar(h * h * .9);   // quanto mais quente, mais brilha
+    q.o.scale.setScalar((1 + q.lift * .12) * (.9 + h * .14));
+  });
+  // design web: globo gira (hover acelera, clique dá um giro rápido)
+  if (globe) { spin *= .95; globe.rotation.y += dt * (.5 + over * 1.6 + spin); globe.rotation.x = Math.sin(t * .4) * .25; }
+  drawOrb(t, b); drawSparks(t, b); drawCluster(t, dt, b);
+  // design web: o cursor segue o seu mouse por dentro da janela; sem mouse, passeia em volta do globo e clica sozinho
+  if (cursor) {
+    const H = cursor.userData.home;
+    let dx, dy;
+    if (tx !== null) { dx = THREE.MathUtils.lerp(-1.3, .45, (ndc.x + 1) / 2); dy = THREE.MathUtils.lerp(-.6, .85, (ndc.y + 1) / 2); }
+    else { dx = -.45 + Math.sin(t * .7) * .55; dy = .05 + Math.sin(t * 1.3) * .35; autoClick -= dt; if (autoClick < 0) { autoClick = 2.6; clickCursor(); } }
+    cx += (dx - cx) * .12; cy += (dy - cy) * .12; press *= .86;
+    cursor.position.set(H.x + cx, H.y + cy, H.z - press * .12);
+    cursor.scale.setScalar(.78 * (1 - press * .16));   // um pouco menor (fica na frente do globo) cursor.rotation.z = -press * .12 + (cx - dx) * .4;
+  }
+  ripples.forEach(q => { q.a += dt * 1.6; q.r.scale.setScalar(1 + q.a * 9); q.r.material.opacity = Math.max(0, .9 - q.a); });
+  for (let i = ripples.length - 1; i >= 0; i--) if (ripples[i].a > 1) { ripples[i].r.parent.remove(ripples[i].r); ripples.splice(i, 1); }
+  // design de movimento: haste da claquete bate (no hover ritmado; no clique uma batida forte)
+  if (clap) {   // a parte de cima ABAIXA e BATE: fecha rápido, dá um tranco e reabre devagar (modelada aberta)
+    const CLOSE = -.27;
+    let k = 0;
+    if (over > .3) { clapPh = (clapPh + dt * 1.1) % 1; const p = clapPh; k = p < .12 ? (p / .12) ** 2 : p < .3 ? 1 : p < .7 ? 1 - (p - .3) / .4 : 0; }
+    if (clapT > .02) { clapT -= dt * 1.4; const p = 1 - clapT; k = Math.max(k, p < .12 ? (p / .12) ** 2 : 1 - (p - .12) / .88); }
+    clap.rotation.z = CLOSE * k;
+    const closed = k > .98; if (closed && !wasClosed) { shake = 1; burst = Math.max(burst, .25); } wasClosed = closed;
+  }
+  shake *= .85; holder.position.x = Math.sin(t * 70) * .03 * shake;
+  // neon: lâmpada tremula / megafone pulsa
+  neons.forEach(n => {
+    let k = 1;
+    if (SLUG === 'branding') k = lightOn ? 1 + over * (.5 * Math.sin(t * 31) * Math.sin(t * 7)) : .06;
+    else if (SLUG === 'campaigns') { wave *= .94; k = 1 + over * .9 * Math.max(0, Math.sin(t * 8)) + wave * 2; n.o.scale.setScalar(1 + wave * .06); }
+    else k = 1 + over * .4;
+    n.o.material.emissiveIntensity = n.base * k;
+  });
+  // desenvolvimento criativo: engrenagem gira; arrastar dá impulso (com inércia)
+  if (gear) { gearV *= drag ? .8 : .96; gearA += gearV + dt * (-.35 - over * .8); gear.rotation.z = gearA; }
+  composer.render();
+};
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>

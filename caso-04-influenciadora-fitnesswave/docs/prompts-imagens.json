@@ -1,0 +1,82 @@
+[
+  {
+    "key": "hero",
+    "file": "hero-influenciadora-v2.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\hero_model.png",
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\market_woman.png"
+    ],
+    "transparent": true,
+    "prompt": "Use case: identity-preserve.\nAsset type: high-resolution transparent hero cutout for the FITNESS WAVE influencer portfolio, wide landscape 3:2.\nInput image 1: edit target and composition/pose/outfit reference. Input image 2: supporting identity reference of same woman.\nPrimary request: recreate only the woman, her purple sneakers and the small purple dumbbell from image 1 as a clean photorealistic cutout. Preserve the same adult woman's facial identity from the supplied references: shoulder-length dark brown softly wavy bob with side part, softly arched dark eyebrows, almond-shaped brown-hazel eyes, defined natural lips and nose, light-to-medium skin, athletic natural build. Keep recognizable face, hair length, skin tone and build consistent. Natural skin texture, no over-retouching.\nPreserve the iconic seated floor pose, wearing a fitted long-sleeve purple athletic crop top, purple shorts, purple athletic sneakers with light gray soles. One sneaker extends toward the camera at lower left in strong foreshortening, one knee bent, other leg angled across floor, one hand resting at ankle and other near chin. Show the complete head, all limbs and shoes comfortably inside image; no cut-off shoe or head. Small purple dumbbell rests near her on the floor plane. Confident calm expression directed at camera. Soft studio key light with restrained violet rim lighting and realistic fabric, skin and rubber texture.\nConstraints: remove EVERY piece of FITNESSWAVE text, all typography, social pills, badges, background grids and purple backdrop. Genuinely transparent background, no painted checkerboard, no opaque rectangle, no watermark, no logos on clothing or shoes, correct limb anatomy and correct hand fingers."
+  },
+  {
+    "key": "perfil",
+    "file": "perfil-influenciadora-v2.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\market_woman.png",
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\hero_model.png"
+    ],
+    "transparent": false,
+    "prompt": "Use case: identity-preserve.\nAsset type: editorial portrait for FITNESS WAVE influencer profile section and avatar, portrait 4:5.\nInput image 1: edit target and face/angle reference. Image 2: supporting identity and outfit reference.\nPrimary request: recreate the same woman's clean high-resolution studio portrait. Preserve the same adult woman's facial identity from the supplied references: shoulder-length dark brown softly wavy bob with side part, softly arched dark eyebrows, almond-shaped brown-hazel eyes, defined natural lips and nose, light-to-medium skin, athletic natural build. Keep recognizable face, hair length, skin tone and build consistent. Natural skin texture, no over-retouching.\nThree-quarter close-up from chest up, face centered, looking slightly toward camera-left with thoughtful confident expression, one hand loosely lifted near chin, black-brown wavy shoulder-length hair. Fitted plain purple long-sleeve athletic top. Clean dark aubergine studio background with subtle violet glow, no graphics. Soft portrait key light, natural skin detail, elegant sports editorial look. Allow clear margin above hair and around face for circular avatar crop.\nConstraints: preserve face and hair, remove ALL existing text, statistics, grid, social stickers and logos, natural hand anatomy, no watermarks, no collage, no UI."
+  },
+  {
+    "key": "treino",
+    "file": "treino-forca-v2.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\hero_model.png",
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\market_woman.png"
+    ],
+    "transparent": false,
+    "prompt": "Use case: identity-preserve.\nAsset type: clean wide editorial fitness photograph for an influencer portfolio, landscape 3:2.\nInput images: all are references for the adult woman's identity and the overall fitness theme.\nPrimary request: the same adult woman as the supplied female portraits, with shoulder-length dark wavy hair and the same facial features, in a bright contemporary gym. She is standing upright doing a light controlled dumbbell curl, wearing a plain purple long-sleeve training T-shirt, full-length charcoal leggings and simple training shoes. An adult professional trainer in a gray T-shirt and black trousers stands beside her at a respectful distance, explaining technique with a small neutral hand gesture. Full-body photograph, both people entirely inside frame, level camera at chest height, calm everyday coaching scene. Pale gray gym, muted violet equipment, soft natural window light, authentic skin and clothing texture.\nConstraints: normal fully clothed exercise scene, same adult woman's identity, natural realistic anatomy, no touching, no text, statistic, original Cyrillic headline, brand, watermark, collage or UI."
+  },
+  {
+    "key": "praia",
+    "file": "cenario-corrida-praia-v2.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\hero_model.png",
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\market_woman.png"
+    ],
+    "transparent": false,
+    "prompt": "Use case: identity-preserve.\nAsset type: additional editorial lifestyle image 1 of 5 for a fitness influencer, landscape 3:2.\nInput images 1 and 2: same-woman identity references only, not background or pose targets.\nPrimary request: a natural candid photograph of this influencer jogging along a seaside boardwalk at sunrise. Preserve the same adult woman's facial identity from the supplied references: shoulder-length dark brown softly wavy bob with side part, softly arched dark eyebrows, almond-shaped brown-hazel eyes, defined natural lips and nose, light-to-medium skin, athletic natural build. Keep recognizable face, hair length, skin tone and build consistent. Natural skin texture, no over-retouching.\nShe wears a plum-purple racerback athletic top, matching bike shorts and neutral running shoes, shoulder-length hair moving naturally with running. Three-quarter front view, full body completely visible in central-left of frame, both feet visible in a believable easy jogging stride; ocean, pale sand and soft palm silhouettes stretch behind, warm peach sunrise and gentle lilac sky. Calm early morning atmosphere, authentic skin texture and natural running posture, editorial lifestyle realism. Keep outfit sporty and functional. Composition includes context and generous room around subject, no exaggerated action effects.\nConstraints: recognizable same face, age and body build as references, realistic limbs and hands, no text, logo, watermark, social UI, border or collage."
+  },
+  {
+    "key": "cozinha",
+    "file": "cenario-cozinha-v2.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\hero_model.png",
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\market_woman.png"
+    ],
+    "transparent": false,
+    "prompt": "Use case: identity-preserve.\nAsset type: additional editorial lifestyle image 2 of 5 for a fitness influencer, landscape 3:2.\nInput images 1 and 2: facial and hair identity references only.\nPrimary request: candid photograph of the same influencer preparing a simple colorful breakfast in a bright modern home kitchen. Preserve the same adult woman's facial identity from the supplied references: shoulder-length dark brown softly wavy bob with side part, softly arched dark eyebrows, almond-shaped brown-hazel eyes, defined natural lips and nose, light-to-medium skin, athletic natural build. Keep recognizable face, hair length, skin tone and build consistent. Natural skin texture, no over-retouching.\nShe stands at a light wood kitchen island wearing a relaxed pale lavender overshirt over a plain white sleeveless top, smiling gently while adding fresh berries with a spoon to a bowl of yogurt and fruit. A banana, a glass of water and modest linen napkin nearby, white cabinetry, a small green plant and soft morning window light behind. Waist-up composition, full head and both natural hands visible, woman slightly right of center, recognizable facial details. Everyday relaxed lifestyle, natural realistic textures, warm neutral colors with lavender accents. No gym equipment, no studio posing, no meal plan or weight-loss claims.\nConstraints: same face and hair as references, believable spoon and hand interaction, no brands on objects, no readable labels, no text overlays, logos, watermark, UI or collage."
+  },
+  {
+    "key": "criacao",
+    "file": "cenario-gravacao-conteudo-v2.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\hero_model.png",
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\market_woman.png"
+    ],
+    "transparent": false,
+    "prompt": "Use case: identity-preserve.\nAsset type: additional editorial lifestyle image 3 of 5 for a fitness influencer, landscape 3:2.\nInput images 1 and 2: same-person identity references only.\nPrimary request: behind-the-scenes photograph of this influencer filming a short wellness routine in a bright apartment studio. Preserve the same adult woman's facial identity from the supplied references: shoulder-length dark brown softly wavy bob with side part, softly arched dark eyebrows, almond-shaped brown-hazel eyes, defined natural lips and nose, light-to-medium skin, athletic natural build. Keep recognizable face, hair length, skin tone and build consistent. Natural skin texture, no over-retouching.\nShe is seated cross-legged on a lavender exercise mat, wearing a plain black fitted sleeveless training top and high-waisted purple leggings, casually explaining something to a smartphone on a small tripod in the left foreground. Smartphone angled toward her; its screen is not readable. Friendly engaged smile, one hand making a small relaxed conversational gesture and other resting on knee, straight relaxed posture. Full head and legs visible, subject center-right, real wooden floor, soft beige curtains, a green plant, daylight through large window. At-home creator atmosphere, authentic and approachable, no extra crew, natural editorial light and realistic skin.\nConstraints: same facial features and hair, realistic hands and phone proportions, no fake app interfaces, no text, logo, watermark, collage or UI."
+  },
+  {
+    "key": "cafe",
+    "file": "cenario-cafe-urbano-v2.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\hero_model.png",
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\market_woman.png"
+    ],
+    "transparent": false,
+    "prompt": "Use case: identity-preserve.\nAsset type: additional editorial lifestyle image 4 of 5 for a fitness influencer, landscape 3:2.\nInput images 1 and 2: same-person identity references only.\nPrimary request: lifestyle editorial photograph of this influencer planning content at an outdoor city cafe. Preserve the same adult woman's facial identity from the supplied references: shoulder-length dark brown softly wavy bob with side part, softly arched dark eyebrows, almond-shaped brown-hazel eyes, defined natural lips and nose, light-to-medium skin, athletic natural build. Keep recognizable face, hair length, skin tone and build consistent. Natural skin texture, no over-retouching.\nShe wears a charcoal casual jacket over a light lilac top, relaxed dark trousers, simple small earrings, same loose wavy bob. Sitting at a small cafe table with an open unbranded slim laptop, a small notebook and one ceramic coffee cup, she looks up thoughtfully toward the camera from her planning notes. Complete head and natural hands visible, waist-up relaxed three-quarter view. Soft urban street bokeh, stone facades and a little greenery in background, late-afternoon natural daylight, lavender and neutral charcoal wardrobe, realistic everyday creator-working moment.\nConstraints: same identity, no readable laptop screen or notebook text, no store signage readable, no brands, watermark, fashion logos, UI, text overlays or collage."
+  },
+  {
+    "key": "trilha",
+    "file": "cenario-trilha-natureza-v2.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\hero_model.png",
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\market_woman.png"
+    ],
+    "transparent": false,
+    "prompt": "Use case: identity-preserve.\nAsset type: additional editorial lifestyle image 5 of 5 for a fitness influencer, landscape 3:2.\nInput images 1 and 2: same-person identity references only.\nPrimary request: natural adventure lifestyle photograph of the same influencer pausing on a scenic forest trail with a green valley in the distance. Preserve the same adult woman's facial identity from the supplied references: shoulder-length dark brown softly wavy bob with side part, softly arched dark eyebrows, almond-shaped brown-hazel eyes, defined natural lips and nose, light-to-medium skin, athletic natural build. Keep recognizable face, hair length, skin tone and build consistent. Natural skin texture, no over-retouching.\nShe wears a muted violet lightweight windbreaker over a dark athletic top, charcoal hiking leggings, practical trail shoes and a small plain black daypack. Full body with head and both feet completely visible, one hand resting naturally on backpack strap, standing confidently on a safe wide gravel trail, looking back toward camera with a relaxed smile. Lush foliage, soft misty hills and diffuse late-morning daylight, fresh green and violet palette. Wide landscape environmental portrait, grounded natural realism, no dramatic cliff-edge pose, no gym or city objects.\nConstraints: recognizable same face and hair, realistic hands, clothing and feet, no branded gear, no text, logos, watermark, UI, collage or before-and-after."
+  }
+]

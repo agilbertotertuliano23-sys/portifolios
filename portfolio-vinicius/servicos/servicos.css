@@ -1,0 +1,91 @@
+/* =========================================================
+   Serviços · refatorada no estilo "kit de UI gamer neon em pixel art"
+   roxo profundo + lima neon, cantos em degrau de pixel, molduras pixeladas, cards de número com o
+   lima "derretendo" em pixels, botões grossos com borda em degrau, quadradinhos de pixel espalhados.
+   Os 6 componentes 3D (Blender) ficam dentro de molduras pixeladas (elementos-3d/*.html).
+   ========================================================= */
+.sv {
+  --vk: #0d0520; --v1: #1a0b3a; --v2: #2c1460; --v3: #5b2fc2; --vl: #9b6cff; --lm: #c6f432; --lm-d: #8fb31c;
+  --s: 8px;   /* tamanho do "pixel" dos cantos */
+  position: relative; padding: clamp(60px, 8vw, 120px) var(--gutter); overflow: hidden; isolation: isolate;
+  background:
+    radial-gradient(40% 35% at 12% 18%, rgba(198, 244, 50, .22), transparent 70%),
+    radial-gradient(35% 30% at 88% 70%, rgba(198, 244, 50, .18), transparent 70%),
+    radial-gradient(60% 50% at 60% 30%, #4a1fa8 0%, transparent 70%),
+    radial-gradient(90% 80% at 50% 50%, #2c1270 0%, #170838 60%, #0c0420 100%);
+  color: #fff; font-family: "Geist", var(--f-body);
+}
+.sv__inner { position: relative; max-width: 1240px; margin-inline: auto; display: grid; gap: clamp(20px, 2.4vw, 32px); }
+
+/* forma com cantos em degrau de pixel (2 degraus) */
+.px-cut { clip-path: polygon(
+  calc(var(--s) * 2) 0, calc(100% - var(--s) * 2) 0, calc(100% - var(--s) * 2) var(--s), calc(100% - var(--s)) var(--s), calc(100% - var(--s)) calc(var(--s) * 2), 100% calc(var(--s) * 2),
+  100% calc(100% - var(--s) * 2), calc(100% - var(--s)) calc(100% - var(--s) * 2), calc(100% - var(--s)) calc(100% - var(--s)), calc(100% - var(--s) * 2) calc(100% - var(--s)), calc(100% - var(--s) * 2) 100%,
+  calc(var(--s) * 2) 100%, calc(var(--s) * 2) calc(100% - var(--s)), var(--s) calc(100% - var(--s)), var(--s) calc(100% - var(--s) * 2), 0 calc(100% - var(--s) * 2),
+  0 calc(var(--s) * 2), var(--s) calc(var(--s) * 2), var(--s) var(--s), calc(var(--s) * 2) var(--s)); }
+
+/* quadradinhos de pixel espalhados no fundo (posições geradas no index.html) */
+.sv__bits { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.sv__bits i { position: absolute; width: var(--z); height: var(--z); background: var(--c); box-shadow: 0 0 14px color-mix(in srgb, var(--c) 70%, transparent);
+  animation: sv-blink var(--d) steps(2) infinite; animation-delay: var(--dl); }
+@keyframes sv-blink { 50% { opacity: .35; } }
+
+/* ---------- topo: título em placa pixelada + botão ---------- */
+.sv__head { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.sv__headtxt { display: grid; gap: 14px; }
+.sv__title { position: relative; justify-self: start; padding: 3px; --s: 10px; background: linear-gradient(90deg, var(--v3), var(--vl) 50%, var(--v3)); }
+.sv__title > div { padding: 18px 36px 18px 26px; --s: 9px; background: linear-gradient(180deg, #24104e, var(--vk)); }
+.sv__title h2 { margin: 0; font: 800 clamp(2.2rem, 6vw, 4.6rem)/.9 "Geist", var(--f-body); letter-spacing: -.03em; text-transform: uppercase; color: #fff; text-shadow: 0 4px 0 #0b0418, 0 0 24px rgba(155, 108, 255, .6); }
+.sv__title h2 b { color: var(--lm); font-weight: 800; text-shadow: 0 4px 0 #0b0418, 0 0 22px rgba(198, 244, 50, .55); }
+.sv__tag { font: 600 12px/1 var(--f-mono); letter-spacing: .16em; text-transform: uppercase; color: var(--lm); }
+.sv__lead { max-width: 40ch; margin: 0; color: rgba(233, 222, 255, .75); font-size: clamp(.95rem, 1.2vw, 1.1rem); line-height: 1.45; }
+.sv__round { display: grid; place-items: center; width: 72px; height: 72px; --s: 7px; background: var(--lm); color: #0b0418; font-size: 28px; font-weight: 800; text-decoration: none;
+  box-shadow: 0 0 30px rgba(198, 244, 50, .5); transition: transform .35s var(--ease-out), background .35s; }
+.sv__round:hover { transform: translateX(6px); background: #e3ff7a; }
+
+/* ---------- números: lima "derretendo" em pixels ---------- */
+.sv__stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(10px, 1.4vw, 18px); }
+.sv-stat { position: relative; aspect-ratio: 1.15; --s: 7px; background: var(--vk); overflow: hidden; }
+.sv-stat::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 30%, rgba(155, 108, 255, .12)); pointer-events: none; }
+.sv-stat__melt { position: absolute; inset: 0; transition: transform .6s var(--ease-out); }
+.sv-stat:hover .sv-stat__melt { transform: translateY(-7%); }
+.sv-stat__melt svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.sv-stat__in { position: absolute; left: 10%; right: 10%; bottom: 10%; color: #0b0418; }
+.sv-stat strong { display: block; font: 800 clamp(1.8rem, 3.4vw, 3rem)/1 "Geist", var(--f-body); letter-spacing: -.04em; }
+.sv-stat span { font-weight: 600; font-size: clamp(.8rem, 1.1vw, 1rem); }
+.sv-stat__arrow { position: absolute; right: 9%; top: 50%; width: clamp(22px, 2.4vw, 32px); color: #0b0418; }
+.sv-stat__arrow svg { display: block; width: 100%; height: auto; }
+
+/* ---------- serviços: molduras pixeladas com o componente 3D ---------- */
+.sv__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 1.6vw, 20px); }
+.sv-card { position: relative; padding: 3px; --s: 9px; background: linear-gradient(180deg, var(--vl), var(--v3) 45%, #3a1a88); transition: transform .5s var(--ease-out); }
+.sv-card:hover { transform: translateY(-6px); background: linear-gradient(180deg, #e3ff7a, var(--lm) 45%, var(--lm-d)); }
+.sv-card__in { display: grid; gap: 12px; height: 100%; padding: 10px 10px 18px; --s: 8px; background: linear-gradient(180deg, #1c0b40, var(--vk) 70%); }
+.sv-card__stage { position: relative; aspect-ratio: 1 / .95; --s: 7px; overflow: hidden; background: #160930; }
+.sv-card__stage iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+.sv-card__body { padding: 0 8px; display: grid; gap: 6px; }
+.sv-card h3 { margin: 0; font: 800 clamp(1.05rem, 1.5vw, 1.35rem)/1.05 "Geist", var(--f-body); text-transform: uppercase; letter-spacing: -.01em; }
+.sv-card h3 b { color: var(--lm); font-weight: 800; }
+.sv-card p { margin: 0; font-size: .86rem; line-height: 1.45; color: rgba(233, 222, 255, .72); }
+.sv-card__bar { height: 4px; margin: 4px 8px 0; background: linear-gradient(90deg, var(--lm) var(--p), rgba(155, 108, 255, .25) var(--p)); box-shadow: 0 0 8px rgba(198, 244, 50, .4); }
+
+/* ---------- faixa de chamada + botões pixelados ---------- */
+.sv__cta { position: relative; display: grid; grid-template-columns: 1.4fr auto; align-items: center; gap: 24px; padding: 3px; --s: 10px; background: linear-gradient(90deg, var(--v3), var(--lm) 70%, var(--v3)); }
+.sv__cta > div { display: grid; grid-template-columns: 1.4fr auto; align-items: center; gap: 24px; grid-column: 1 / -1; padding: clamp(24px, 3vw, 40px) clamp(24px, 3.4vw, 48px); --s: 9px;
+  background: radial-gradient(60% 90% at 85% 50%, rgba(155, 108, 255, .35), transparent 70%), linear-gradient(90deg, #12052a, #1f0b48); }
+.sv__cta h3 { margin: 0 0 18px; font: 800 clamp(1.6rem, 3.4vw, 2.8rem)/1 "Geist", var(--f-body); text-transform: uppercase; letter-spacing: -.02em; }
+.sv__cta h3 b { color: var(--lm); }
+.sv__btns { display: flex; flex-wrap: wrap; gap: 12px; }
+.px-btn { position: relative; display: inline-flex; align-items: center; gap: 10px; padding: 16px 26px; --s: 5px; font: 800 14px/1 "Geist", var(--f-body); letter-spacing: .04em; text-transform: uppercase;
+  text-decoration: none; color: #0b0418; background: var(--lm); box-shadow: 0 0 24px rgba(198, 244, 50, .35); transition: transform .3s var(--ease-out), background .3s, color .3s; }
+.px-btn:hover { transform: translateY(-3px); background: #e3ff7a; }
+.px-btn--ghost { color: #fff; background: linear-gradient(var(--vk), var(--vk)) padding-box, var(--vl); box-shadow: inset 0 0 0 2px var(--vl); }
+.px-btn--ghost:hover { color: #0b0418; background: var(--lm); box-shadow: 0 0 24px rgba(198, 244, 50, .35); }
+.sv__chev { display: flex; gap: 2px; justify-self: end; font: 900 clamp(40px, 6vw, 80px)/1 "Geist", var(--f-body); letter-spacing: -.12em; }
+.sv__chev span { color: var(--v3); animation: sv-chev 1.2s steps(1) infinite; } .sv__chev span:nth-child(2) { animation-delay: .2s; } .sv__chev span:nth-child(3) { animation-delay: .4s; }
+@keyframes sv-chev { 0%, 60% { color: var(--v3); text-shadow: none; } 20%, 40% { color: var(--lm); text-shadow: 0 0 18px var(--lm); } }
+
+/* responsivo */
+@media (max-width: 1000px) { .sv__grid { grid-template-columns: 1fr 1fr; } .sv__stats { grid-template-columns: 1fr 1fr; } .sv__cta > div { grid-template-columns: 1fr; } .sv__chev { justify-self: start; } }
+@media (max-width: 600px) { .sv__grid { grid-template-columns: 1fr; } .sv__title > div { padding: 16px 24px; } }
+@media (prefers-reduced-motion: reduce) { .sv__bits i, .sv__chev span { animation: none; } }

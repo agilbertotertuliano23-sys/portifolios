@@ -1,0 +1,76 @@
++-------------------------------------------------------------------------------------+
+| nav                                                                                  |
+| [ico:logo] [t1: Patrícia Medronha - Psicóloga Clínica]                                |
++-------------------------------------------------------------------------------------+
+| hero                                                                                |
+| +-------------------------------------------------------+ +-------------------------+ |
+| | [h1: Conquiste sua autonomia emocional e bem-estar.]  | | [img: hero_psychologist]| |
+| | [t1: • Produtividade]                                 | |                         | |
+| | [t1: • Inteligência Emocional]                        | |                         | |
+| | [t1: • Relacionamento Saudáveis]                      | |                         | |
+| | [t1: • Desenvolvimento de Hábitos Saudáveis]          | |                         | |
+| | [t3: seu futuro começa com a decisão que você toma hoje]|                        | |
+| | [btn: Agendar sessão]                                 | |                         | |
+| +-------------------------------------------------------+ +-------------------------+ |
++-------------------------------------------------------------------------------------+
+| section (Benefits Bar)                                                              |
+| [h2: Agende sua sessão.]                                                             |
+| +----------+ +----------+ +----------+ +------------------------+ +-----------------+ |
+| | card_b1  | | card_b2  | | card_b3  | | card_b4                 | | card_b5        | |
+| | [ico:time| | [ico:vid]| | [ico:lock| | [ico:shield]           | | [ico:home]    | |
+| | [t2: 50  | | [t2: Ví- | | [t2: Sig-| | [t2: Ambiente Seguro e  | | [t2: Sem sair | |
+| |  Minutos]| | deo tempo| | ilo Abs.]| |  Livre de Julgamento]  | |  de casa...]  | |
+| +----------+ +----------+ +----------+ +------------------------+ +-----------------+ |
+| [t3: O seu futuro começa com a decisão que você toma hoje, não decidir também...]   |
++-------------------------------------------------------------------------------------+
+| section2 (Symptoms & Brain Illustration)                                            |
+| +-----------------------------+ +---------------------------------------------------+ |
+| | [img: brain_neural_network] | | [h2: NÃO É NORMAL E NÃO É SAUDÁVEL]               | |
+| |                             | | [pill: [ico:sphere] ESTAR ANSIOSO O TEMPO TODO]   | |
+| |                             | | [pill: [ico:sphere] ESTAR IRRITADO O TEMPO TODO]  | |
+| |                             | | [pill: [ico:sphere] SE PREOCUPAR COM A OPINIÃO...] | |
+| |                             | | [pill: [ico:sphere] ESTAR TRISTE O TEMPO TODO]    | |
+| |                             | | [pill: [ico:sphere] SENSAÇÃO DE CANSAÇO...]       | |
+| |                             | | [pill: [ico:sphere] ESTAR EM LUTA O TEMPO TODO]   | |
+| |                             | | [pill: [ico:sphere] QUERER AGRADAR A TODOS...]    | |
+| |                             | | [pill: [ico:sphere] SE COBRAR DEMAIS]             | |
+| |                             | | [t2: Tais sintomas não é você, são apenas...]     | |
+| |                             | | [t2: Não acumule suas dificuldades e tensões...]  | |
+| +-----------------------------+ +---------------------------------------------------+ |
++-------------------------------------------------------------------------------------+
+| banner (Mid-page Callout)                                                            |
+| [t1: Em minha atuação clínica, priorizo um atendimento de escuta empática...]       |
+| [btn: Agendar sessão]                                                               |
++-------------------------------------------------------------------------------------+
+| section3 (Online Therapy & Laptop)                                                  |
+| +-------------------------------------------------------+ +-------------------------+ |
+| | [h2: Atendimento psicológico de onde estiver.]        | | [img: laptop_call_mock]| |
+| | [t1: Meu objetivo é auxiliar você a lidar com...]     | |                         | |
+| | [t1: Na primeira parte do atendimento eu vou te ouvir]| |                         | |
+| | [t1: É o seu momento de desabafar e contar...]        | |                         | |
+| | [t1: Feito isso, te explico como a terapia...]        | |                         | |
++-------------------------------------------------------+ +-------------------------+ |
++-------------------------------------------------------------------------------------+
+| section4 (Testimonials)                                                             |
+| [h2: O que estão falando das sessões]                                               |
+| +-----------------------+ +-----------------------+ +-------------------------------+ |
+| | card_t1               | | card_t2               | | card_t3                       | |
+| | [t2: Patrícia é...   | | [t2: Patrícia me...  | | [t2: Profissional incrível..| |
+| |  ...longo caminho.]   | |  ...tirar minha CNH.] | |  ...não tinha há anos]      | |
+| | [t3: Silvia]          | | [t3: Raphaella]       | | [t3: Luiz]                  | |
+| +-----------------------+ +-----------------------+ +-------------------------------+ |
++-------------------------------------------------------------------------------------+
+| section5 (About Psychologist)                                                       |
+| +-------------------------------------------------------+ +-------------------------+ |
+| | [h2: Patrícia Medronha:]                              | | [ico:monogram_logo]     | |
+| | [t1: • Abordagem: Terapia cognitivo comportamental.]  | | [img: bio_armchair]     | |
+| | [t1: • Especialidades: Transtornos de ansiedade...]   | |                         | |
+| | [t1: • (A partir de 18 anos)]                         | |                         | |
+| | [t1: • experiência da Profissional - +2.500 consulta] | |                         | |
+| | [t1: • neurociência - Conhecimento sobre a neuro...]  | |                         | |
++-------------------------------------------------------+ +-------------------------+ |
++-------------------------------------------------------------------------------------+
+| footer                                                                              |
+| [t2: Você pode encontrá-la também nas redes sociais, pelo perfil @patriciamedronhapsi] |
+| [btn2: Instagram] [btn2: zenklub.com]                     [btn_float: [ico:whatsapp]] |
++-------------------------------------------------------------------------------------+

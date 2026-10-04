@@ -1,0 +1,322 @@
+[
+  {
+    "width": 1440,
+    "scrollWidth": 1440,
+    "images": [
+      {
+        "src": "assets/hero-alex-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      },
+      {
+        "src": "assets/class1-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      },
+      {
+        "src": "assets/class2-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      },
+      {
+        "src": "assets/class3-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      },
+      {
+        "src": "assets/orientacao-treino-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1536,
+        "naturalHeight": 1024
+      },
+      {
+        "src": "assets/materiais-apoio-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1536,
+        "naturalHeight": 1024
+      },
+      {
+        "src": "assets/comunidade-inovfit-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1536,
+        "naturalHeight": 1024
+      },
+      {
+        "src": "assets/instructor-alex-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      }
+    ],
+    "sections": [
+      "metodo",
+      "materiais",
+      "comunidade"
+    ],
+    "invalidAnchors": [],
+    "overflowElements": [],
+    "enrollmentLinkWorks": true,
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "width": 1024,
+    "scrollWidth": 1024,
+    "images": [
+      {
+        "src": "assets/hero-alex-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      },
+      {
+        "src": "assets/class1-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      },
+      {
+        "src": "assets/class2-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      },
+      {
+        "src": "assets/class3-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      },
+      {
+        "src": "assets/orientacao-treino-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1536,
+        "naturalHeight": 1024
+      },
+      {
+        "src": "assets/materiais-apoio-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1536,
+        "naturalHeight": 1024
+      },
+      {
+        "src": "assets/comunidade-inovfit-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1536,
+        "naturalHeight": 1024
+      },
+      {
+        "src": "assets/instructor-alex-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      }
+    ],
+    "sections": [
+      "metodo",
+      "materiais",
+      "comunidade"
+    ],
+    "invalidAnchors": [],
+    "overflowElements": [],
+    "enrollmentLinkWorks": true,
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "width": 768,
+    "scrollWidth": 768,
+    "images": [
+      {
+        "src": "assets/hero-alex-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      },
+      {
+        "src": "assets/class1-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      },
+      {
+        "src": "assets/class2-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      },
+      {
+        "src": "assets/class3-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      },
+      {
+        "src": "assets/orientacao-treino-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1536,
+        "naturalHeight": 1024
+      },
+      {
+        "src": "assets/materiais-apoio-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1536,
+        "naturalHeight": 1024
+      },
+      {
+        "src": "assets/comunidade-inovfit-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1536,
+        "naturalHeight": 1024
+      },
+      {
+        "src": "assets/instructor-alex-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      }
+    ],
+    "sections": [
+      "metodo",
+      "materiais",
+      "comunidade"
+    ],
+    "invalidAnchors": [],
+    "overflowElements": [],
+    "enrollmentLinkWorks": true,
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "width": 390,
+    "scrollWidth": 390,
+    "images": [
+      {
+        "src": "assets/hero-alex-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      },
+      {
+        "src": "assets/class1-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      },
+      {
+        "src": "assets/class2-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      },
+      {
+        "src": "assets/class3-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      },
+      {
+        "src": "assets/orientacao-treino-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1536,
+        "naturalHeight": 1024
+      },
+      {
+        "src": "assets/materiais-apoio-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1536,
+        "naturalHeight": 1024
+      },
+      {
+        "src": "assets/comunidade-inovfit-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1536,
+        "naturalHeight": 1024
+      },
+      {
+        "src": "assets/instructor-alex-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      }
+    ],
+    "sections": [
+      "metodo",
+      "materiais",
+      "comunidade"
+    ],
+    "invalidAnchors": [],
+    "overflowElements": [],
+    "enrollmentLinkWorks": true,
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "width": 320,
+    "scrollWidth": 320,
+    "images": [
+      {
+        "src": "assets/hero-alex-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      },
+      {
+        "src": "assets/class1-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      },
+      {
+        "src": "assets/class2-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      },
+      {
+        "src": "assets/class3-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      },
+      {
+        "src": "assets/orientacao-treino-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1536,
+        "naturalHeight": 1024
+      },
+      {
+        "src": "assets/materiais-apoio-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1536,
+        "naturalHeight": 1024
+      },
+      {
+        "src": "assets/comunidade-inovfit-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1536,
+        "naturalHeight": 1024
+      },
+      {
+        "src": "assets/instructor-alex-v2.webp",
+        "loaded": true,
+        "naturalWidth": 1122,
+        "naturalHeight": 1402
+      }
+    ],
+    "sections": [
+      "metodo",
+      "materiais",
+      "comunidade"
+    ],
+    "invalidAnchors": [],
+    "overflowElements": [],
+    "enrollmentLinkWorks": true,
+    "errors": [],
+    "failedRequests": []
+  }
+]

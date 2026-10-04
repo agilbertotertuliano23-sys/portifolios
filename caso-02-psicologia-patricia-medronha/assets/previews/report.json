@@ -1,0 +1,51 @@
+{
+  "viewports": [
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "hasOverflow": false,
+      "headings": 1,
+      "brokenImages": []
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "hasOverflow": false,
+      "headings": 1,
+      "brokenImages": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "hasOverflow": false,
+      "headings": 1,
+      "brokenImages": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "hasOverflow": false,
+      "headings": 1,
+      "brokenImages": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "hasOverflow": false,
+      "headings": 1,
+      "brokenImages": []
+    }
+  ],
+  "errors": [],
+  "requests": [],
+  "laptop": {
+    "mode": "webgl",
+    "canvas": true,
+    "width": 692,
+    "height": 523
+  },
+  "carousel": "Depoimento 2 de 3",
+  "keyboard": true,
+  "scheduleTarget": "#contato",
+  "fileFallback": true
+}

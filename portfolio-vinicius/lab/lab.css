@@ -1,0 +1,179 @@
+/* =========================================================
+   Laboratório · estilos compartilhados (seção "Modelos & Formas" da home + páginas /biblioteca)
+   Usa as variáveis do style.css (--line, --ink, --ink-dim, --lime, --f-display, --f-mono, --gutter).
+   ========================================================= */
+
+/* canvas WebGL fixo: desenha os modelos 3D só dentro do palco de cada cartão; fica abaixo dos textos */
+.lab-gl { position: fixed; inset: 0; z-index: 1; width: 100vw; height: 100vh; pointer-events: none; }
+
+/* ---------- seção da home: 4 sessões empilhadas na vertical ---------- */
+.mf { padding: clamp(80px, 10vw, 150px) var(--gutter); }
+.lab-row {
+  display: grid; grid-template-columns: minmax(240px, 1fr) 2.6fr; gap: clamp(24px, 4vw, 64px);
+  padding-block: clamp(36px, 5vw, 70px);
+  border-top: 1px solid var(--line);
+}
+.lab-row:last-child { border-bottom: 1px solid var(--line); }
+.lab-row__info { position: sticky; top: 14vh; align-self: start; display: grid; gap: 16px; }
+.lab-row__info h3 { font-family: var(--f-display); font-weight: 400; font-size: clamp(2.2rem, 4vw, 4rem); line-height: .92; text-transform: uppercase; }
+.lab-row__info p { max-width: 36ch; color: var(--ink-dim); }
+.lab-link {
+  justify-self: start; display: inline-flex; align-items: center; gap: .8em;
+  padding: .85em 1.3em; border: 1px solid var(--line); border-radius: 999px;
+  font-family: var(--f-mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
+  transition: background .35s, color .35s, border-color .35s;
+}
+.lab-link span { color: var(--ink-dim); transition: color .35s; }
+.lab-link:hover, .lab-link:focus-visible { background: var(--lime); color: #0a0a0b; border-color: var(--lime); outline: none; }
+.lab-link:hover span, .lab-link:focus-visible span { color: rgba(10, 10, 11, .6); }
+
+/* ---------- grade de cartões ---------- */
+.lab-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 1.4vw, 20px); }
+.lab-card {
+  --mc: var(--lime); --rx: 0deg; --ry: 0deg;
+  position: relative; aspect-ratio: 4 / 5;
+  display: flex; flex-direction: column;
+  padding: clamp(14px, 1.4vw, 22px);
+  border-radius: clamp(18px, 2.2vw, 30px);
+  background: radial-gradient(70% 50% at 50% 42%, color-mix(in srgb, var(--mc) 16%, transparent), transparent 70%), #101012;
+  border: 1px solid var(--line);
+  cursor: pointer; outline: none;
+  transition: border-color .5s;
+}
+.lab-card:hover, .lab-card:focus-visible { border-color: color-mix(in srgb, var(--mc) 55%, transparent); }
+.lab-card > * { position: relative; z-index: 2; }        /* textos acima do canvas WebGL */
+.lab-card__top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.lab-num { font-family: var(--f-display); font-size: clamp(1.3rem, 1.8vw, 1.9rem); line-height: 1; color: var(--mc); }
+.lab-chip { padding: .45em .9em; border: 1px solid var(--line); border-radius: 999px; font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-dim); background: rgba(10, 10, 11, .6); white-space: nowrap; }
+.lab-stage { flex: 1; min-height: 0; z-index: 1 !important; }   /* área do modelo / sprite / forma */
+.lab-stage canvas { display: block; width: 100%; height: 100%; }
+.lab-card__bottom { display: grid; gap: .4em; }
+.lab-card h3 { font-family: var(--f-display); font-weight: 400; font-size: clamp(1.3rem, 2vw, 2rem); line-height: 1; text-transform: uppercase; }
+.lab-card p { font-size: .86em; line-height: 1.4; color: var(--ink-dim); }
+.lab-mode { display: inline-flex; align-items: center; gap: .6em; font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-dim); }
+.lab-mode i { width: 8px; height: 8px; border-radius: 50%; background: var(--mc); box-shadow: 0 0 10px var(--mc); }
+.lab-mode b { font-weight: 500; color: var(--ink); }
+/* chão: sombra sob o modelo 3D */
+.lab-card--3d .lab-stage::after, .lab-card--materials .lab-stage::after {
+  content: ""; position: absolute; left: 22%; right: 22%; bottom: 6%; height: 8%;
+  border-radius: 50%; background: radial-gradient(closest-side, rgba(0, 0, 0, .7), transparent); filter: blur(4px);
+}
+
+/* formas 2D: peças .p animam de --ta (estado A) para --tb (estado B, cartão .is-b); paletas por classe */
+.lab-card--vector { --k: #f2f0eb; --a: #8c5bff; --b: #c9b3ff; }
+.lab-card--vector.pal-bauhaus { --k: #2a5bd7; --a: #e8423c; --b: #f2b632; }
+.lab-card--vector.pal-neon { --k: #c9f0ff; --a: #ff4d6d; --b: #8fd9ff; }
+.lab-card--vector .lab-stage { display: grid; place-items: center; perspective: 700px; }
+.lab-svg { width: 66%; height: auto; overflow: visible; transform: rotateX(var(--rx)) rotateY(var(--ry)); transition: transform .5s cubic-bezier(.16, 1, .3, 1), filter .5s; }
+.pal-neon .lab-svg { filter: drop-shadow(0 0 4px var(--a)) drop-shadow(0 0 14px color-mix(in srgb, var(--a) 45%, transparent)); }
+.lab-svg__shape { animation: labFloat 5s ease-in-out infinite; transform-origin: 50px 50px; }
+.lab-svg .p {
+  transform-box: fill-box; transform-origin: center;
+  transform: var(--ta, none);
+  transition: transform .85s cubic-bezier(.75, 0, .2, 1) var(--d, 0s), fill .5s, stroke .5s;
+}
+.lab-card.is-b .lab-svg .p { transform: var(--tb, var(--ta, none)); }
+.lab-svg .k { fill: var(--k); } .lab-svg .a { fill: var(--a); } .lab-svg .b { fill: var(--b); }
+.lab-svg .ks, .lab-svg .as { fill: none; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.lab-svg .ks { stroke: var(--k); } .lab-svg .as { stroke: var(--a); }
+.lab-svg .glow { opacity: .85; filter: blur(3px); }
+@keyframes labFloat { 50% { transform: translateY(-4px) rotate(2deg); } }
+
+/* ---------- páginas de catálogo (/biblioteca) ---------- */
+.lib-page { min-height: 100vh; padding: 0 var(--gutter) 90px; }
+.lib-bar {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
+  padding: 18px 0; margin-bottom: clamp(30px, 5vw, 60px);
+  background: linear-gradient(var(--bg) 70%, transparent);
+  font-family: var(--f-mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
+}
+.lib-back { color: var(--ink-dim); transition: color .3s; }
+.lib-back:hover { color: var(--lime); }
+.lib-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-left: auto; }
+.lib-tabs a { padding: .65em 1.1em; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-dim); transition: background .3s, color .3s, border-color .3s; }
+.lib-tabs a:hover { color: var(--ink); border-color: rgba(242, 240, 235, .35); }
+.lib-tabs a[aria-current="page"] { background: var(--lime); color: #0a0a0b; border-color: var(--lime); }
+.lib-head { display: grid; gap: 14px; margin-bottom: clamp(30px, 5vw, 60px); }
+.lib-head .display { font-family: var(--f-display); font-weight: 400; font-size: clamp(3rem, 9vw, 8.5rem); line-height: .86; text-transform: uppercase; }
+.lib-head p { max-width: 56ch; color: var(--ink-dim); }
+/* título da biblioteca = mesmo título animado da seção (lab/titles.js), em tamanho de página */
+.lib-head .tt { position: relative; justify-self: start; }
+.lib-head .tt[data-fx="artefatos"] { font-family: "Syne", var(--f-body); font-weight: 800; letter-spacing: -.01em; line-height: .95; font-size: clamp(2.2rem, 5.6vw, 5.4rem); }
+.lib-head .tt[data-fx="animacoes"] { font-family: "Outfit", var(--f-body); font-weight: 600; letter-spacing: .02em; line-height: 1; }
+.lib-count { font-family: var(--f-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--lime); }
+.lib-page .lab-grid { grid-template-columns: repeat(4, 1fr); }
+
+/* subseções da biblioteca Objetos 3D (Modelos · Formas · Materiais & texturas) */
+.lib-sec { margin-bottom: clamp(50px, 7vw, 100px); }
+.lib-sec__head { display: flex; align-items: baseline; gap: 16px; margin-bottom: clamp(18px, 2.4vw, 28px); padding-top: 18px; border-top: 1px solid var(--line); }
+.lib-sec__head h2 { font-family: var(--f-display); font-weight: 400; font-size: clamp(1.8rem, 3.4vw, 3.2rem); line-height: 1; text-transform: uppercase; }
+.lib-sec__head span { font-family: var(--f-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-dim); }
+
+/* artefatos interativos: cartão largo, objetos direto sobre o cartão (componente com fundo transparente) */
+.lab-card--artifacts { grid-column: 1 / -1; aspect-ratio: auto; cursor: default; }
+.lab-card--artifacts .lab-stage { position: relative; flex: none; aspect-ratio: 16 / 9; margin-block: 8px; }
+.lab-card--artifacts .lab-stage > * { position: absolute; inset: 0; }
+
+/* créditos dos modelos (licenças CC-BY) no fim da página da biblioteca */
+
+@media (max-width: 1100px) { .lib-page .lab-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px) {
+  .lab-row { grid-template-columns: 1fr; }
+  .lab-row__info { position: static; }
+  .lab-grid, .lib-page .lab-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .lab-grid, .lib-page .lab-grid { grid-template-columns: 1fr; }
+  .lab-card { aspect-ratio: 1; }
+  .lib-tabs { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lab-svg__shape { animation: none; }
+  .lab-svg .p { transition: none; }
+}
+
+/* 05 · animações do Uiverse: palco escuro, o elemento fica centralizado e escalado (Shadow DOM) */
+.lab-card--anims .lab-stage { position: relative; display: grid; place-items: center; overflow: hidden; margin-block: 8px; border-radius: 14px; background: #0c0c0e; }
+
+/* ---------- títulos das bibliotecas (home) — desenhados por lab/titles.js ---------- */
+.lab-row__info .tt { position: relative; justify-self: start; }
+.tt-w { white-space: nowrap; }
+.tt-ch { display: inline-block; }
+/* canvas (artefatos, pixel, formas): a letra real fica invisível e o canvas desenha por cima */
+.tt.is-canvas .tt-ch { color: transparent; }
+.tt-cv { position: absolute; left: -40px; top: -40px; pointer-events: none; }
+/* objetos 3D: letras extrudadas (camadas .o3-l empilhadas em Z), acabamentos como os cartões da seção */
+.tt-o3 { perspective: 700px; cursor: pointer; user-select: none; }
+.o3-stage { display: inline-block; transform-style: preserve-3d; will-change: transform; }
+.tt-o3 .tt-w { display: inline-block; transform-style: preserve-3d; }
+.tt-o3 .tt-ch { position: relative; transform-style: preserve-3d; will-change: transform; }
+.o3-l { display: block; transform: translateZ(calc(var(--i) * -.028em)); backface-visibility: visible; }
+.o3-l:not([style*="--i:0"]) { position: absolute; inset: 0; }
+/* brilho: frente branca→lilás com reflexo, lateral violeta escurecendo */
+.o3--brilho .o3-l { color: color-mix(in srgb, #7b5cff calc(100% - var(--i) * 9%), #0a0a0b); }
+.o3--brilho .o3-l[style*="--i:0"] { background: linear-gradient(170deg, #fff 0%, #f2f0eb 40%, #c9b8ff 75%, #8c5bff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+/* metal: frente cromada, lateral grafite */
+.o3--metal .o3-l { color: color-mix(in srgb, #8a8f9c calc(100% - var(--i) * 9%), #0a0a0b); }
+.o3--metal .o3-l[style*="--i:0"] { background: linear-gradient(100deg, #77777e 0%, #fff 22%, #9c9ca4 40%, #f2f0eb 58%, #5f5f66 78%, #d6d6dc 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+/* wireframe: só contornos em lima, camadas de trás mais apagadas */
+.o3--wire .o3-l { color: transparent; -webkit-text-stroke: 1px color-mix(in srgb, var(--lime) calc(100% - var(--i) * 9%), transparent); }
+.o3--wire .o3-l[style*="--i:0"] { -webkit-text-stroke: 1.5px var(--lime); }
+@media (prefers-reduced-motion: reduce) { .o3-stage, .tt-o3 .tt-ch { transform: none !important; } }
+/* cenas interativas: letras soltas em profundidade + objetos da vitrine orbitando (desenhados em CSS, tamanhos em em) */
+.tt-scene { isolation: isolate; }
+.tt-scene .tt-ch { position: relative; z-index: 1; will-change: transform; }
+.sc-box { position: absolute; inset: 0; pointer-events: none; }
+.sc-o { position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity; }
+.sc-ball { width: 1em; height: 1em; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #ffd9bd, #ff8a3d 45%, #a8400f); box-shadow: 0 .3em .6em rgba(0, 0, 0, .45); }
+.sc-card { width: 1.5em; height: .95em; border-radius: .16em; background: linear-gradient(135deg, #9b6cff, #5b2fc2); box-shadow: inset 0 -.2em 0 var(--lime), 0 .3em .6em rgba(0, 0, 0, .45); }
+.sc-phone { width: .66em; height: 1.2em; border-radius: .16em; background: linear-gradient(160deg, var(--lime), #7b5cff 70%); border: .07em solid #1a1a22; box-shadow: 0 .3em .6em rgba(0, 0, 0, .45); }
+.sc-star { width: 1em; height: 1em; background: var(--lime); clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%); filter: drop-shadow(0 0 .3em rgba(198, 244, 50, .6)); }
+.sc-ring { width: 1em; height: 1em; border-radius: 50%; border: .16em solid var(--pink); box-sizing: border-box; }
+.tt-ghost { visibility: hidden; display: inline-block; white-space: nowrap; }
+
+/* título "Artefatos 3D": Syne ExtraBold (passes de render desenhados por titles.js) */
+.lab-row__info .tt[data-fx="artefatos"] { font-family: "Syne", var(--f-body); font-weight: 800; text-transform: uppercase; letter-spacing: -.01em; line-height: .95; font-size: clamp(1.4rem, 2.1vw, 2.2rem); }
+
+/* título "Animações": fonte larga e geométrica (como o split text da referência) */
+.lab-row__info .tt[data-fx="animacoes"] { font-family: "Outfit", var(--f-body); font-weight: 600; letter-spacing: .02em; line-height: 1; }

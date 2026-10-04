@@ -1,0 +1,77 @@
+/* =========================================================
+   Órbita · o retrato no centro com painéis holográficos girando em volta
+   (recria em HTML/CSS 3D o vídeo da seção "Vamos conversar")
+   Tudo é medido em cqw (largura do cartão), então escala com o tamanho do container.
+   ========================================================= */
+.orb { position: absolute; inset: 0; overflow: hidden; container-type: inline-size; background: radial-gradient(80% 70% at 50% 45%, #0b2a2a 0%, #061416 45%, #03080a 100%); }
+.orb canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.orb__rain { opacity: .8; }
+.orb__rain--front { z-index: 3; opacity: 1; mix-blend-mode: screen; }
+.orb__px { z-index: 3; }
+.orb__scene { position: absolute; inset: 0; perspective: 140cqw; perspective-origin: 50% 30%; z-index: 2; }
+.orb__world { position: absolute; left: 50%; top: 0; width: 0; height: 100%; transform-style: preserve-3d; }
+
+/* retrato: fica em pé no centro do mundo (os painéis de trás passam por trás dele) */
+.orb__face {
+  position: absolute; left: -40cqw; top: 3cqw; width: 80cqw; height: auto;
+  transform: rotateX(var(--counter, 0deg)); transform-origin: 50% 40%;
+  filter: drop-shadow(0 0 4cqw rgba(46, 255, 160, .25)) saturate(1.05);
+  -webkit-user-drag: none; user-select: none;
+}
+
+/* anéis */
+.orb__ring { position: absolute; left: 0; transform-style: preserve-3d; }
+.orb__halo {
+  position: absolute; left: calc(var(--r) * -1); top: calc(var(--r) * -1); width: calc(var(--r) * 2); height: calc(var(--r) * 2);
+  border-radius: 50%; border: .3cqw solid color-mix(in srgb, var(--c) 55%, transparent); transform: rotateX(90deg);
+  box-shadow: 0 0 2.5cqw color-mix(in srgb, var(--c) 70%, transparent), inset 0 0 2.5cqw color-mix(in srgb, var(--c) 50%, transparent);
+}
+/* luz correndo em volta do halo (como os traços luminosos do vídeo) */
+.orb__halo::before {
+  content: ""; position: absolute; inset: -.6cqw; border-radius: 50%;
+  background: conic-gradient(from var(--spin, 0deg), transparent 0 62%, var(--c) 78%, #fff 80%, transparent 82% 100%);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 1.1cqw), #000 calc(100% - .9cqw));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 1.1cqw), #000 calc(100% - .9cqw));
+  filter: drop-shadow(0 0 1.2cqw var(--c));
+}
+
+/* painéis de vidro */
+.orb__panel {
+  position: absolute; left: calc(var(--w) / -2); top: calc(var(--h) / -2); width: var(--w); height: var(--h);
+  transform: rotateY(var(--a)) translateZ(var(--r));
+  border-radius: 1.2cqw; overflow: hidden;
+  background: linear-gradient(160deg, rgba(120, 190, 255, .28), rgba(20, 50, 90, .35) 60%, rgba(10, 30, 50, .45));
+  border: .25cqw solid rgba(150, 220, 255, .75);
+  box-shadow: 0 0 2cqw rgba(80, 200, 255, .55), inset 0 0 2cqw rgba(120, 220, 255, .25);
+  backface-visibility: visible;
+  font-family: "JetBrains Mono", ui-monospace, monospace; color: #c9f6ff;
+}
+.orb__panel--green { border-color: rgba(70, 255, 150, .85); box-shadow: 0 0 2.2cqw rgba(46, 255, 140, .6), inset 0 0 2cqw rgba(46, 255, 140, .25); background: linear-gradient(160deg, rgba(40, 255, 150, .16), rgba(5, 40, 30, .45)); }
+.orb__panel > * { transition: opacity .3s; }
+.orb__panel.is-back > :not(.orb__bar) { opacity: 0; }   /* de costas: só o vidro (sem conteúdo espelhado) */
+.orb__panel::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(255, 255, 255, .22), transparent 40%); pointer-events: none; }
+.orb__bar { height: 1.6cqw; display: flex; gap: .6cqw; align-items: center; padding: 0 1cqw; background: rgba(150, 220, 255, .18); }
+.orb__bar i { width: .8cqw; height: .8cqw; border-radius: 50%; background: #ff5f7a; }
+.orb__bar i:nth-child(2) { background: #ffd25f; } .orb__bar i:nth-child(3) { background: #5fff9a; }
+
+/* conteúdos */
+.orb__img { position: absolute; inset: 1.6cqw 0 0; width: 100%; height: calc(100% - 1.6cqw); object-fit: cover; filter: hue-rotate(-10deg) saturate(1.1) brightness(1.05); }
+.orb__code { padding: 1cqw 1.2cqw; display: grid; gap: .7cqw; }
+.orb__code span { display: block; height: .75cqw; border-radius: .4cqw; background: currentColor; opacity: .85; }
+.orb__chart { position: absolute; left: 1.4cqw; right: 1.4cqw; bottom: 1.2cqw; top: 3cqw; display: flex; align-items: flex-end; gap: .7cqw; }
+.orb__chart b { flex: 1; border-radius: .3cqw .3cqw 0 0; background: linear-gradient(#ff3fa4, #7b5cff 50%, #2effa0); animation: orb-bar 2.4s ease-in-out infinite alternate; animation-delay: calc(var(--i) * -.3s); }
+@keyframes orb-bar { from { height: calc(var(--v) * 1%); } to { height: calc(var(--v) * .45%); } }
+.orb__cube { position: absolute; inset: 1.6cqw 0 0; display: grid; place-items: center; }
+.orb__cube svg { width: 62%; height: 80%; stroke: #4dff9a; fill: rgba(46, 255, 140, .08); stroke-width: 1.4; filter: drop-shadow(0 0 1cqw #2eff8c); animation: orb-spin 6s linear infinite; }
+@keyframes orb-spin { to { transform: rotate(360deg); } }
+.orb__aa { padding: 1.4cqw; display: grid; gap: 1cqw; }
+.orb__aa strong { font: 400 6.5cqw/1 "Anton", sans-serif; color: #e8f7ff; }
+.orb__aa div { display: flex; gap: .6cqw; }
+.orb__aa div i { width: 2.6cqw; height: 2.6cqw; border-radius: .5cqw; }
+.orb__term { padding: 1cqw 1.2cqw; font-size: 1.15cqw; line-height: 1.5; color: #5dff9e; white-space: pre; text-shadow: 0 0 .8cqw #2eff8c; }
+@media (prefers-reduced-motion: reduce) { .orb__chart b, .orb__cube svg { animation: none; } }
+
+/* acabamento de tela: linhas de varredura e vinheta */
+.orb__scan { position: absolute; inset: 0; z-index: 4; pointer-events: none;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, .16) 0 1px, transparent 1px 3px), radial-gradient(120% 90% at 50% 45%, transparent 55%, rgba(0, 0, 0, .55));
+  mix-blend-mode: multiply; }

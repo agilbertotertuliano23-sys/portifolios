@@ -1,0 +1,80 @@
+[
+  {
+    "file": "assets/hero-alex-v2.webp",
+    "width": 1122,
+    "height": 1402,
+    "hasAlpha": true,
+    "alphaRange": [
+      0,
+      255
+    ],
+    "pngBytes": 1462617,
+    "webpBytes": 167140
+  },
+  {
+    "file": "assets/instructor-alex-v2.webp",
+    "width": 1122,
+    "height": 1402,
+    "hasAlpha": true,
+    "alphaRange": [
+      0,
+      255
+    ],
+    "pngBytes": 1343447,
+    "webpBytes": 150106
+  },
+  {
+    "file": "assets/class1-v2.webp",
+    "width": 1122,
+    "height": 1402,
+    "hasAlpha": false,
+    "alphaRange": null,
+    "pngBytes": 2041243,
+    "webpBytes": 135950
+  },
+  {
+    "file": "assets/class2-v2.webp",
+    "width": 1122,
+    "height": 1402,
+    "hasAlpha": false,
+    "alphaRange": null,
+    "pngBytes": 2177476,
+    "webpBytes": 183264
+  },
+  {
+    "file": "assets/class3-v2.webp",
+    "width": 1122,
+    "height": 1402,
+    "hasAlpha": false,
+    "alphaRange": null,
+    "pngBytes": 1917927,
+    "webpBytes": 124612
+  },
+  {
+    "file": "assets/orientacao-treino-v2.webp",
+    "width": 1536,
+    "height": 1024,
+    "hasAlpha": false,
+    "alphaRange": null,
+    "pngBytes": 2205907,
+    "webpBytes": 176472
+  },
+  {
+    "file": "assets/materiais-apoio-v2.webp",
+    "width": 1536,
+    "height": 1024,
+    "hasAlpha": false,
+    "alphaRange": null,
+    "pngBytes": 2689282,
+    "webpBytes": 273118
+  },
+  {
+    "file": "assets/comunidade-inovfit-v2.webp",
+    "width": 1536,
+    "height": 1024,
+    "hasAlpha": false,
+    "alphaRange": null,
+    "pngBytes": 2360217,
+    "webpBytes": 197780
+  }
+]

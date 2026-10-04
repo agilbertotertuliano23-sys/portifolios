@@ -1,0 +1,52 @@
+[
+  {
+    "key": "podcast",
+    "file": "cenario-podcast-v3.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\hero_model.png",
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\market_woman.png"
+    ],
+    "transparent": false,
+    "prompt": "Use case: identity-preserve.\nAsset type: additional lifestyle photograph for the same fitness influencer, landscape 3:2.\nInput images 1 and 2: identity references only, ignore all typography and graphic backgrounds.\nPrimary request: photorealistic candid editorial photo of this influencer recording a wellness podcast in a modern intimate audio studio. Use the same adult woman from both supplied reference pictures, preserving her recognizable facial identity, shoulder-length dark brown softly wavy bob with a side part, almond-shaped brown-hazel eyes, natural eyebrows, lips and nose, light-to-medium skin and natural athletic build. Real skin texture and consistent age, no face redesign.\nShe is seated at a dark wood table in three-quarter view, wearing a relaxed lilac blazer over a plain black crew-neck T-shirt, large neutral black over-ear headphones. A professional black microphone on a boom arm is positioned near but not hiding her face. She smiles mid-conversation with a natural small open-hand gesture; other hand rests beside a glass of water and simple notes with no readable writing. Acoustic wall panels and subtle purple accent lighting in softly blurred background, warm key light flattering real skin, authentic fabric and equipment details. Frame waist-up with complete head and both hands, face easy to recognize.\nConstraints: same adult woman and haircut, realistic hands, no audience metrics, no podcast logo, readable text, brand marks, watermark, screen UI, frame or collage."
+  },
+  {
+    "key": "pilates",
+    "file": "cenario-pilates-v3.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\hero_model.png",
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\market_woman.png"
+    ],
+    "transparent": false,
+    "prompt": "Use case: identity-preserve.\nAsset type: additional fitness editorial photograph for the same influencer, landscape 3:2.\nInput images 1 and 2: face and identity references only.\nPrimary request: natural high-resolution photograph of this influencer during a calm seated exercise in a bright boutique Pilates studio. Use the same adult woman from both supplied reference pictures, preserving her recognizable facial identity, shoulder-length dark brown softly wavy bob with a side part, almond-shaped brown-hazel eyes, natural eyebrows, lips and nose, light-to-medium skin and natural athletic build. Real skin texture and consistent age, no face redesign.\nShe wears a plain lilac long-sleeve athletic shirt, full-length charcoal leggings and grip socks. Sitting upright on a wooden Pilates reformer carriage, facing camera at a three-quarter angle, feet naturally supported, she gently holds the two resistance handles beside her waist, elbows bent, shoulders relaxed, neutral spine. No extreme stretch or contortion. Full figure and much of the reformer visible, authentic wood and black padded machine details, pale plaster walls, soft linen curtains, one green plant and gentle diffused window daylight. Warm light neutral studio with restrained purple wardrobe, serene focused expression, natural face and body anatomy.\nConstraints: same face and shoulder-length hairstyle, fully clothed ordinary exercise pose, physically plausible equipment, no exaggerated anatomy, no logos, instructional text, watermark, UI or collage."
+  },
+  {
+    "key": "bicicleta",
+    "file": "cenario-bicicleta-v3.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\hero_model.png",
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\market_woman.png"
+    ],
+    "transparent": false,
+    "prompt": "Use case: identity-preserve.\nAsset type: additional outdoor lifestyle editorial photograph for a fitness influencer, landscape 3:2.\nInput images 1 and 2: same-person face and hair references only.\nPrimary request: a photorealistic candid photograph of the influencer riding a city bicycle along a safe separated paved cycle lane in a leafy urban park. Use the same adult woman from both supplied reference pictures, preserving her recognizable facial identity, shoulder-length dark brown softly wavy bob with a side part, almond-shaped brown-hazel eyes, natural eyebrows, lips and nose, light-to-medium skin and natural athletic build. Real skin texture and consistent age, no face redesign.\nShe wears a muted violet lightweight windbreaker, full-length dark sports leggings, plain neutral sneakers and a properly fitted matte black cycling helmet; a little of her wavy shoulder-length hair is visible beneath it. Both hands naturally hold handlebars, both feet on pedals, gentle relaxed riding posture, subtle smile, recognizable face shown in front three-quarter angle. Capture complete bicycle with two realistic wheels and full rider inside canvas, slight environmental motion only in background. Green trees, sunlit modern park path, soft morning light, no cars nearby. Environmental composition with room around subject, authentic bicycle geometry and natural skin.\nConstraints: same adult face and build, practical clothing, correct arms/hands, safe plausible cycling, no racing competition, text, logos, watermark, UI or collage."
+  },
+  {
+    "key": "viagem",
+    "file": "cenario-viagem-v3.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\hero_model.png",
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\market_woman.png"
+    ],
+    "transparent": false,
+    "prompt": "Use case: identity-preserve.\nAsset type: additional travel lifestyle photograph of a fitness influencer, landscape 3:2.\nInput images 1 and 2: identity references only, not clothing or scene references.\nPrimary request: natural editorial photograph of this influencer in a bright contemporary airport departure concourse by large windows. Use the same adult woman from both supplied reference pictures, preserving her recognizable facial identity, shoulder-length dark brown softly wavy bob with a side part, almond-shaped brown-hazel eyes, natural eyebrows, lips and nose, light-to-medium skin and natural athletic build. Real skin texture and consistent age, no face redesign.\nShe wears a relaxed lavender sweatshirt, comfortable dark straight-leg trousers and clean white sneakers, a small plain charcoal shoulder bag. Standing casually beside a small black rolling carry-on suitcase with one hand on its handle and holding a plain takeaway cup in the other, she looks toward the camera with a relaxed warm smile. Show full head and feet, suitcase complete, figure centered with useful surrounding travel context. Out-of-focus airport seating, structural windows and a distant airplane outside; no readable departure board or airline logos. Soft daylight, modern architecture, believable travel-day moment, natural body and fabric texture.\nConstraints: same recognizable adult woman, no passport or personal data, no real brand endorsement, no readable signs, text overlays, watermark, UI or collage."
+  },
+  {
+    "key": "evento",
+    "file": "cenario-evento-fitness-v3.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\hero_model.png",
+      "C:\\Users\\agilb\\Downloads\\web\\fitness-wave-pitch-deck\\assets\\market_woman.png"
+    ],
+    "transparent": false,
+    "prompt": "Use case: identity-preserve.\nAsset type: additional behind-the-scenes creator editorial photograph, landscape 3:2.\nInput images 1 and 2: same-person identity references only.\nPrimary request: photorealistic lifestyle photograph of this influencer creating coverage at a fictional fitness and wellness exhibition. Use the same adult woman from both supplied reference pictures, preserving her recognizable facial identity, shoulder-length dark brown softly wavy bob with a side part, almond-shaped brown-hazel eyes, natural eyebrows, lips and nose, light-to-medium skin and natural athletic build. Real skin texture and consistent age, no face redesign.\nShe wears an elegant simple black crew-neck T-shirt under a lilac casual jacket with dark comfortable trousers. Standing in a bright exhibition aisle, she faces a smartphone mounted on a compact handheld gimbal in one hand, speaking naturally to camera with a friendly engaged smile while the other hand makes a small expressive gesture. Frame from head through upper legs with complete head and both hands, face unobstructed. Behind her: softly blurred generic purple-and-white exhibition stands, a few indistinct adults in casual clothing, neutral fitness equipment displays and warm overhead event lighting. Natural editorial documentary composition, believable gimbal/phone geometry and skin texture.\nConstraints: same woman, this is an imagined event with NO logos, sponsors, real companies, legible signage, identity badges, engagement metrics, text, watermark, UI or collage."
+  }
+]

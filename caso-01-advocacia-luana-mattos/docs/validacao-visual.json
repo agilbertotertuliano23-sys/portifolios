@@ -1,0 +1,162 @@
+[
+  {
+    "width": 1440,
+    "scrollWidth": 1440,
+    "images": [
+      {
+        "src": "assets/papeis-v2.webp",
+        "loaded": true,
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "assets/papeis-v2.webp",
+        "loaded": true,
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "assets/tema-contratos-v2.webp",
+        "loaded": true,
+        "width": 1536,
+        "height": 1024
+      },
+      {
+        "src": "assets/tema-assinatura-v2.webp",
+        "loaded": true,
+        "width": 1536,
+        "height": 1024
+      },
+      {
+        "src": "assets/tema-escritorio-v2.webp",
+        "loaded": true,
+        "width": 1536,
+        "height": 1024
+      }
+    ],
+    "hero": "url(\"file:///C:/Users/agilb/Downloads/web/luana-mattos-advocacia/assets/hero-luana-v2.webp\")",
+    "bio": "url(\"file:///C:/Users/agilb/Downloads/web/luana-mattos-advocacia/assets/bio-luana-v2.webp\")",
+    "tabsWork": true,
+    "errors": []
+  },
+  {
+    "width": 768,
+    "scrollWidth": 768,
+    "images": [
+      {
+        "src": "assets/papeis-v2.webp",
+        "loaded": true,
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "assets/papeis-v2.webp",
+        "loaded": true,
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "assets/tema-contratos-v2.webp",
+        "loaded": true,
+        "width": 1536,
+        "height": 1024
+      },
+      {
+        "src": "assets/tema-assinatura-v2.webp",
+        "loaded": true,
+        "width": 1536,
+        "height": 1024
+      },
+      {
+        "src": "assets/tema-escritorio-v2.webp",
+        "loaded": true,
+        "width": 1536,
+        "height": 1024
+      }
+    ],
+    "hero": "url(\"file:///C:/Users/agilb/Downloads/web/luana-mattos-advocacia/assets/hero-luana-v2.webp\")",
+    "bio": "url(\"file:///C:/Users/agilb/Downloads/web/luana-mattos-advocacia/assets/bio-luana-v2.webp\")",
+    "tabsWork": true,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "scrollWidth": 390,
+    "images": [
+      {
+        "src": "assets/papeis-v2.webp",
+        "loaded": true,
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "assets/papeis-v2.webp",
+        "loaded": true,
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "assets/tema-contratos-v2.webp",
+        "loaded": true,
+        "width": 1536,
+        "height": 1024
+      },
+      {
+        "src": "assets/tema-assinatura-v2.webp",
+        "loaded": true,
+        "width": 1536,
+        "height": 1024
+      },
+      {
+        "src": "assets/tema-escritorio-v2.webp",
+        "loaded": true,
+        "width": 1536,
+        "height": 1024
+      }
+    ],
+    "hero": "url(\"file:///C:/Users/agilb/Downloads/web/luana-mattos-advocacia/assets/hero-luana-v2.webp\")",
+    "bio": "url(\"file:///C:/Users/agilb/Downloads/web/luana-mattos-advocacia/assets/bio-luana-v2.webp\")",
+    "tabsWork": true,
+    "errors": []
+  },
+  {
+    "width": 320,
+    "scrollWidth": 320,
+    "images": [
+      {
+        "src": "assets/papeis-v2.webp",
+        "loaded": true,
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "assets/papeis-v2.webp",
+        "loaded": true,
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "assets/tema-contratos-v2.webp",
+        "loaded": true,
+        "width": 1536,
+        "height": 1024
+      },
+      {
+        "src": "assets/tema-assinatura-v2.webp",
+        "loaded": true,
+        "width": 1536,
+        "height": 1024
+      },
+      {
+        "src": "assets/tema-escritorio-v2.webp",
+        "loaded": true,
+        "width": 1536,
+        "height": 1024
+      }
+    ],
+    "hero": "url(\"file:///C:/Users/agilb/Downloads/web/luana-mattos-advocacia/assets/hero-luana-v2.webp\")",
+    "bio": "url(\"file:///C:/Users/agilb/Downloads/web/luana-mattos-advocacia/assets/bio-luana-v2.webp\")",
+    "tabsWork": true,
+    "errors": []
+  }
+]

@@ -1,0 +1,46 @@
++-------------------------------------------------------------------------------------+
+| nav                                                                                  |
+| [t1: LUANA MATTOS - ADVOCACIA & ASSESSORIA JURÍDICA]                                 |
++-------------------------------------------------------------------------------------+
+| hero                                                                                |
+| +-------------------------------------------------------+ +-------------------------+ |
+| | [h1: Proteja seu negócio com contratos bem...]        | | [img: hero_lawyer_desk] | |
+| | [t1: Elaboramos contratos claros e objetivos para...] | |                         | |
+| | [btn: Saiba mais]                                     | |                         | |
+| +-------------------------------------------------------+ +-------------------------+ |
++-------------------------------------------------------------------------------------+
+| section_practice_areas (Áreas de atuação)                                           |
+| [h2: Áreas de atuação]                                                              |
+| +-----------------------+ +-----------------------+ +-------------------------------+ |
+| | card_area1            | | card_area2            | | card_area3                    | |
+| | [ico:contract]        | | [ico:scales]          | | [ico:courthouse]              | |
+| | [h3: Direito Contratual]| | [h3: Direito Civil]   | | [h3: Execução Cível]        | |
+| | [t2: Regulamentação...] | | [t2: Trata das...]  | | [t2: Atuação em...]         | |
+| +-----------------------+ +-----------------------+ +-------------------------------+ |
+| [tabs: Direito do Trabalho | Direito do Consumidor | Direito Previdenciário]        |
+| [banner_brasil: [ico:map] Atendimento em todo o Brasil]                             |
++-------------------------------------------------------------------------------------+
+| section_bio (Dra. Luana Mattos)                                                     |
+| +-------------------------------------------------------+ +-------------------------+ |
+| | [img: bio_lawyer_desk]                                | | [h2: Dra. Luana Mattos] | |
+| |                                                       | | [t1: Advogada formada...| |
+| |                                                       | | [t1: Com experiência... | |
+| |                                                       | | [btn: Obter ajuda ...] | |
+| +-------------------------------------------------------+ +-------------------------+ |
++-------------------------------------------------------------------------------------+
+| section_articles (Temas importantes)                                                |
+| [h2: Temas importantes:]                                                            |
+| +-----------------------+ +-----------------------+ +-------------------------------+ |
+| | post1                 | | post2                 | | post3                         | |
+| | [img: signing_contract| | [img: typing_laptop]  | | [img: spectacles_document]   | |
+| | [h3: Lorem ipsum...]  | | [h3: Curabitur...]    | | [h3: Suspendisse...]          | |
+| | [t2: Etiam eu...]     | | [t2: Nam bibendum...] | | [t2: Aenean fringilla...]   | |
+| +-----------------------+ +-----------------------+ +-------------------------------+ |
++-------------------------------------------------------------------------------------+
+| section_contact_map                                                                 |
+| [bar_contact: (67) 99999-9999 | seuemail@gmail.com | Centro, Dourados/MS]            |
+| [img: google_map_dourados]                                                          |
++-------------------------------------------------------------------------------------+
+| footer                                                                              |
+| [t3: Copyright © 2024. Todos os direitos reservados.]                               |
++-------------------------------------------------------------------------------------+

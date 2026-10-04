@@ -1,0 +1,57 @@
+[
+  {
+    "key": "hero",
+    "file": "hero-luana-v2.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\luana-mattos-advocacia\\assets\\hero-luana.jpg"
+    ],
+    "transparent": false,
+    "prompt": "Use case: identity-preserve.\nAsset type: high-resolution hero photograph for a Brazilian law office website, landscape 3:2.\nInput image 1: edit target and identity/composition reference, a low-resolution supplied photograph.\nPrimary request: recreate this same office portrait as a clean, sharp, photorealistic professional photograph. Preserve the woman's facial identity, brown hair pulled back, gentle closed-mouth smile, black textured blazer with white cuffs and blouse, wristwatch, chin resting on her hand while holding eyeglasses. Preserve the dark leather executive chair, wooden desktop and shelves with binders behind her. Frame waist-up, woman slightly right of center with unobstructed face and natural hands. Warm soft daylight, natural skin and fabric texture, restrained warm wood and burgundy environment. Remove the flying foreground papers and remove the artificial red overlay; show a clean office photo with softly blurred shelves. Keep useful room around her shoulders and head, and desktop along bottom; this photo will be cropped by the site.\nConstraints: one woman, same person as reference, no redesign of face, no extra fingers, no text or lettering, no logo, no watermark, no UI, no collage."
+  },
+  {
+    "key": "bio",
+    "file": "bio-luana-v2.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\luana-mattos-advocacia\\assets\\bio-luana.jpg",
+      "C:\\Users\\agilb\\Downloads\\web\\luana-mattos-advocacia\\assets\\hero-luana.jpg"
+    ],
+    "transparent": false,
+    "prompt": "Use case: identity-preserve.\nAsset type: high-resolution biography photograph for a Brazilian law office website, landscape 3:2.\nInput image 1: edit target and pose/scene reference. Input image 2: supporting facial identity reference of the same woman.\nPrimary request: recreate image 1 as a clean, sharp, photorealistic office photograph. Preserve the same woman's face, brown pulled-back hair, natural smile and black textured blazer over a white blouse. She sits at a wooden desk, looking at the camera, holding two white contract pages naturally in one hand; other hand resting on the desk near a black tablet. Silver laptop open at far left, warm wood shelving with books, a small potted plant and modest clock in background, black leather chair. Reframe the woman in the center-left, face at about 43 percent of image width, so the right edge may fade into website background. Waist-up portrait, head fully visible, desk across bottom. Soft window daylight, realistic skin and fabric texture, subtle warm wood tones.\nConstraints: same person in both supplied references, preserve outfit and office style, remove artificial red overlay and floating paper at top. No legible writing, logos, watermark, collage or UI; natural hands with correct anatomy."
+  },
+  {
+    "key": "contratos",
+    "file": "tema-contratos-v2.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\luana-mattos-advocacia\\assets\\tema-contratos.jpg"
+    ],
+    "transparent": false,
+    "prompt": "Use case: photorealistic-natural.\nAsset type: law website article thumbnail, landscape 3:2.\nInput image 1: low-resolution composition reference to recreate cleanly.\nPrimary request: a sharp editorial close-up photograph of a legal consultation across a warm wooden table. Only the torsos and hands of two business professionals visible, no faces. Dark-suited professional on left points with a pen to a contract lying on the table, person wearing a light blouse on right holds a separate sheet. Several orderly contract pages, two white porcelain coffee cups on saucers near opposite edges. Camera at a slightly elevated oblique angle, natural office daylight, authentic wood grain, neutral white and warm brown palette, professional calm mood. Fill frame with interaction and paperwork, no borders.\nConstraints: match reference composition and subject, anatomically correct hands, paper text indistinct and unreadable, no logos, no watermark, no website text, no UI or collage."
+  },
+  {
+    "key": "assinatura",
+    "file": "tema-assinatura-v2.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\luana-mattos-advocacia\\assets\\tema-assinatura.jpg"
+    ],
+    "transparent": false,
+    "prompt": "Use case: photorealistic-natural.\nAsset type: law website article thumbnail, landscape 3:2.\nInput image 1: low-resolution composition reference to recreate cleanly.\nPrimary request: sharp natural editorial photograph, close-up of a person in a light ivory blouse signing a contract with a silver pen on a pale desk. Face entirely outside the frame. Writing hand on the left side of image, other hand rests naturally on right side of the page. One neat stack of white papers with subtle indistinct gray print, subject's torso softly blurred behind, soft daylight, shallow depth of field focused on pen tip and natural hands, ivory and neutral gray palette with gentle warm light. Simple uncluttered framing.\nConstraints: match reference action and composition, anatomically plausible five-fingered hands, no legible writing or signature, no logos, watermark, borders, text overlays, UI or collage."
+  },
+  {
+    "key": "escritorio",
+    "file": "tema-escritorio-v2.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\luana-mattos-advocacia\\assets\\tema-escritorio.jpg"
+    ],
+    "transparent": false,
+    "prompt": "Use case: photorealistic-natural.\nAsset type: law website article thumbnail, landscape 3:2.\nInput image 1: low-resolution composition reference to recreate cleanly.\nPrimary request: sharp, elegant overhead editorial photograph of a minimal ivory office desktop. A white compact keyboard enters diagonally from the upper-left edge. Thin dark tortoiseshell eyeglasses rest near upper-right. A tidy cream folder with white document pages enters diagonally from lower-right. A slim neutral pen and edge of a pale notebook along lower-left. Open negative space in center. Soft side daylight, delicate shadows, authentic subtle paper texture, pale beige, ivory and soft gray palette. No people.\nConstraints: preserve the reference arrangement, no logos, no readable document text, no watermarks, no UI, no borders, no collage."
+  },
+  {
+    "key": "papeis",
+    "file": "papeis-v2.png",
+    "refs": [
+      "C:\\Users\\agilb\\Downloads\\web\\luana-mattos-advocacia\\assets\\papeis.jpg"
+    ],
+    "transparent": true,
+    "prompt": "Use case: background-extraction.\nAsset type: transparent decorative paper overlay for a burgundy law office landing page, square canvas.\nInput image 1: reference for floating-paper arrangement and softly lit paper appearance.\nPrimary request: recreate only the three loose floating contract sheets as a crisp high-resolution photorealistic cutout on a genuinely transparent background. Two softly curved ivory sheets grouped at upper left, one separate curling sheet toward lower right. Delicate muted warm pink reflected light on edges, natural thin paper texture, subtle faint gray unreadable document lines. Airy diagonal arrangement, all sheets fully inside canvas with a small clear margin, subtle depth and slight motion softness on farther sheet only.\nConstraints: remove the entire burgundy background to transparency, no opaque rectangle, no checkerboard baked into image, no tabletop, no people, no extra objects, no legible text, no watermark, preserve translucent antialiased paper edges."
+  }
+]

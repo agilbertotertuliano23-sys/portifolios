@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animações · Biblioteca · Vinicius</title>
+  <meta name="description" content="Catálogo de animações do laboratório de Vinicius.">
+  <link rel="icon" href="../assets/logo/marca.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Geist:wght@200;300;400;500;600;700;800&family=Questrial&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <!-- fonte do título animado desta biblioteca (só as letras usadas) -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600&amp;family=Syne:wght@800&amp;text=%20.3ACDEFGIMNOPRSTXabdeghijlmnprstu%C3%87%C3%95&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=lab1">
+  <link rel="stylesheet" href="../lab/lab.css?v=21">
+</head>
+<body>
+  <main class="lib-page">
+    <nav class="lib-bar" aria-label="Bibliotecas">
+      <a class="lib-back" href="../index.html#modelos">← Voltar ao portfólio</a>
+      <div class="lib-tabs">
+        <a href="artefatos-3d.html">01 · Artefatos 3D</a>
+        <a href="objetos-3d.html">02 · Objetos 3D</a>
+        <a href="pixel-art.html">03 · Pixel art</a>
+        <a href="formas-2d.html">04 · Formas 2D</a>
+        <a href="animacoes.html" aria-current="page">05 · Animações</a>
+        <a href="cenas-interativas.html">06 · Cenas interativas</a>
+      </div>
+    </nav>
+    <header class="lib-head">
+      <span class="lib-count">Biblioteca 05 · 12 animações</span>
+      <h1 class="display tt" data-fx="animacoes">Animações</h1>
+      <p>Doze animações geométricas do Uiverse — neon, wireframes e ondas. Passe o mouse para acelerar; clique para trocar a velocidade.</p>
+    </header>
+    <div class="lab-grid" data-lab="anims"></div>
+  </main>
+
+  <script type="importmap">
+  { "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  } }
+  </script>
+  <script type="module" src="../lab/lab.js?v=33"></script>
+  <!-- o título da biblioteca usa o mesmo efeito do título da seção na home -->
+  <script type="module" src="../lab/titles.js?v=22"></script>
+</body>
+</html>

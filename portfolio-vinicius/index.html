@@ -1,0 +1,999 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vinicius — Portfólio</title>
+  <meta name="description" content="Vinicius — design, desenvolvimento e sistemas com IA para marcas que querem ser lembradas.">
+  <link rel="icon" href="assets/logo/marca.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- bibliotecas vêm dessas CDNs: abre a conexão cedo -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Geist:wght@200;300;400;500;600;700;800&family=Questrial&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <!-- fontes de marca (só os nomes do letreiro e dois títulos do laboratório): baixa só as letras usadas -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Newsreader:opsz,wght@6..72,500&amp;family=Nunito:ital,wght@1,900&amp;family=Outfit:wght@600&amp;family=Poppins:wght@800&amp;family=Syne:wght@800&amp;text=%20.3ACDEFGIMNOPRSTXabdeghijlmnprstu%C3%87%C3%95&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=nos3d">
+  <link rel="stylesheet" href="orbita/orbita.css?v=2">
+  <link rel="stylesheet" href="servicos/servicos.css?v=3">
+  <link rel="stylesheet" href="destaques/destaques.css?v=8">
+  <link rel="stylesheet" href="lab/lab.css?v=23">
+</head>
+<body>
+
+  <!-- ============ PRELOADER ============ -->
+  <!-- modelo do reel: personagem em loop no centro, contador grande e fino no canto, nome gigante; ao chegar a 100 o personagem sobe e some -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__top"><span>Vinicius Araújo</span><span data-loader-clock>--:--</span><span>Sites · Marcas · 3D</span></div>
+    <video class="loader__video" autoplay muted loop playsinline preload="auto" poster="assets/preloader/dev-cafe-poster.jpg">
+      <source src="assets/preloader/dev-cafe.webm" type="video/webm">
+      <source src="assets/preloader/dev-cafe.mp4" type="video/mp4">
+    </video>
+    <div class="loader__name">Vinicius<br>— 2026</div>
+    <div class="loader__count"><span data-count>0</span><sup>%</sup><small>sentindo o ambiente…</small></div>
+    <div class="loader__bar"><i></i></div>
+  </div>
+
+  <!-- ============ INTRO (entre o preloader e a hero) ============
+       o símbolo da logo se monta no centro → legendas entram à esquerda e à direita → o nome aparece ao lado do símbolo
+       → o conjunto voa até a posição da logo no menu enquanto a hero abre. Clique para pular. -->
+  <div class="intro" aria-hidden="true">
+    <div class="intro__brand">
+      <svg class="logo-mark" viewBox="0 0 40 40">
+        <polygon class="lp lp1" points="3,6 13,6 22.5,32 13.5,32"/>
+        <polygon class="lp lp2" points="22.5,6 37,6 22,30.5"/>
+        <circle class="lp lp3" cx="18.5" cy="33.5" r="4.2"/>
+      </svg>
+      <span class="logo-name">vinicius<i>.</i></span>
+    </div>
+    <p class="intro__cap intro__cap--l">Oi. Eu sou o Vinicius.</p>
+    <p class="intro__cap intro__cap--r">Crio pra ser <em>sentido</em>.</p>
+    <p class="intro__cap intro__cap--l">Sites, marcas</p>
+    <p class="intro__cap intro__cap--r">e experiências 3D com <em>IA</em>.</p>
+    <p class="intro__cap intro__cap--l">Entra,</p>
+    <p class="intro__cap intro__cap--r">a casa é <em>sua</em>.</p>
+    <span class="intro__skip">clique para pular</span>
+  </div>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+
+  <!-- gradientes SVG compartilhados -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <radialGradient id="gStar" cx="35%" cy="30%"><stop offset="0" stop-color="#fff"/><stop offset=".35" stop-color="#c9b8ff"/><stop offset="1" stop-color="#6a4cff"/></radialGradient>
+      <radialGradient id="gHeart" cx="35%" cy="30%"><stop offset="0" stop-color="#ffb3b3"/><stop offset=".4" stop-color="#ff2a3d"/><stop offset="1" stop-color="#8a0012"/></radialGradient>
+      <!-- cores oficiais do logo da Figma -->
+      <linearGradient id="gFigma" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#F24E1E"/><stop offset=".3" stop-color="#FF7262"/><stop offset=".55" stop-color="#A259FF"/>
+        <stop offset=".78" stop-color="#1ABCFE"/><stop offset="1" stop-color="#0ACF83"/>
+      </linearGradient>
+      <!-- face frontal dos ícones 3D: preto brilhante com reflexo -->
+      <linearGradient id="g3dFront" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#6b6b6b"/><stop offset=".22" stop-color="#1c1c1c"/>
+        <stop offset=".6" stop-color="#050505"/><stop offset=".85" stop-color="#1a1a1a"/><stop offset="1" stop-color="#4a3a33"/>
+      </linearGradient>
+      <radialGradient id="gFl" cx="40%" cy="35%"><stop offset="0" stop-color="#f6d7ff"/><stop offset=".45" stop-color="#b44bff"/><stop offset="1" stop-color="#5a0fa8"/></radialGradient>
+    </defs>
+  </svg>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <!-- logo: monograma "V" montado com as peças geométricas do site (barra, cunha violeta, disco lima) + nome.
+         No hover as peças se desmontam e voltam como borracha. -->
+    <a href="#top" class="nav__logo" aria-label="Vinicius — voltar ao início">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <polygon class="lp lp1" points="3,6 13,6 22.5,32 13.5,32"/>
+        <polygon class="lp lp2" points="22.5,6 37,6 22,30.5"/>
+        <circle class="lp lp3" cx="18.5" cy="33.5" r="4.2"/>
+      </svg>
+      <span class="logo-name" aria-hidden="true">vinicius<i>.</i></span>
+    </a>
+    <nav class="nav__links">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#numeros">Fatos</a>
+    </nav>
+    <a href="#contato" class="btn btn--shine btn--gradient magnetic"><span>Fale comigo</span></a>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO (modelo pôster "WINGS": nome espalhado, faixa panorâmica, citação) ============ -->
+    <section class="hero hero--v3">
+      <!-- hero = o vídeo "BEM VINDO" inteiro (sem recorte), cobrindo a tela; o conteúdo fica por cima -->
+      <div class="hero__strip hero__strip--video hero__bgvid" aria-hidden="true">
+        <video class="hero__img" autoplay muted loop playsinline preload="auto" poster="assets/hero/bem-vindo-poster.webp" width="1280" height="720">
+          <source src="assets/hero/bem-vindo.webm" type="video/webm">
+          <source src="assets/hero/bem-vindo.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <div class="hero__bottom">
+        <div class="hero__lead">
+          <div>
+            <h1 class="hero__head reveal-up">Design, código<br>e IA que <em>voam.</em></h1>
+            <div class="hero__cta reveal-up">
+              <a href="#projetos" class="btn btn--shine btn--gradient magnetic"><span>Ver projetos</span></a>
+              <a href="#contato" class="hero__ghost">Fale comigo <span>↗</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE STACK ============ -->
+    <section class="logos" aria-label="Ferramentas">
+      <div class="marquee">
+        <div class="marquee__track">
+          <span class="tool tool--figma"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"/></svg><span class="tool__name">Figma</span></span><b>✦</b><span class="tool tool--gsap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.83,7.59C10.647,7.595 11.267,7.828 11.672,8.282C12.055,8.713 12.239,9.336 12.219,10.132L12.205,10.193C12.197,10.211 12.185,10.229 12.17,10.243C12.14,10.272 12.099,10.288 12.057,10.288L10.398,10.288C10.29,10.288 10.199,10.2 10.199,10.093C10.199,9.669 10.071,9.435 9.809,9.383L9.689,9.372C9.347,9.372 9.125,9.583 9.119,9.951C9.112,10.361 9.344,10.734 10.004,11.374C10.872,12.19 11.221,12.913 11.204,13.867C11.177,15.411 10.127,16.41 8.531,16.41C7.716,16.41 7.093,16.191 6.678,15.761C6.258,15.324 6.066,14.683 6.106,13.855C6.108,13.813 6.125,13.772 6.155,13.743C6.185,13.714 6.226,13.698 6.267,13.698L7.983,13.698C8.007,13.699 8.03,13.705 8.052,13.715C8.073,13.726 8.092,13.741 8.107,13.76C8.12,13.775 8.129,13.793 8.135,13.813C8.14,13.832 8.141,13.853 8.137,13.873C8.118,14.171 8.171,14.394 8.288,14.518C8.363,14.598 8.469,14.639 8.599,14.639C8.916,14.639 9.102,14.414 9.109,14.024C9.115,13.687 9.007,13.39 8.427,12.792C7.676,12.058 7.003,11.3 7.024,10.108C7.037,9.416 7.311,8.784 7.798,8.327C8.312,7.845 9.014,7.59 9.83,7.59ZM4.047,7.618C4.794,7.612 5.381,7.842 5.789,8.303C6.221,8.79 6.44,9.524 6.441,10.485C6.44,10.527 6.422,10.567 6.392,10.597C6.362,10.626 6.322,10.643 6.28,10.643L4.479,10.643C4.448,10.642 4.417,10.629 4.395,10.607C4.373,10.584 4.361,10.553 4.36,10.522C4.346,9.899 4.172,9.576 3.828,9.538L3.757,9.534C3.067,9.535 2.66,10.472 2.444,10.992C2.142,11.719 1.988,12.507 2.018,13.293C2.033,13.659 2.092,14.173 2.438,14.386C2.746,14.575 3.185,14.45 3.451,14.24C3.716,14.031 3.93,13.669 4.02,13.339C4.033,13.293 4.033,13.258 4.021,13.241C4.015,13.233 4.003,13.229 3.989,13.226L3.485,13.222C3.461,13.222 3.436,13.216 3.414,13.206C3.392,13.196 3.372,13.181 3.356,13.162C3.344,13.148 3.335,13.13 3.331,13.112C3.327,13.093 3.327,13.074 3.331,13.056L3.647,11.682C3.663,11.611 3.726,11.558 3.804,11.548L3.804,11.545L6.839,11.545C6.846,11.545 6.854,11.545 6.86,11.546C6.939,11.556 6.995,11.63 6.994,11.71L6.994,11.714L6.678,13.085C6.661,13.163 6.583,13.22 6.494,13.22L6.113,13.22C6.1,13.22 6.086,13.225 6.075,13.233C6.064,13.241 6.056,13.253 6.052,13.266C5.7,14.46 5.223,15.282 4.594,15.775C4.058,16.195 3.399,16.391 2.517,16.391C1.725,16.391 1.191,16.136 0.738,15.633C0.14,14.967 -0.107,13.879 0.043,12.566C0.313,10.103 1.589,7.618 4.047,7.618ZM21.016,7.75C23.026,7.75 24.03,8.662 23.999,10.461C23.962,12.569 22.678,14.119 20.745,14.477C20.47,14.527 20.191,14.547 19.912,14.545L18.978,14.541C18.963,14.541 18.948,14.547 18.937,14.558C18.926,14.568 18.92,14.583 18.92,14.598C18.92,14.608 18.922,14.618 18.928,14.627C18.933,14.636 18.941,14.643 18.95,14.648L19.744,15.062C19.809,15.096 19.835,15.153 19.82,15.226C19.815,15.249 19.618,16.139 19.613,16.159C19.596,16.237 19.533,16.282 19.442,16.282L17.739,16.282C17.715,16.282 17.69,16.277 17.668,16.267C17.646,16.257 17.626,16.241 17.61,16.223C17.598,16.208 17.589,16.191 17.585,16.173C17.58,16.155 17.581,16.135 17.585,16.116L19.481,7.875C19.5,7.789 19.581,7.751 19.653,7.751L21.016,7.75ZM17.273,7.762C17.292,7.77 17.31,7.781 17.324,7.795C17.338,7.81 17.351,7.828 17.358,7.847C17.366,7.866 17.369,7.886 17.369,7.906L17.358,16.119C17.361,16.138 17.36,16.158 17.355,16.177C17.35,16.196 17.34,16.213 17.328,16.228C17.313,16.245 17.295,16.259 17.274,16.268C17.254,16.277 17.232,16.282 17.21,16.281L15.397,16.281C15.377,16.282 15.356,16.277 15.337,16.27C15.318,16.262 15.3,16.25 15.286,16.236C15.272,16.221 15.26,16.204 15.253,16.185C15.245,16.166 15.241,16.146 15.241,16.125L15.28,15.328C15.282,15.241 15.28,15.217 15.229,15.211L15.161,15.209L13.447,15.209C13.323,15.209 13.314,15.22 13.27,15.334L12.914,16.191C12.882,16.252 12.818,16.281 12.722,16.281L10.927,16.281C10.818,16.281 10.74,16.173 10.781,16.072L14.499,7.873C14.524,7.824 14.562,7.75 14.648,7.75L17.214,7.75C17.234,7.75 17.254,7.754 17.273,7.762ZM15.5,9.985C15.492,9.953 15.466,9.956 15.445,9.998C15.43,10.028 15.416,10.06 15.405,10.091L14.121,13.274C14.114,13.294 14.109,13.31 14.105,13.322C14.104,13.328 14.103,13.335 14.104,13.341C14.105,13.347 14.108,13.353 14.111,13.358C14.115,13.363 14.12,13.367 14.126,13.37C14.131,13.373 14.137,13.376 14.143,13.376L15.215,13.39C15.334,13.38 15.34,13.374 15.352,13.253C15.354,13.21 15.506,10.022 15.5,9.985ZM20.112,9.582C20.097,9.582 20.083,9.588 20.072,9.599C20.061,9.609 20.055,9.624 20.054,9.639C20.054,9.649 20.057,9.659 20.062,9.668C20.068,9.677 20.075,9.685 20.084,9.69C20.097,9.697 20.869,10.104 20.926,10.135C20.968,10.158 20.969,10.198 20.955,10.267C20.948,10.298 20.415,12.642 20.416,12.644C20.419,12.647 20.435,12.655 20.515,12.655L20.551,12.655C21.446,12.619 21.934,11.561 21.952,10.534C21.961,9.979 21.772,9.638 21.429,9.588L21.358,9.582L20.112,9.582Z"/></svg><span class="tool__name">GSAP</span></span><b>✦</b><span class="tool tool--three"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.38 0a.268.268 0 0 0-.256.332l2.894 11.716a.268.268 0 0 0 .01.04l2.89 11.708a.268.268 0 0 0 .447.128L23.802 7.15a.268.268 0 0 0-.112-.45l-5.784-1.667a.268.268 0 0 0-.123-.035L6.38 1.715a.268.268 0 0 0-.144-.04L.456.01A.268.268 0 0 0 .38 0zm.374.654L5.71 2.08 1.99 5.664zM6.61 2.34l4.864 1.4-3.65 3.515zm-.522.12l1.217 4.926-4.877-1.4zm6.28 1.538l4.878 1.404-3.662 3.53zm-.52.13l1.208 4.9-4.853-1.392zm6.3 1.534l4.947 1.424-3.715 3.574zm-.524.12l1.215 4.926-4.876-1.398zm-15.432.696l4.964 1.424-3.726 3.586zM8.047 8.15l4.877 1.4-3.66 3.527zm-.518.137l1.236 5.017-4.963-1.432zm6.274 1.535l4.965 1.425-3.73 3.586zm-.52.127l1.235 5.012-4.958-1.43zm-9.63 2.438l4.873 1.406-3.656 3.523zm5.854 1.687l4.863 1.403-3.648 3.51zm-.54.04l1.214 4.927-4.875-1.4zm-3.896 4.02l5.037 1.442-3.782 3.638z"/></svg><span class="tool__name">three.js</span></span><b>✦</b><span class="tool tool--next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.665 21.978C16.758 23.255 14.465 24 12 24 5.377 24 0 18.623 0 12S5.377 0 12 0s12 5.377 12 12c0 3.583-1.574 6.801-4.067 9.001L9.219 7.2H7.2v9.596h1.615V9.251l9.85 12.727Zm-3.332-8.533 1.6 2.061V7.2h-1.6v6.245Z"/></svg><span class="tool__name">NEXT.js</span></span><b>✦</b><span class="tool tool--claude"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></svg><span class="tool__name">Claude</span></span><b>✦</b><span class="tool tool--blender"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.51 13.214c.046-.8.438-1.506 1.03-2.006a3.424 3.424 0 0 1 2.212-.79c.85 0 1.631.3 2.211.79.592.5.983 1.206 1.028 2.005.045.823-.285 1.586-.865 2.153a3.389 3.389 0 0 1-2.374.938 3.393 3.393 0 0 1-2.376-.938c-.58-.567-.91-1.33-.865-2.152M7.35 14.831c.006.314.106.922.256 1.398a7.372 7.372 0 0 0 1.593 2.757 8.227 8.227 0 0 0 2.787 2.001 8.947 8.947 0 0 0 3.66.76 8.964 8.964 0 0 0 3.657-.772 8.285 8.285 0 0 0 2.785-2.01 7.428 7.428 0 0 0 1.592-2.762 6.964 6.964 0 0 0 .25-3.074 7.123 7.123 0 0 0-1.016-2.779 7.764 7.764 0 0 0-1.852-2.043h.002L13.566 2.55l-.02-.015c-.492-.378-1.319-.376-1.86.002-.547.382-.609 1.015-.123 1.415l-.001.001 3.126 2.543-9.53.01h-.013c-.788.001-1.545.518-1.695 1.172-.154.665.38 1.217 1.2 1.22V8.9l4.83-.01-8.62 6.617-.034.025c-.813.622-1.075 1.658-.563 2.313.52.667 1.625.668 2.447.004L7.414 14s-.069.52-.063.831zm12.09 1.741c-.97.988-2.326 1.548-3.795 1.55-1.47.004-2.827-.552-3.797-1.538a4.51 4.51 0 0 1-1.036-1.622 4.282 4.282 0 0 1 .282-3.519 4.702 4.702 0 0 1 1.153-1.371c.942-.768 2.141-1.183 3.396-1.185 1.256-.002 2.455.41 3.398 1.175.48.391.87.854 1.152 1.367a4.28 4.28 0 0 1 .522 1.706 4.236 4.236 0 0 1-.239 1.811 4.54 4.54 0 0 1-1.035 1.626"/></svg><span class="tool__name">blender</span></span><b>✦</b><span class="tool tool--framer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z"/></svg><span class="tool__name">Framer</span></span><b>✦</b><span class="tool tool--supabase"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z"/></svg><span class="tool__name">supabase</span></span><b>✦</b>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALERIA ============ -->
+    <section class="gallery" aria-hidden="true">
+      <div class="gallery__row">
+        <div class="tile t1"><div class="blob"></div></div>
+        <div class="tile t2"><div class="blob"></div></div>
+        <div class="tile t3"><div class="blob"></div></div>
+        <div class="tile t4"><div class="blob"></div></div>
+        <div class="tile t5"><div class="blob"></div></div>
+        <div class="tile t6"><div class="blob"></div></div>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE ============ -->
+    <section class="about" id="sobre">
+      <div class="float f-star" data-depth="0.6" aria-hidden="true">
+        <svg viewBox="0 0 100 100"><path d="M50 4c6 22 12 28 34 34-22 6-28 12-34 34-6-22-12-28-34-34 22-6 28-12 34-34z" transform="translate(0 12)" fill="url(#gStar)"/></svg>
+      </div>
+      <div class="float f-cube" data-depth="-0.4" aria-hidden="true"><div class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div class="float f-heart" data-depth="0.9" aria-hidden="true">
+        <svg viewBox="0 0 100 100"><path d="M50 88S8 62 8 34a21 21 0 0 1 42-6 21 21 0 0 1 42 6c0 28-42 54-42 54z" fill="url(#gHeart)"/></svg>
+      </div>
+      <div class="float f-flower" data-depth="-0.8" aria-hidden="true">
+        <svg viewBox="0 0 100 100"><g fill="url(#gFl)"><circle cx="50" cy="24" r="20"/><circle cx="76" cy="44" r="20"/><circle cx="66" cy="74" r="20"/><circle cx="34" cy="74" r="20"/><circle cx="24" cy="44" r="20"/></g><circle cx="50" cy="52" r="12" fill="#ffd84a"/></svg>
+      </div>
+
+      <h2 class="display display--emboss">SOBRE MIM</h2>
+
+      <p class="about__text scrub-words">
+        Tenho 21 anos, sou de Princesa Isabel (PB) e crio coisas que as pessoas sentem antes de entender.
+        Curso Ciência da Computação (6º período) e sou técnico em Administração: junto código e visão de negócio —
+        e uso a criatividade e o que me torna único em cada projeto. Acredito que o melhor do trabalho vem dos sentidos:
+        olhar, tato, escuta, sensibilidade. Quem tem isso chega longe. Vamos fazer algo seu?
+      </p>
+
+      <div class="stats">
+        <div class="stat"><strong data-to="21">0</strong><span>anos de idade</span></div>
+        <div class="stat"><strong data-to="6" data-suffix="º">0</strong><span>período de Ciência da Computação</span></div>
+        <div class="stat"><strong>PB</strong><span>Princesa Isabel, Paraíba</span></div>
+      </div>
+
+      <a href="#contato" class="btn btn--shine btn--gradient magnetic"><span>Vamos conversar</span></a>
+    </section>
+
+    <!-- ============ BENTO ============ -->
+    <section class="bento-wrap" id="processo">
+      <!-- fundo: grade 3D de "teclas" que ondulam com o mouse (módulo inline no fim da página) -->
+      <div class="wave-bg" id="waveBg" aria-hidden="true"><canvas id="waveCanvas"></canvas></div>
+      <div class="section-head">
+        <span class="eyebrow">( Como eu trabalho )</span>
+        <h2 class="display"><span class="split-lines">PROCESSO</span></h2>
+      </div>
+
+      <div class="bento">
+        <article class="card b-a" data-tilt>
+          <span class="eyebrow">Fase 01</span>
+          <h3>Escuta</h3>
+          <p>Entendo seu negócio e seu público antes de desenhar qualquer coisa. Você explica do seu jeito.</p>
+          <div class="rings" aria-hidden="true"><i></i><i></i><i></i></div>
+        </article>
+        <article class="card b-b" data-tilt>
+          <span class="eyebrow">Horário local</span>
+          <div class="clock" data-clock>--:--</div>
+          <p>Brasil · UTC−3</p>
+        </article>
+        <article class="card b-c" data-tilt>
+          <span class="eyebrow">Fase 02</span>
+          <h3>Design &amp; Protótipo</h3>
+          <p>Você vê a ideia ganhar forma e se mexer antes de virar código. Ajusta rápido.</p>
+        </article>
+        <article class="card b-d" data-tilt>
+          <span class="eyebrow">Stack</span>
+          <ul class="chips">
+            <li>Figma</li><li>GSAP</li><li>Three.js</li><li>React</li><li>Blender</li><li>Claude</li><li>Lenis</li><li>Supabase</li>
+          </ul>
+        </article>
+        <article class="card card--accent b-e" data-tilt>
+          <span class="eyebrow">Fase 03</span>
+          <h3>Entrega</h3>
+          <p>Código limpo, site leve e no ar. Fico por perto depois da entrega pra ajustar o que precisar.</p>
+          <div class="launch" aria-hidden="true">↗</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ MODELOS & FORMAS ============ -->
+    <!-- 6 bibliotecas empilhadas; cada uma mostra 3 itens (home: true em lab/catalog.js) e abre seu catálogo em /biblioteca -->
+    <section class="mf" id="modelos">
+      <div class="section-head">
+        <span class="eyebrow">( Laboratório )</span>
+        <h2 class="display"><span class="split-lines">MODELOS &amp; FORMAS</span></h2>
+      </div>
+      <div class="lab-rows">
+        <div class="lab-row">
+          <div class="lab-row__info">
+            <h3 class="tt" data-fx="artefatos">Artefatos 3D</h3>
+            <p>Modelos GLB com texturas e materiais reais — alguns animados. Passe o mouse para inclinar; clique para ver em Argila ou Wireframe.</p>
+            <a class="lab-link" href="biblioteca/artefatos-3d.html">Abrir biblioteca <span>12 modelos</span> ↗</a>
+          </div>
+          <div class="lab-grid" data-lab="models" data-home></div>
+        </div>
+        <div class="lab-row">
+          <div class="lab-row__info">
+            <h3 class="tt" data-fx="objetos">Objetos 3D</h3>
+            <p>Formas e materiais em tempo real. Passe o mouse para inclinar e acelerar o giro; clique para trocar o acabamento.</p>
+            <a class="lab-link" href="biblioteca/objetos-3d.html">Abrir biblioteca <span>24 itens</span> ↗</a>
+          </div>
+          <div class="lab-grid" data-lab="objects" data-home></div>
+        </div>
+        <div class="lab-row">
+          <div class="lab-row__info">
+            <h3 class="tt" data-fx="pixel">Pixel art</h3>
+            <p>Sprites com contorno e brilho que se montam pixel a pixel, ondulam, fogem do cursor e explodem no hover.</p>
+            <a class="lab-link" href="biblioteca/pixel-art.html">Abrir biblioteca <span>15 sprites</span> ↗</a>
+          </div>
+          <div class="lab-grid" data-lab="pixel" data-home></div>
+        </div>
+        <div class="lab-row">
+          <div class="lab-row__info">
+            <h3 class="tt" data-fx="formas">Formas 2D</h3>
+            <p>Composições geométricas que se desmontam e viram outra forma — sozinhas e no hover. Clique para trocar a paleta.</p>
+            <a class="lab-link" href="biblioteca/formas-2d.html">Abrir biblioteca <span>12 formas</span> ↗</a>
+          </div>
+          <div class="lab-grid" data-lab="vector" data-home></div>
+        </div>
+        <div class="lab-row">
+          <div class="lab-row__info">
+            <h3 class="tt" data-fx="animacoes">Animações</h3>
+            <p>Doze animações geométricas do Uiverse — neon, wireframes e ondas. Passe o mouse para acelerar; clique para trocar a velocidade.</p>
+            <a class="lab-link" href="biblioteca/animacoes.html">Abrir biblioteca <span>12 animações</span> ↗</a>
+          </div>
+          <div class="lab-grid" data-lab="anims" data-home></div>
+        </div>
+        <div class="lab-row">
+          <div class="lab-row__info">
+            <h3 class="tt" data-fx="cenas">Cenas interativas</h3>
+            <p>Composições completas em movimento que reagem ao cursor — só os objetos, direto no cartão.</p>
+            <a class="lab-link" href="biblioteca/cenas-interativas.html">Abrir biblioteca <span>1 cena</span> ↗</a>
+          </div>
+          <div class="lab-grid" data-lab="artifacts" data-home></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJETOS ============ -->
+    <!-- SUBSTITUA os nomes e as artes pelos seus projetos reais -->
+    <section class="projects" id="projetos">
+      <h2 class="display display--emboss projects__title">PROJETOS</h2>
+
+      <!-- personagem trabalhando (independente das pastas) -->
+      <div class="desk" aria-hidden="true">
+        <div class="desk__glow"></div>
+        <picture>
+          <source srcset="assets/dev-desk.webp" type="image/webp">
+          <img src="assets/dev-desk.png" alt="" class="desk__img" width="1100" height="964" loading="lazy" decoding="async">
+        </picture>
+        <div class="desk__screen">
+          <div class="scr scr--code is-on">
+            <span class="scr__bar"><i></i><i></i><i></i></span>
+            <pre class="scr__code" data-typing></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- cartões dos projetos que se sobrepõem ao rolar (como no início) — SUBSTITUA nomes e artes pelos reais -->
+      <div class="stack">
+        <article class="pcard" style="--c1:#ff5f8f;--c2:#ffb36b;--c3:#7b5cff">
+          <header class="pcard__head">
+            <span class="pcard__num">01</span>
+            <div><small>Projeto conceito</small><strong>Aurora Studio</strong></div>
+            <a href="#" class="pill">Ver projeto ↗</a>
+          </header>
+          <div class="pcard__media">
+            <div class="art art--1"></div>
+            <div class="art art--2"></div>
+          </div>
+        </article>
+
+        <article class="pcard" style="--c1:#3dd6a0;--c2:#c6f432;--c3:#2a7fff">
+          <header class="pcard__head">
+            <span class="pcard__num">02</span>
+            <div><small>Estudo de marca</small><strong>Verde Vivo</strong></div>
+            <a href="#" class="pill">Ver projeto ↗</a>
+          </header>
+          <div class="pcard__media pcard__media--single">
+            <div class="compare" data-compare>
+              <div class="compare__after art art--3"><span class="compare__tag">Detalhe</span></div>
+              <div class="compare__before"><span class="compare__tag">Conceito</span></div>
+              <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+              <div class="compare__handle"><span>⟷</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="pcard" style="--c1:#6a4cff;--c2:#00c2ff;--c3:#ff4dd8">
+          <header class="pcard__head">
+            <span class="pcard__num">03</span>
+            <div><small>Estudo de interface</small><strong>Nébula AI</strong></div>
+            <a href="#" class="pill">Ver projeto ↗</a>
+          </header>
+          <div class="pcard__media">
+            <div class="art art--4"></div>
+            <div class="art art--5"></div>
+          </div>
+        </article>
+
+        <article class="pcard" style="--c1:#ffcc00;--c2:#ff5f1f;--c3:#ff2a6d">
+          <header class="pcard__head">
+            <span class="pcard__num">04</span>
+            <div><small>Projeto conceito</small><strong>Solar Co.</strong></div>
+            <a href="#" class="pill">Ver projeto ↗</a>
+          </header>
+          <div class="pcard__media">
+            <div class="art art--6"></div>
+            <div class="art art--2"></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ SERVIÇOS (cards de vidro com ícones 3D) ============ -->
+    <!-- ============ SERVIÇOS · estilo kit de UI gamer neon em pixel art (servicos/servicos.css) ============ -->
+    <section class="sv" id="servicos">
+      <div class="sv__bits" aria-hidden="true"><i style="left:61.4%;top:72.5%;--z:18px;--c:#c6f432;--d:3.1s;--dl:-2.3s"></i><i style="left:25.2%;top:6.9%;--z:10px;--c:#c6f432;--d:2.3s;--dl:-2.6s"></i><i style="left:37.9%;top:11.7%;--z:10px;--c:#c6f432;--d:2.9s;--dl:-1.2s"></i><i style="left:18.7%;top:84.4%;--z:14px;--c:#c6f432;--d:3.0s;--dl:-0.2s"></i><i style="left:60.9%;top:44.3%;--z:10px;--c:#c6f432;--d:3.4s;--dl:-0.0s"></i><i style="left:76.0%;top:93.2%;--z:10px;--c:#c6f432;--d:2.1s;--dl:-2.9s"></i><i style="left:53.3%;top:66.4%;--z:10px;--c:#c6f432;--d:3.3s;--dl:-2.1s"></i><i style="left:94.8%;top:86.9%;--z:12px;--c:#c6f432;--d:2.3s;--dl:-0.5s"></i><i style="left:15.1%;top:8.2%;--z:12px;--c:#c6f432;--d:2.7s;--dl:-2.1s"></i><i style="left:7.4%;top:35.8%;--z:12px;--c:#5b2fc2;--d:2.9s;--dl:-0.6s"></i><i style="left:46.8%;top:18.7%;--z:12px;--c:#c6f432;--d:3.3s;--dl:-1.1s"></i><i style="left:40.2%;top:54.2%;--z:14px;--c:#9b6cff;--d:2.3s;--dl:-2.5s"></i><i style="left:44.9%;top:69.2%;--z:18px;--c:#c6f432;--d:1.8s;--dl:-0.7s"></i><i style="left:80.5%;top:45.9%;--z:18px;--c:#9b6cff;--d:3.2s;--dl:-0.8s"></i><i style="left:45.9%;top:58.0%;--z:12px;--c:#9b6cff;--d:1.7s;--dl:-2.8s"></i><i style="left:9.8%;top:34.4%;--z:18px;--c:#9b6cff;--d:3.3s;--dl:-1.0s"></i><i style="left:90.6%;top:53.8%;--z:12px;--c:#9b6cff;--d:2.2s;--dl:-2.4s"></i><i style="left:61.8%;top:70.5%;--z:12px;--c:#5b2fc2;--d:1.9s;--dl:-0.1s"></i><i style="left:96.7%;top:52.7%;--z:14px;--c:#c6f432;--d:2.0s;--dl:-1.8s"></i><i style="left:81.2%;top:45.3%;--z:14px;--c:#c6f432;--d:1.7s;--dl:-2.7s"></i><i style="left:4.2%;top:48.9%;--z:10px;--c:#c6f432;--d:3.4s;--dl:-1.7s"></i><i style="left:13.9%;top:87.2%;--z:14px;--c:#c6f432;--d:1.9s;--dl:-1.1s"></i><i style="left:6.7%;top:42.0%;--z:10px;--c:#5b2fc2;--d:3.3s;--dl:-1.9s"></i><i style="left:17.4%;top:51.6%;--z:14px;--c:#9b6cff;--d:2.5s;--dl:-0.9s"></i><i style="left:40.2%;top:15.9%;--z:14px;--c:#c6f432;--d:2.7s;--dl:-1.5s"></i><i style="left:33.8%;top:10.5%;--z:12px;--c:#9b6cff;--d:1.7s;--dl:-2.4s"></i><i style="left:35.5%;top:57.8%;--z:8px;--c:#9b6cff;--d:2.3s;--dl:-2.1s"></i><i style="left:28.2%;top:48.1%;--z:12px;--c:#9b6cff;--d:2.8s;--dl:-1.7s"></i><i style="left:2.1%;top:54.0%;--z:12px;--c:#9b6cff;--d:2.8s;--dl:-1.4s"></i><i style="left:80.2%;top:63.5%;--z:12px;--c:#9b6cff;--d:2.1s;--dl:-1.0s"></i><i style="left:91.9%;top:40.8%;--z:10px;--c:#5b2fc2;--d:3.4s;--dl:-2.9s"></i><i style="left:51.3%;top:52.3%;--z:10px;--c:#c6f432;--d:3.1s;--dl:-2.8s"></i><i style="left:47.3%;top:67.7%;--z:14px;--c:#c6f432;--d:2.7s;--dl:-2.8s"></i><i style="left:51.1%;top:91.0%;--z:12px;--c:#9b6cff;--d:2.9s;--dl:-0.1s"></i></div>
+      <div class="sv__inner">
+        <header class="sv__head">
+          <div class="sv__headtxt">
+            <span class="sv__tag">( O que eu faço )</span>
+            <div class="sv__title px-cut"><div class="px-cut"><h2>Servi<b>ços</b></h2></div></div>
+            <p class="sv__lead">Seis frentes, do começo ao fim. Você não precisa entender de tecnologia: eu cuido. Passe o mouse e clique nos componentes.</p>
+          </div>
+          <a class="sv__round px-cut" href="#contato" aria-label="Iniciar um projeto">→</a>
+        </header>
+
+        <div class="sv__stats">
+          <div class="sv-stat px-cut"><div class="sv-stat__melt"><svg viewBox="0 0 120 104" preserveAspectRatio="none" fill="#c6f432" shape-rendering="crispEdges"><rect x="0" y="40" width="10" height="64"/><rect x="10" y="50" width="10" height="54"/><rect x="20" y="40" width="10" height="64"/><rect x="20" y="20" width="10" height="10" opacity="1"/><rect x="20" y="20" width="10" height="10" opacity="1"/><rect x="30" y="40" width="10" height="64"/><rect x="40" y="50" width="10" height="54"/><rect x="40" y="30" width="10" height="10" opacity="1"/><rect x="50" y="50" width="10" height="54"/><rect x="50" y="30" width="10" height="10" opacity="1"/><rect x="60" y="40" width="10" height="64"/><rect x="60" y="20" width="10" height="10" opacity="0.6"/><rect x="70" y="50" width="10" height="54"/><rect x="70" y="40" width="10" height="10" opacity="1"/><rect x="70" y="20" width="10" height="10" opacity="0.6"/><rect x="80" y="40" width="10" height="64"/><rect x="80" y="10" width="10" height="10" opacity="1"/><rect x="80" y="10" width="10" height="10" opacity="0.6"/><rect x="90" y="50" width="10" height="54"/><rect x="100" y="50" width="10" height="54"/><rect x="100" y="20" width="10" height="10" opacity="1"/><rect x="110" y="40" width="10" height="64"/><rect x="110" y="30" width="10" height="10" opacity="1"/><rect x="110" y="30" width="10" height="10" opacity="0.6"/><rect x="10" y="0" width="10" height="10" fill="#3a1a88"/><rect x="50" y="20" width="10" height="10" fill="#3a1a88"/><rect x="70" y="0" width="10" height="10" fill="#3a1a88"/><rect x="40" y="20" width="10" height="10" fill="#3a1a88"/><rect x="40" y="20" width="10" height="10" fill="#3a1a88"/></svg></div><span class="sv-stat__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square"><path d="M19 5 6 18M6 8v10h10"/></svg></span><div class="sv-stat__in"><strong>21</strong><span>anos de idade</span></div></div>
+          <div class="sv-stat px-cut"><div class="sv-stat__melt"><svg viewBox="0 0 120 104" preserveAspectRatio="none" fill="#c6f432" shape-rendering="crispEdges"><rect x="0" y="40" width="10" height="64"/><rect x="10" y="60" width="10" height="44"/><rect x="10" y="30" width="10" height="10" opacity="1"/><rect x="20" y="30" width="10" height="74"/><rect x="20" y="10" width="10" height="10" opacity="1"/><rect x="30" y="40" width="10" height="64"/><rect x="40" y="40" width="10" height="64"/><rect x="50" y="50" width="10" height="54"/><rect x="60" y="40" width="10" height="64"/><rect x="60" y="30" width="10" height="10" opacity="0.6"/><rect x="60" y="10" width="10" height="10" opacity="1"/><rect x="70" y="50" width="10" height="54"/><rect x="70" y="40" width="10" height="10" opacity="1"/><rect x="70" y="30" width="10" height="10" opacity="0.6"/><rect x="80" y="50" width="10" height="54"/><rect x="90" y="50" width="10" height="54"/><rect x="100" y="30" width="10" height="74"/><rect x="110" y="40" width="10" height="64"/><rect x="110" y="30" width="10" height="10" opacity="0.6"/><rect x="80" y="20" width="10" height="10" fill="#3a1a88"/><rect x="10" y="0" width="10" height="10" fill="#3a1a88"/><rect x="100" y="20" width="10" height="10" fill="#3a1a88"/><rect x="40" y="0" width="10" height="10" fill="#3a1a88"/><rect x="110" y="10" width="10" height="10" fill="#3a1a88"/></svg></div><span class="sv-stat__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square"><path d="M19 5 6 18M6 8v10h10"/></svg></span><div class="sv-stat__in"><strong>6º</strong><span>período de Computação</span></div></div>
+          <div class="sv-stat px-cut"><div class="sv-stat__melt"><svg viewBox="0 0 120 104" preserveAspectRatio="none" fill="#c6f432" shape-rendering="crispEdges"><rect x="0" y="40" width="10" height="64"/><rect x="0" y="10" width="10" height="10" opacity="1"/><rect x="0" y="20" width="10" height="10" opacity="0.6"/><rect x="10" y="30" width="10" height="74"/><rect x="10" y="10" width="10" height="10" opacity="0.6"/><rect x="20" y="40" width="10" height="64"/><rect x="30" y="50" width="10" height="54"/><rect x="30" y="30" width="10" height="10" opacity="0.6"/><rect x="40" y="40" width="10" height="64"/><rect x="40" y="10" width="10" height="10" opacity="1"/><rect x="50" y="50" width="10" height="54"/><rect x="60" y="60" width="10" height="44"/><rect x="70" y="50" width="10" height="54"/><rect x="80" y="50" width="10" height="54"/><rect x="90" y="60" width="10" height="44"/><rect x="90" y="30" width="10" height="10" opacity="0.6"/><rect x="90" y="30" width="10" height="10" opacity="1"/><rect x="100" y="40" width="10" height="64"/><rect x="100" y="10" width="10" height="10" opacity="0.6"/><rect x="110" y="50" width="10" height="54"/><rect x="110" y="30" width="10" height="10" opacity="0.6"/><rect x="20" y="10" width="10" height="10" fill="#3a1a88"/><rect x="110" y="20" width="10" height="10" fill="#3a1a88"/><rect x="70" y="20" width="10" height="10" fill="#3a1a88"/><rect x="80" y="0" width="10" height="10" fill="#3a1a88"/><rect x="70" y="10" width="10" height="10" fill="#3a1a88"/></svg></div><span class="sv-stat__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square"><path d="M19 5 6 18M6 8v10h10"/></svg></span><div class="sv-stat__in"><strong>6</strong><span>serviços num só lugar</span></div></div>
+          <div class="sv-stat px-cut"><div class="sv-stat__melt"><svg viewBox="0 0 120 104" preserveAspectRatio="none" fill="#c6f432" shape-rendering="crispEdges"><rect x="0" y="40" width="10" height="64"/><rect x="0" y="10" width="10" height="10" opacity="1"/><rect x="10" y="60" width="10" height="44"/><rect x="10" y="40" width="10" height="10" opacity="0.6"/><rect x="10" y="40" width="10" height="10" opacity="1"/><rect x="20" y="60" width="10" height="44"/><rect x="20" y="50" width="10" height="10" opacity="0.6"/><rect x="20" y="30" width="10" height="10" opacity="1"/><rect x="30" y="30" width="10" height="74"/><rect x="40" y="50" width="10" height="54"/><rect x="40" y="40" width="10" height="10" opacity="0.6"/><rect x="40" y="40" width="10" height="10" opacity="0.6"/><rect x="50" y="60" width="10" height="44"/><rect x="50" y="30" width="10" height="10" opacity="0.6"/><rect x="50" y="30" width="10" height="10" opacity="0.6"/><rect x="60" y="50" width="10" height="54"/><rect x="60" y="20" width="10" height="10" opacity="0.6"/><rect x="60" y="40" width="10" height="10" opacity="0.6"/><rect x="70" y="60" width="10" height="44"/><rect x="80" y="60" width="10" height="44"/><rect x="80" y="50" width="10" height="10" opacity="0.6"/><rect x="90" y="30" width="10" height="74"/><rect x="100" y="60" width="10" height="44"/><rect x="100" y="30" width="10" height="10" opacity="0.6"/><rect x="110" y="30" width="10" height="74"/><rect x="90" y="10" width="10" height="10" fill="#3a1a88"/><rect x="90" y="0" width="10" height="10" fill="#3a1a88"/><rect x="50" y="20" width="10" height="10" fill="#3a1a88"/><rect x="0" y="10" width="10" height="10" fill="#3a1a88"/><rect x="90" y="20" width="10" height="10" fill="#3a1a88"/></svg></div><span class="sv-stat__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square"><path d="M19 5 6 18M6 8v10h10"/></svg></span><div class="sv-stat__in"><strong>24h</strong><span>compromisso de resposta</span></div></div>
+        </div>
+
+        <div class="sv__grid">
+          <article class="sv-card px-cut">
+            <div class="sv-card__in px-cut">
+              <div class="sv-card__stage px-cut" aria-hidden="true"><iframe src="elementos-3d/web-design.html" title="Design web" loading="lazy" tabindex="-1"></iframe></div>
+              <div class="sv-card__body"><p>Sites bonitos, rápidos e claros. Do Figma ao ar.</p></div>
+              <div class="sv-card__bar" style="--p:92%" aria-hidden="true"></div>
+            </div>
+          </article>
+          <article class="sv-card px-cut">
+            <div class="sv-card__in px-cut">
+              <div class="sv-card__stage px-cut" aria-hidden="true"><iframe src="elementos-3d/web-3d.html" title="Web 3D" loading="lazy" tabindex="-1"></iframe></div>
+              <div class="sv-card__body"><p>Cenas, objetos e produtos em 3D, direto no navegador.</p></div>
+              <div class="sv-card__bar" style="--p:78%" aria-hidden="true"></div>
+            </div>
+          </article>
+          <article class="sv-card px-cut">
+            <div class="sv-card__in px-cut">
+              <div class="sv-card__stage px-cut" aria-hidden="true"><iframe src="elementos-3d/motion-design.html" title="Design de movimento" loading="lazy" tabindex="-1"></iframe></div>
+              <div class="sv-card__body"><p>Animações e microinterações que dão ritmo à sua marca.</p></div>
+              <div class="sv-card__bar" style="--p:85%" aria-hidden="true"></div>
+            </div>
+          </article>
+          <article class="sv-card px-cut">
+            <div class="sv-card__in px-cut">
+              <div class="sv-card__stage px-cut" aria-hidden="true"><iframe src="elementos-3d/branding.html" title="Direção de marca" loading="lazy" tabindex="-1"></iframe></div>
+              <div class="sv-card__body"><p>Identidade visual com personalidade: logo, tipografia, paleta e guia de uso.</p></div>
+              <div class="sv-card__bar" style="--p:88%" aria-hidden="true"></div>
+            </div>
+          </article>
+          <article class="sv-card px-cut">
+            <div class="sv-card__in px-cut">
+              <div class="sv-card__stage px-cut" aria-hidden="true"><iframe src="elementos-3d/campaigns.html" title="Campanhas" loading="lazy" tabindex="-1"></iframe></div>
+              <div class="sv-card__body"><p>Peças e lançamentos que chamam atenção, em cada canal.</p></div>
+              <div class="sv-card__bar" style="--p:74%" aria-hidden="true"></div>
+            </div>
+          </article>
+          <article class="sv-card px-cut">
+            <div class="sv-card__in px-cut">
+              <div class="sv-card__stage px-cut" aria-hidden="true"><iframe src="elementos-3d/creative-dev.html" title="Desenvolvimento criativo" loading="lazy" tabindex="-1"></iframe></div>
+              <div class="sv-card__body"><p>Código sob medida e sistemas com IA, no tamanho do seu negócio.</p></div>
+              <div class="sv-card__bar" style="--p:96%" aria-hidden="true"></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="sv__cta px-cut">
+          <div class="px-cut">
+            <div>
+              <h3>Projetos que<br>deixam <b>marca</b></h3>
+              <div class="sv__btns">
+                <a class="px-btn px-cut" href="#contato">Iniciar projeto →</a>
+                <a class="px-btn px-btn--ghost px-cut" href="#projetos">Ver projetos →</a>
+              </div>
+            </div>
+            <div class="sv__chev" aria-hidden="true"><span>›</span><span>›</span><span>›</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DESTAQUES · SEM ATRITO (cards claros com animações 3D em lima) ============ -->
+    <section class="perks" id="destaques">
+      <div class="section-head section-head--center">
+        <span class="eyebrow">( Por que comigo )</span>
+        <h2 class="display"><span class="split-lines">SEM ATRITO</span></h2>
+      </div>
+      <div class="perks__grid">
+        <article class="perk">
+          <div class="perk__stage" aria-hidden="true">
+            <div class="pk-bell">
+              <div class="pk-bell__layer l4"></div><div class="pk-bell__layer l3"></div><div class="pk-bell__layer l2"></div><div class="pk-bell__layer l1"></div>
+              <div class="pk-bell__face pk-bell__face--back"><svg viewBox="0 0 24 24"><path d="M12 2.5a1.6 1.6 0 0 1 1.6 1.6v.6A6.6 6.6 0 0 1 18.6 11v4.1l1.7 2.4c.4.6 0 1.4-.7 1.4H4.4c-.7 0-1.1-.8-.7-1.4l1.7-2.4V11a6.6 6.6 0 0 1 5-6.3v-.6A1.6 1.6 0 0 1 12 2.5Z"/><path d="M9.4 20.2h5.2a2.6 2.6 0 0 1-5.2 0Z"/></svg></div>
+              <div class="pk-bell__face pk-bell__face--front"><svg viewBox="0 0 24 24"><path d="M12 2.5a1.6 1.6 0 0 1 1.6 1.6v.6A6.6 6.6 0 0 1 18.6 11v4.1l1.7 2.4c.4.6 0 1.4-.7 1.4H4.4c-.7 0-1.1-.8-.7-1.4l1.7-2.4V11a6.6 6.6 0 0 1 5-6.3v-.6A1.6 1.6 0 0 1 12 2.5Z"/><path d="M9.4 20.2h5.2a2.6 2.6 0 0 1-5.2 0Z"/></svg></div>
+            </div>
+          </div>
+          <div><h3>Resposta em até 24h</h3><p>Mandou mensagem? Respondo em até 24h e aviso cada etapa. Sem você cobrar.</p></div>
+        </article>
+        <article class="perk">
+          <div class="perk__stage" aria-hidden="true">
+            <div class="pk-stack"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div><h3>Tudo organizado.<br>Sem esforço.</h3><p>Briefing, arquivos, versões e feedbacks num só lugar. Cada coisa na ordem certa.</p></div>
+        </article>
+        <article class="perk">
+          <div class="perk__stage" aria-hidden="true">
+            <div class="pk-wheel"><div class="pk-wheel__in"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><i style="--i:5"></i><i style="--i:6"></i><i style="--i:7"></i></div><span class="pk-wheel__dot"></span></div>
+          </div>
+          <div><h3>Aprovação simples</h3><p>Você aprova cada etapa de forma simples e acompanha o projeto crescer. Sem reunião à toa.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ EM NÚMEROS (slides inclinados) ============ -->
+    <!-- AJUSTE os números aos seus dados reais antes de publicar -->
+    <section class="numbers" id="numeros">
+      <div class="section-head section-head--center">
+        <span class="eyebrow">( Sobre o Vinicius )</span>
+        <h2 class="display"><span class="split-lines">FATOS</span></h2>
+      </div>
+
+      <div class="slides-stage">
+        <div class="slides-row" data-row="1">
+          <article class="slide slide--num" style="--a:#c6f432;--b:#2fae4a;--c:#2c5d7a">
+            <span class="beams" aria-hidden="true"></span>
+            <span class="big-num" aria-hidden="true">21</span>
+            <span class="pill-g p1">Princesa Isabel · PB</span>
+            <span class="pill-g p2">2026 · 6º período</span>
+            <p class="slide__text">anos de idade e uma vontade enorme de criar coisas que você sente</p>
+            <span class="tag tr">figma</span>
+            <span class="tag bl">@vinicius</span><span class="tag br">web design</span>
+          </article>
+
+          <article class="slide slide--stat" style="--a:#1f8a3c;--b:#c6f432;--c:#0f3d1c">
+            <span class="shard" aria-hidden="true"></span>
+            <strong class="stat-big">6º</strong>
+            <p class="slide__text">período de Ciência da Computação — teoria e prática andando juntas</p>
+            <span class="tag tr">gsap</span>
+            <span class="tag bl">@vinicius</span><span class="tag br">desenvolvimento</span>
+          </article>
+
+          <article class="slide slide--num" style="--a:#9fe22a;--b:#1d7a4a;--c:#3a4f7a">
+            <span class="beams" aria-hidden="true"></span>
+            <span class="big-num" aria-hidden="true">Téc.</span>
+            <span class="pill-g p1">Administração</span>
+            <span class="pill-g p2">visão de negócio</span>
+            <p class="slide__text">técnico em Administração: eu entendo de negócio, não só de pixel</p>
+            <span class="tag tr">claude</span>
+            <span class="tag bl">@vinicius</span><span class="tag br">sistemas com IA</span>
+          </article>
+
+          <article class="slide slide--stat" style="--a:#2fae4a;--b:#d4f75a;--c:#123a22">
+            <span class="shard" aria-hidden="true"></span>
+            <strong class="stat-big">24h</strong>
+            <p class="slide__text">é o meu compromisso de resposta pra qualquer mensagem sobre o seu projeto</p>
+            <span class="tag tr">contato</span>
+            <span class="tag bl">@vinicius</span><span class="tag br">atendimento</span>
+          </article>
+        </div>
+
+        <div class="slides-row" data-row="2">
+          <article class="slide slide--stat" style="--a:#1f8a3c;--b:#c6f432;--c:#0f3d1c">
+            <span class="shard" aria-hidden="true"></span>
+            <strong class="stat-big">8</strong>
+            <p class="slide__text">ferramentas no dia a dia: Figma, GSAP, three.js, Next.js, Claude, Blender, Framer e Supabase</p>
+            <span class="tag tr">next.js</span>
+            <span class="tag bl">@vinicius</span><span class="tag br">ferramentas</span>
+          </article>
+
+          <article class="slide slide--num" style="--a:#c6f432;--b:#239a52;--c:#2c5d7a">
+            <span class="beams" aria-hidden="true"></span>
+            <span class="big-num" aria-hidden="true">5</span>
+            <span class="pill-g p1">sentidos</span>
+            <span class="pill-g p2">primeiro</span>
+            <p class="slide__text">olhar, tato, escuta: é o que guia o meu trabalho — se o projeto é sentido, ele é lembrado</p>
+            <span class="tag tr">motion</span>
+            <span class="tag bl">@vinicius</span><span class="tag br">experiência</span>
+          </article>
+
+          <article class="slide slide--stat" style="--a:#2fae4a;--b:#d4f75a;--c:#123a22">
+            <span class="shard" aria-hidden="true"></span>
+            <strong class="stat-big">Quadra</strong>
+            <p class="slide__text">fora do computador, eu jogo basquete — visão de jogo e time também valem no trabalho</p>
+            <span class="tag tr">basquete</span>
+            <span class="tag bl">@vinicius</span><span class="tag br">web design</span>
+          </article>
+
+          <article class="slide slide--num" style="--a:#9fe22a;--b:#1d7a4a;--c:#3a4f7a">
+            <span class="beams" aria-hidden="true"></span>
+            <span class="big-num" aria-hidden="true">1:1</span>
+            <span class="pill-g p1">branding</span>
+            <span class="pill-g p2">web + IA</span>
+            <p class="slide__text">marcas e sites feitos sob medida, com a individualidade de quem pede</p>
+            <span class="tag tr">blender</span>
+            <span class="tag bl">@vinicius</span><span class="tag br">direção de arte</span>
+          </article>
+        </div>
+      </div>
+
+      <a href="#contato" class="profile-card">
+        <img src="assets/hero-poster.webp" alt="" class="profile-card__avatar" loading="lazy" decoding="async" width="624" height="480">
+        <span class="profile-card__body">
+          <strong>VINICIUS</strong>
+          <span>sites, landing pages, 3D, branding e IA</span>
+          <span>e-mail: agilbertotertuliano23@gmail.com</span>
+        </span>
+      </a>
+    </section>
+
+    <!-- ============ CONTATO ============ -->
+    <section class="contact light" id="contato">
+      <div class="contact__video float" data-depth="0.35" aria-hidden="true">
+        <div data-orbita><!-- montado por orbita/orbita.js: retrato com painéis girando em volta (antes era o vídeo hero-loop) --></div>      </div>
+
+      <h2 class="display display--dark contact__title">
+        <span class="split-lines">VAMOS</span>
+        <span class="split-lines outline">CONVERSAR</span>
+      </h2>
+
+      <div class="contact__grid">
+        <div>
+          <p class="contact__lead">Tem uma ideia? Me conta do seu jeito. Respondo em até 24h.</p>
+          <button class="copy" type="button" data-copy="agilbertotertuliano23@gmail.com">
+            <span class="copy__text">agilbertotertuliano23@gmail.com</span>
+            <span class="copy__state">Copiar</span>
+          </button>
+        </div>
+
+        <form class="form" data-form>
+          <label class="field"><input name="nome" type="text" placeholder=" " required><span>Seu nome</span></label>
+          <label class="field"><input name="email" type="email" placeholder=" " required><span>Seu e-mail</span></label>
+          <label class="field"><textarea name="msg" rows="3" placeholder=" "></textarea><span>Conta sua ideia</span></label>
+          <button class="btn btn--shine btn--dark magnetic" type="submit"><span>Enviar mensagem</span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__top">
+      <h2 class="footer__name">VINICIUS</h2>
+      <div class="footer__cols">
+        <div><small>Social</small><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">Behance</a></div>
+        <div><small>Contato</small><a href="mailto:agilbertotertuliano23@gmail.com">E-mail</a><a href="#">WhatsApp</a></div>
+        <div><small>Local</small><span>Princesa Isabel · PB</span><span>Remoto · Brasil</span></div>
+      </div>
+    </div>
+
+    <div class="shapes" aria-hidden="true">
+      <svg viewBox="0 0 100 100" style="--c:#c6f432"><path d="M0 0h50a50 50 0 0 1 0 100H0z"/></svg>
+      <svg viewBox="0 0 100 100" style="--c:#c6f432"><circle cx="28" cy="28" r="26"/><circle cx="72" cy="28" r="26"/><circle cx="28" cy="72" r="26"/><circle cx="72" cy="72" r="26"/></svg>
+      <svg viewBox="0 0 100 100" style="--c:#f2f0eb"><path d="M100 0v50A50 50 0 0 1 0 50h40a10 10 0 0 0 20 0V0z"/></svg>
+      <svg viewBox="0 0 100 100" style="--c:#7b5cff"><circle cx="50" cy="50" r="50"/></svg>
+      <svg viewBox="0 0 100 100" style="--c:#f2f0eb"><path d="M0 20 50 50 0 80zM50 20l50 30-50 30z"/></svg>
+      <svg viewBox="0 0 100 100" style="--c:#ff8a3d"><path d="M0 100V0l50 50L100 0v100z"/></svg>
+      <svg viewBox="0 0 100 100" style="--c:#f2f0eb"><path d="M50 0 100 50H70v50H30V50H0z"/></svg>
+      <svg viewBox="0 0 100 100" style="--c:#ff3fa4"><path fill-rule="evenodd" d="M50 0a50 50 0 1 1 0 100A50 50 0 0 1 50 0zm0 30a20 20 0 1 0 0 40 20 20 0 0 0 0-40z"/></svg>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© 2026 Vinicius Araújo de Sousa. Todos os direitos reservados.</span>
+      <a href="#top" class="totop">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="main.js?v=copy2"></script>
+
+  <!-- Grade 3D de ondas atrás de PROCESSO (Three.js via CDN) — copiada da seção AURA TOUCH do projeto WEB-Eletronicos.
+       Inline de propósito: <script type="module" src> falha ao abrir por file://. -->
+  <script type="importmap">
+  { "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  } }
+  </script>
+  <script type="module">
+  // WaveGridBackground: grade de cubos instanciados que ondula em resposta ao cursor
+  // (ondas suaves automáticas quando parado), com pós-processamento de vinheta + deslocamento RGB.
+  // Só roda quando a seção está visível.
+  const container = document.getElementById('waveBg');
+  const canvas = document.getElementById('waveCanvas');
+  const section = document.getElementById('processo');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (container && canvas && !reduceMotion) {
+    try {
+      const THREE = await import('three');
+      const { EffectComposer } = await import('three/addons/postprocessing/EffectComposer.js');
+      const { RenderPass } = await import('three/addons/postprocessing/RenderPass.js');
+      const { ShaderPass } = await import('three/addons/postprocessing/ShaderPass.js');
+      const { OutputPass } = await import('three/addons/postprocessing/OutputPass.js');
+
+      // ---- parâmetros: iguais ao AURA TOUCH, com as cores adaptadas ao tema escuro do portfólio ----
+      const P = {
+        gridSize: 52,               // mais cubos, menores (52 × 0.5 ≈ mesma área que 34 × 0.8)
+        colorBase: '#101812',       // teclas quase pretas com fundo esverdeado (no AURA: #ffffff)
+        colorHigh: '#00ff41',       // verde Matrix no pico da onda (no AURA: #37e6c4)
+        waveAmplitude: 0.4,
+        waveSpeed: 6.0,
+        waveFrequency: 1.2,
+        waveWidth: 3.0,
+        waveMaxHeight: 0.4,
+        waveJitter: 0.2,
+        autoAnimate: true,
+        vignette: true
+      };
+      const MAX_TRAIL = 128;
+
+      const VIGNETTE_RGB_SHIFT_SHADER = {
+        uniforms: {
+          tDiffuse: { value: null },
+          shiftAmount: { value: 0.005 },
+          vignetteRadius: { value: 0.3 },
+          vignetteSoftness: { value: 0.3 }
+        },
+        vertexShader: `
+          varying vec2 vUv;
+          void main() {
+            vUv = uv;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+          }`,
+        fragmentShader: `
+          uniform sampler2D tDiffuse;
+          uniform float shiftAmount;
+          uniform float vignetteRadius;
+          uniform float vignetteSoftness;
+          varying vec2 vUv;
+          void main() {
+            vec2 center = vec2(0.5);
+            float dist = distance(vUv, center);
+            float horzQuadrant = sign(vUv.x - center.x);
+            float vertQuadrant = sign(vUv.y - center.y);
+            float vignetteFactor = smoothstep(vignetteRadius, vignetteRadius + vignetteSoftness, dist);
+            float currentShift = shiftAmount * vignetteFactor;
+            float r = texture2D(tDiffuse, vUv + vec2(currentShift * horzQuadrant, currentShift * vertQuadrant)).r;
+            float g = texture2D(tDiffuse, vUv).g;
+            float b = texture2D(tDiffuse, vUv - vec2(currentShift * horzQuadrant, currentShift * vertQuadrant)).b;
+            float darken = 1.0 - vignetteFactor * 0.5;
+            gl_FragColor = vec4(vec3(r, g, b) * darken, 1.0);
+          }`
+      };
+
+      // injeta o deslocamento por ondas no vertex shader (material visível e de profundidade, p/ as sombras)
+      const overrideVertexShader = (vs) => vs
+        .replace('#include <common>', `#include <common>
+          varying float vHeight;
+          attribute vec2 aOffset;
+          uniform sampler2D uTrailTexture;
+          uniform int       uTrailCount;
+          uniform float     uWaveSpeed;
+          uniform float     uWaveFreq;
+          uniform float     uWaveWidth;
+          uniform float     uFadeTime;
+          uniform float     uAmplitude;
+          uniform float     uJitter;
+          uniform float     uMaxHeight;
+          vec2 hash2( vec2 p ) {
+            p = vec2( dot( p, vec2( 127.1, 311.7 ) ), dot( p, vec2( 269.5, 183.3 ) ) );
+            return fract( sin( p ) * 43758.5453123 ) - 0.5;
+          }`)
+        .replace('#include <begin_vertex>', `#include <begin_vertex>
+          vHeight = 0.0;
+          if ( position.y > 0.0 ) {
+            vec2 jitter  = hash2( aOffset ) * uJitter;
+            vec2 worldXZ = aOffset + jitter;
+            float waveHeight  = 0.0;
+            float totalWeight = 0.0;
+            for ( int i = 0; i < uTrailCount; i++ ) {
+              vec4 td = texture2D( uTrailTexture, vec2( ( float(i) + 0.5 ) / 128.0, 0.5 ) );
+              float dist      = length( worldXZ - td.rg );
+              float wavefront = uWaveSpeed * td.b;
+              float relDist   = dist - wavefront;
+              float window = exp( -( relDist * relDist ) / ( uWaveWidth * uWaveWidth ) );
+              float fade   = exp( -td.b / uFadeTime );
+              float atten  = 1.0 / ( 1.0 + dist * 0.1 );
+              float weight = fade * window * atten * td.a;
+              waveHeight  += weight * cos( uWaveFreq * relDist );
+              totalWeight += weight;
+            }
+            waveHeight /= max( totalWeight, 1.0 );
+            float displacement = clamp( waveHeight * uAmplitude, -uMaxHeight, uMaxHeight );
+            transformed.y += displacement;
+            vHeight = displacement;
+          }`);
+
+      const cubeWidth = 0.5, cubeHeight = 3, gap = 0.01;
+      const bounds = P.gridSize * (cubeWidth + gap);
+      const getSize = () => ({
+        width: container.clientWidth || 1,
+        height: container.clientHeight || 1,
+        pixelRatio: Math.min(window.devicePixelRatio, 1.5)
+      });
+      let size = getSize();
+
+      // ---- cena e câmera (órbita guiada pelo mouse) ----
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(P.colorBase).multiplyScalar(0.5);
+
+      const radius = 12, alphaRange = Math.PI * 0.03, betaRange = Math.PI * 0.05;
+      const mouse = new THREE.Vector2(0, 0);
+      const lerpedMouse = new THREE.Vector2(0, 0);
+      const camera = new THREE.PerspectiveCamera(40, size.width / size.height, 0.1, 200);
+      const positionCamera = (mx, my) => {
+        const alpha = my * alphaRange;
+        const beta = mx * betaRange;
+        camera.position.set(-radius * Math.cos(alpha) * Math.sin(beta), radius * Math.cos(alpha) * Math.cos(beta), radius * Math.sin(alpha));
+        camera.up.set(0, 0, -1);
+        camera.lookAt(0, 0, 0);
+      };
+      positionCamera(0, 0);
+      scene.add(camera);
+
+      const onMouseMove = (e) => {
+        const r = section.getBoundingClientRect();
+        mouse.x = ((e.clientX - r.left) / r.width) * 2 - 1;
+        mouse.y = -((e.clientY - r.top) / r.height) * 2 + 1;
+      };
+      window.addEventListener('mousemove', onMouseMove);
+
+      // ---- luzes ----
+      scene.add(new THREE.AmbientLight('#ffffff', 0.5));
+      const keyLight = new THREE.DirectionalLight('#ffffff', 4.0);
+      keyLight.position.set(-20, 10, 6);
+      keyLight.castShadow = true;
+      keyLight.shadow.mapSize.set(1024, 1024);
+      keyLight.shadow.radius = 6;
+      keyLight.shadow.camera.near = 0.1;
+      keyLight.shadow.camera.far = 60;
+      keyLight.shadow.camera.left = -22;
+      keyLight.shadow.camera.right = 22;
+      keyLight.shadow.camera.top = 22;
+      keyLight.shadow.camera.bottom = -22;
+      keyLight.shadow.bias = 0.0001;
+      scene.add(keyLight);
+      const fillLight = new THREE.DirectionalLight('#ffffff', 1.0);
+      fillLight.position.set(10, 5, -3);
+      scene.add(fillLight);
+
+      // ---- trilha do mouse (fontes de ondas no espaço do mundo) ----
+      const trailData = new Float32Array(MAX_TRAIL * 4);
+      const trailTexture = new THREE.DataTexture(trailData, MAX_TRAIL, 1, THREE.RGBAFormat, THREE.FloatType);
+      trailTexture.needsUpdate = true;
+
+      const trailUniforms = {
+        uTrailTexture: { value: trailTexture },
+        uTrailCount: { value: 0 },
+        uFadeTime: { value: 2.0 },
+        uWaveSpeed: { value: P.waveSpeed },
+        uWaveFreq: { value: P.waveFrequency },
+        uWaveWidth: { value: P.waveWidth },
+        uAmplitude: { value: P.waveAmplitude },
+        uJitter: { value: P.waveJitter },
+        uMaxHeight: { value: P.waveMaxHeight }
+      };
+      const colorUniforms = {
+        uColorBase: { value: new THREE.Color(P.colorBase) },
+        uColorHigh: { value: new THREE.Color(P.colorHigh) }
+      };
+
+      const trail = [];
+      let lastPoint = null, timeSinceLastMove = 0, randomPointTimer = 0, placingRandom = true;
+      const fadeTime = 2.0, trailSpacing = 0.1;
+
+      const rayPlane = new THREE.Mesh(new THREE.PlaneGeometry(bounds, bounds), new THREE.MeshBasicMaterial({ side: THREE.DoubleSide, visible: false }));
+      rayPlane.rotation.x = -Math.PI / 2;
+      rayPlane.updateMatrixWorld(true);
+      const raycaster = new THREE.Raycaster();
+      const pointerNDC = new THREE.Vector2();
+      let rect = canvas.getBoundingClientRect();
+
+      // ouvimos a seção (não só o canvas): os cards do bento ficam por cima do canvas
+      const onPointerMove = (e) => {
+        pointerNDC.set(((e.clientX - rect.left) / rect.width) * 2 - 1, -((e.clientY - rect.top) / rect.height) * 2 + 1);
+        raycaster.setFromCamera(pointerNDC, camera);
+        const hits = raycaster.intersectObject(rayPlane);
+        if (hits.length === 0) return;
+        const { x, z } = hits[0].point;
+        let distDelta = 0;
+        if (lastPoint) {
+          const dx = x - lastPoint.x, dz = z - lastPoint.z;
+          distDelta = Math.sqrt(dx * dx + dz * dz);
+          if (distDelta < trailSpacing) return;
+        }
+        if (trail.length >= MAX_TRAIL) trail.shift();
+        trail.push({ x, z, age: 0, distDelta });
+        lastPoint = { x, z };
+        timeSinceLastMove = 0;
+        placingRandom = false;
+        randomPointTimer = 0;
+      };
+      section.addEventListener('pointermove', onPointerMove);
+
+      const addRandomPoint = () => {
+        const x = (Math.random() * 0.5 - 0.25) * bounds;
+        const z = (Math.random() * 0.5 - 0.25) * bounds;
+        const distDelta = 0.8 + Math.random() * 0.2;
+        if (trail.length >= MAX_TRAIL) trail.shift();
+        trail.push({ x, z, age: 0, distDelta });
+      };
+
+      const updateTrail = (delta) => {
+        const expiry = fadeTime * 4;
+        for (let i = trail.length - 1; i >= 0; i--) {
+          trail[i].age += delta;
+          if (trail[i].age > expiry) trail.splice(i, 1);
+        }
+        timeSinceLastMove += delta;
+        if (timeSinceLastMove >= 3.0 && !placingRandom && P.autoAnimate) { placingRandom = true; randomPointTimer = 0; }
+        if (placingRandom && P.autoAnimate) {
+          randomPointTimer += delta;
+          if (randomPointTimer >= 1.5) { addRandomPoint(); randomPointTimer = 0; }
+        }
+        const n = Math.min(trail.length, MAX_TRAIL);
+        if (n > 0 || trailUniforms.uTrailCount.value > 0) {
+          for (let i = 0; i < n; i++) {
+            const ti = i * 4;
+            trailData[ti] = trail[i].x;
+            trailData[ti + 1] = trail[i].z;
+            trailData[ti + 2] = trail[i].age;
+            trailData[ti + 3] = trail[i].distDelta;
+          }
+          trailTexture.needsUpdate = true;
+          trailUniforms.uTrailCount.value = n;
+        }
+      };
+
+      // ---- grade de cubos instanciados com o shader de onda ----
+      const count = P.gridSize * P.gridSize;
+      const geometry = new THREE.BoxGeometry(cubeWidth, cubeHeight, cubeWidth);
+      const offsetAttribute = new THREE.InstancedBufferAttribute(new Float32Array(count * 2), 2);
+      geometry.setAttribute('aOffset', offsetAttribute);
+
+      const material = new THREE.MeshPhongMaterial({ color: 0xffffff });
+      material.onBeforeCompile = (shader) => {
+        Object.assign(shader.uniforms, trailUniforms, colorUniforms);
+        shader.vertexShader = overrideVertexShader(shader.vertexShader);
+        shader.fragmentShader = shader.fragmentShader
+          .replace('#include <common>', `#include <common>
+            varying float vHeight;
+            uniform vec3  uColorBase;
+            uniform vec3  uColorHigh;
+            uniform float uMaxHeight;`)
+          .replace('#include <color_fragment>', `#include <color_fragment>
+            float t = clamp( vHeight / uMaxHeight, 0.0, 1.0 );
+            diffuseColor.rgb = mix( uColorBase, uColorHigh, t );`);
+      };
+      const depthMaterial = new THREE.MeshDepthMaterial();
+      depthMaterial.onBeforeCompile = (shader) => {
+        Object.assign(shader.uniforms, trailUniforms);
+        shader.vertexShader = overrideVertexShader(shader.vertexShader);
+      };
+
+      const instancedMesh = new THREE.InstancedMesh(geometry, material, count);
+      instancedMesh.customDepthMaterial = depthMaterial;
+      instancedMesh.castShadow = true;
+      instancedMesh.receiveShadow = true;
+      scene.add(instancedMesh);
+
+      const dummy = new THREE.Object3D();
+      const spacing = cubeWidth + gap;
+      const offset = ((P.gridSize - 1) * spacing) / 2;
+      for (let i = 0; i < P.gridSize; i++) {
+        for (let j = 0; j < P.gridSize; j++) {
+          const index = i * P.gridSize + j;
+          const x = i * spacing - offset;
+          const z = j * spacing - offset;
+          dummy.position.set(x, 0, z);
+          dummy.updateMatrix();
+          instancedMesh.setMatrixAt(index, dummy.matrix);
+          offsetAttribute.setXY(index, x, z);
+        }
+      }
+      instancedMesh.instanceMatrix.needsUpdate = true;
+      offsetAttribute.needsUpdate = true;
+
+      // ---- renderizador + pós-processamento ----
+      const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.3;     // 1.95 no AURA (fundo branco); menor para manter o preto profundo
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFShadowMap;
+      renderer.setClearColor('#0a0a0b');
+      renderer.setSize(size.width, size.height, false);
+      renderer.setPixelRatio(size.pixelRatio);
+
+      const composer = new EffectComposer(renderer);
+      composer.addPass(new RenderPass(scene, camera));
+      if (P.vignette) composer.addPass(new ShaderPass(VIGNETTE_RGB_SHIFT_SHADER));
+      composer.addPass(new OutputPass());
+      composer.setSize(size.width, size.height);
+      composer.setPixelRatio(size.pixelRatio);
+
+      const applySize = () => {
+        size = getSize();
+        camera.aspect = size.width / size.height;
+        camera.updateProjectionMatrix();
+        renderer.setSize(size.width, size.height, false);
+        renderer.setPixelRatio(size.pixelRatio);
+        composer.setSize(size.width, size.height);
+        composer.setPixelRatio(size.pixelRatio);
+        rect = canvas.getBoundingClientRect();
+      };
+      new ResizeObserver(applySize).observe(container);
+      window.addEventListener('resize', applySize);
+      window.addEventListener('scroll', () => { rect = canvas.getBoundingClientRect(); }, { passive: true });
+
+      // ---- laço de animação: só roda com a seção visível ----
+      const clock = new THREE.Clock();
+      const frame = () => {
+        const delta = Math.min(clock.getDelta(), 0.1);
+        updateTrail(delta);
+        lerpedMouse.x += (mouse.x - lerpedMouse.x) * 0.04;
+        lerpedMouse.y += (mouse.y - lerpedMouse.y) * 0.04;
+        positionCamera(lerpedMouse.x, lerpedMouse.y);
+        composer.render();
+      };
+      let running = false;
+      const start = () => { if (running) return; running = true; clock.getDelta(); renderer.setAnimationLoop(frame); };
+      const stop = () => { if (!running) return; running = false; renderer.setAnimationLoop(null); };
+      new IntersectionObserver((entries) => { entries[0].isIntersecting ? start() : stop(); }, { threshold: 0.02 }).observe(section);
+      document.addEventListener('visibilitychange', () => { document.hidden ? stop() : start(); });
+
+      container.classList.add('is-ready');      // mostra o canvas só depois de a cena existir
+    } catch (err) {
+      console.warn('Wave grid desativada:', err);   // sem WebGL / sem rede: a seção fica com o fundo escuro
+    }
+  }
+  </script>
+
+  <!-- Laboratório (Modelos & Formas): cartões + motores 3D / pixel / vetor -->
+  <script type="module" src="lab/lab.js?v=33"></script>
+  <script type="module" src="lab/titles.js?v=22"></script>
+  <script type="module" src="orbita/orbita.js?v=3"></script>
+  <script>
+    /* destaques: as animações 3D só rodam com a seção na tela */
+    new IntersectionObserver(([e]) => e.target.classList.toggle('is-on', e.isIntersecting), { rootMargin: '150px' }).observe(document.getElementById('destaques'));
+  </script>
+</body>
+</html>
