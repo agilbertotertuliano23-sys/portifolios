@@ -2,8 +2,8 @@
 // 0. título PORTFOLIO em fita (onda)
 // 1. roda de cards do hero (gira um card por vez)
 // 2. carrossel da tela de destaques
-// 3. sentido de rotação do livro 3D
-// 4. scroll da seção final (wordmark estica + nuvem de imagens)
+// 3. livro 3D folheando
+// 4. loop da seção final (wordmark estica + nuvem de imagens)
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -46,7 +46,7 @@ if (wheel && !reduceMotion) {
     if (document.hidden) return;
     rot -= 30;
     wheel.style.setProperty('--rot', `${rot}deg`);
-  }, 2600);
+  }, 2200);
 }
 
 /* ---------- 2. carrossel de destaques ---------- */
@@ -80,33 +80,66 @@ if (carousel) {
 }
 
 /* ---------- 3. livro 3D ---------- */
+// livro aberto que folheia sozinho: cada página anda pela pilha da direita,
+// vira pela lombada e assenta na pilha da esquerda; a última volta para o início.
 const bookStage = document.querySelector('[data-book]');
 const bookToggle = document.querySelector('[data-book-toggle]');
-if (bookStage && bookToggle) {
-  bookToggle.addEventListener('click', () => bookStage.classList.toggle('is-reverse'));
+const pages = bookStage ? [...bookStage.querySelectorAll('.page')] : [];
+if (pages.length) {
+  const N = pages.length;
+  const STACK = (N - 2) / 2;          // páginas em cada pilha
+  const FAN = 38;                     // abertura de cada pilha, em graus
+  const RATE = 1.5;                   // páginas por segundo
+  const smooth = (x) => x * x * (3 - 2 * x);
+
+  // posição p (0..N) → ângulo da página: 0° deitada à direita, 180° deitada à esquerda
+  const angle = (p) => {
+    if (p < STACK) return 12 + (p / STACK) * FAN;
+    if (p < STACK + 2) return 12 + FAN + smooth((p - STACK) / 2) * (180 - 24 - 2 * FAN);
+    return 168 - FAN + ((p - STACK - 2) / STACK) * FAN;
+  };
+
+  const place = (s) => {
+    pages.forEach((page, i) => {
+      const p = (((i + s) % N) + N) % N;
+      const a = angle(p);
+      page.style.setProperty('--a', a.toFixed(2));
+      page.style.opacity = Math.min(1, p / 0.5, (N - p) / 0.5).toFixed(3);
+      page.classList.toggle('is-left', a > 90);
+    });
+  };
+
+  let s = 0;
+  let dir = 1;
+  let last = performance.now();
+  place(s);
+
+  if (!reduceMotion) {
+    const tick = (now) => {
+      const dt = Math.min((now - last) / 1000, .1);
+      last = now;
+      s += dt * RATE * dir;
+      place(s);
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  bookToggle?.addEventListener('click', () => { dir *= -1; });
 }
 
 /* ---------- 4. seção final ---------- */
-const track = document.querySelector('[data-stage]');
-if (track && !reduceMotion) {
-  let ticking = false;
-
-  const update = () => {
-    ticking = false;
-    const rect = track.getBoundingClientRect();
-    const total = rect.height - window.innerHeight;
-    const p = Math.min(Math.max(-rect.top / total, 0), 1);
-    // 0 → 1 → 0: abre a nuvem no meio do scroll e recolhe no fim, como na referência
-    const wave = Math.sin(Math.PI * p);
-    const e = wave * wave * (3 - 2 * wave); // smoothstep
-    track.style.setProperty('--e', e.toFixed(4));
-  };
-
-  const onScroll = () => {
-    if (!ticking) { ticking = true; requestAnimationFrame(update); }
-  };
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll);
-  update();
+// o loop (wordmark + nuvem) só toca enquanto a seção está visível
+const stage = document.querySelector('[data-stage]');
+if (stage && !reduceMotion) {
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {
+      const entering = entry.isIntersecting && !stage.classList.contains('is-playing');
+      stage.classList.toggle('is-playing', entry.isIntersecting);
+      // sempre recomeça do repouso ao entrar, como na referência
+      if (entering) stage.getAnimations({ subtree: true }).forEach((anim) => { anim.currentTime = 0; });
+    }, { threshold: 0.35 }).observe(stage);
+  } else {
+    stage.classList.add('is-playing');
+  }
 }

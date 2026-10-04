@@ -14,7 +14,7 @@ referências: docs/referencias/01-hero.jpg · 02-secao-destaques.jpg · 03-secao
 | +-----------------------------------------------------------------------------------+ |
 | | wheel (roda de cards girando em volta do disco)                                   | |
 | |   card [img: orbe]  card2 [ico:olho]  card3 [img: retrato]  card4 [t2: 1:1]       | |
-| |   card5 [h3: IMPACTO]  card6 [img: padrão circular]  …                           | |
+| |   card5 [h3: IMPACTO]  card6 [img: padrão circular]  … (15 cards, 24° cada)      | |
 | |                 +-----------------------------+                                   | |
 | |                 | disc                        |                                   | |
 | |                 | [t3: ▲ EU]                  |                                   | |
@@ -37,17 +37,17 @@ referências: docs/referencias/01-hero.jpg · 02-secao-destaques.jpg · 03-secao
 | [h2: portfólios] (degradê transparente → preto)                                     |
 +-------------------------------------------------------------------------------------+
 | section2 (arquivo de pôsteres — vídeo 3)                                             |
-| [t3: 02 — ARQUIVO]                                    [t3: 18 PÔSTERES]              |
+| [t3: 02 — ARQUIVO]                                    [t3: 20 PEÇAS]                 |
 | +-----------------------------------------------------------------------------------+ |
-| | book (livro 3D: páginas em leque girando no eixo vertical inclinado)              | |
+| | book (livro 3D aberto, folheando sozinho: página vira pela lombada)               | |
 | |   page [h3: GROW]  page [h3: DOPE]  page [h3: Ó]  page [ico:anéis]  page [img:…]  | |
 | +-----------------------------------------------------------------------------------+ |
 | [lnk: ↗ Acesse o arquivo]                                        [ico:replay]        |
 +-------------------------------------------------------------------------------------+
 | section3 (final / contato — vídeo 4)                                                 |
 | +-----------------------------------------------------------------------------------+ |
-| | stage (sticky; scroll estica o wordmark e espalha a nuvem de imagens)             | |
-| |   [img: still] [img: still] [img: still] …   (nuvem, 18 frames)                   | |
+| | stage (loop: repouso → nuvem explode → wordmark gira e estica → recolhe)          | |
+| |   [img: still] [img: still] [img: still] …   (nuvem, 28 frames)                   | |
 | |                      [h1: theo] (wordmark líquido)                                | |
 | +-----------------------------------------------------------------------------------+ |
 | footer                                                                               |
