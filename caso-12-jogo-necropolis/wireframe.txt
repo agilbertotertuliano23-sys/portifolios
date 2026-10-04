@@ -7,7 +7,10 @@ referência: reference.jpg (fundo branco, coluna central preta de tinta com resp
 | smoke (fluid.js — simulação de fluido WebGL: as bordas da tinta soltam névoa preta |
 |        sozinhas; no centro o cursor arrasta névoa vermelha; clique solta rajada)    |
 +-------------------------------------------------------------------------------------+
-| hero (vermelho-escuro)                                                               |
+| nav (fixo; transparente no hero, escuro ao rolar; barra de progresso; menu no celular) |
+| [ico: logo] [lnk: 01 INTRODUÇÃO] [lnk: 02 NOVO MAPA] [lnk: 03 OITO ZUMBIS] [lnk: 04 HABILIDADES] [lnk: ZUMBIS] [btn2: ▶ TRAILER] [btn: PRÉ-REGISTRO] |
++-------------------------------------------------------------------------------------+
+| hero (tela cheia, vermelho-escuro)                                                               |
 | [ico: logo NECRÓPOLIS 2]                                                             |
 | [img: rosto de zumbi com olhos vermelhos + mãos com garras + sobrevivente]           |
 | [img: X vermelho]  [h1: ZUMBI] [h1: COMANDANTE]  [btn: ▶]                            |
@@ -31,5 +34,8 @@ referência: reference.jpg (fundo branco, coluna central preta de tinta com resp
 | [h2: 04] [h2: HABILIDADES HUMANAS]                                                   |
 | card [h3: ZUMBI FORTE] [t3: …] [ico×5 habilidades]   panel(pincel) [t3: …] [btn3: VER DETALHES] |
 | [btn3: APRESENTAÇÃO DOS ZUMBIS]  galeria [img] × 8 com nomes                         |
-| footer [t3: © 2026 …] [t3: 16+]                                                      |
+| footer [h1: NECRÓPOLIS 2] [h2: COMANDE A HORDA. OU SEJA COMANDADO POR ELA.]         |
+|        form [h3: PRÉ-REGISTRO] [in: seu e-mail] [btn: QUERO JOGAR]                   |
+|        colunas [t2: JOGO] [t2: COMUNIDADE] [t2: SUPORTE] [t2: PLATAFORMAS] + links   |
+|        [ico: 16] [t3: © 2026 …] [lnk: VOLTAR AO TOPO ↑]                              |
 +-------------------------------------------------------------------------------------+

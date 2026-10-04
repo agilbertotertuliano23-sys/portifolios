@@ -34,13 +34,30 @@
     IMAGENS: arquivos .webp em assets/fotos/ (geradas no Codex, convertidas e otimizadas).
   -->
 
+  <!-- ============ NAV ============ -->
+  <header class="nav" data-nav>
+    <a class="nav-logo" href="#inicio" aria-label="NECRÓPOLIS 2 — início">NECRÓP<span>☠</span>LIS <b>2</b></a>
+    <nav class="nav-links" id="menu" data-nav-links aria-label="Seções">
+      <a href="#introducao" data-spy><i>01</i>Introdução</a>
+      <a href="#novo-mapa" data-spy><i>02</i>Novo mapa</a>
+      <a href="#oito-zumbis" data-spy><i>03</i>Oito zumbis</a>
+      <a href="#habilidades" data-spy><i>04</i>Habilidades</a>
+      <a href="#apresentacao" data-spy><i>☠</i>Zumbis</a>
+    </nav>
+    <div class="nav-cta">
+      <button class="nav-trailer" type="button" data-trailer>▶ Trailer</button>
+      <a class="nav-pre" href="#pre-registro">Pré-registro</a>
+      <button class="nav-burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu" data-burger><i></i><i></i><i></i></button>
+    </div>
+    <span class="nav-progress" data-progress aria-hidden="true"></span>
+  </header>
+
   <div class="wrap">
     <!-- coluna de tinta preta com respingos -->
     <div class="ink" aria-hidden="true"><i class="ink-body"></i><i class="drips"></i><i class="splat s1"></i><i class="splat s2"></i><i class="splat s3"></i></div>
 
     <!-- ============ HERO ============ -->
     <header class="hero" id="inicio">
-      <p class="game-logo">NECRÓP<span>☠</span>LIS <b>2</b></p>
       <figure class="hero-art">
         <video class="h-video" poster="assets/videos/abertura.jpg" muted loop playsinline preload="metadata" data-autoplay aria-hidden="true">
           <source src="assets/videos/abertura.webm" type="video/webm">
@@ -189,9 +206,38 @@
 
     </main>
 
-    <footer class="foot">
-      <p class="t3">© 2026 Estúdio Ferrugem · NECRÓPOLIS é uma obra de ficção</p>
-      <span class="age">16</span>
+    <!-- ============ RODAPÉ ============ -->
+    <footer class="site-foot" id="pre-registro">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <p class="foot-logo">NECRÓP<span>☠</span>LIS <b>2</b></p>
+          <p class="foot-slogan">Comande a horda.<br><span>Ou seja comandado por ela.</span></p>
+          <p class="t3">Modo Comandante Zumbi · ataque bioquímico em 12 de dezembro.</p>
+        </div>
+        <form class="foot-form" data-prereg>
+          <p class="h3">Pré-registro</p>
+          <p class="t3">Ganhe a skin <b class="red">“Couraça Sangrenta”</b> e acesso ao teste fechado.</p>
+          <div class="foot-field">
+            <label class="sr-only" for="pre-email">Seu e-mail</label>
+            <input id="pre-email" type="email" placeholder="seu e-mail" required>
+            <button class="btn3" type="submit">Quero jogar</button>
+          </div>
+          <p class="t3 foot-ok" data-prereg-ok hidden>Inscrição confirmada. A horda vai te encontrar.</p>
+        </form>
+      </div>
+
+      <div class="foot-cols">
+        <div><p class="t2">Jogo</p><ul><li><a href="#introducao">Modo Comandante</a></li><li><a href="#novo-mapa">Novo mapa</a></li><li><a href="#apresentacao">Os zumbis</a></li><li><a href="#habilidades">Habilidades humanas</a></li></ul></div>
+        <div><p class="t2">Comunidade</p><ul><li><a href="#">Discord</a></li><li><a href="#">YouTube</a></li><li><a href="#">Instagram</a></li><li><a href="#">X</a></li></ul></div>
+        <div><p class="t2">Suporte</p><ul><li><a href="#">Perguntas frequentes</a></li><li><a href="#">Requisitos do sistema</a></li><li><a href="#">Reportar um bug</a></li><li><a href="#">Contato</a></li></ul></div>
+        <div><p class="t2">Plataformas</p><ul class="platforms"><li>PC</li><li>PlayStation 5</li><li>Xbox Series X|S</li></ul></div>
+      </div>
+
+      <div class="foot-bottom">
+        <span class="age">16</span>
+        <p class="t3">Violência, sangue e medo. © 2026 Estúdio Ferrugem · NECRÓPOLIS é uma obra de ficção.</p>
+        <a class="to-top" href="#inicio">Voltar ao topo ↑</a>
+      </div>
     </footer>
   </div>
 

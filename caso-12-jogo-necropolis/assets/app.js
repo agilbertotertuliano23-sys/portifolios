@@ -5,6 +5,8 @@
 // 4. habilidades humanas (ícones trocam nome e texto)
 // 5. "ver imagem maior" e trailer em um visualizador
 // 6. vídeos cinemáticos em loop: tocam só quando aparecem na tela
+// 7. menu: fundo ao rolar, barra de progresso, seção ativa, menu do celular
+// 8. pré-registro do rodapé (sem backend: só confirma na tela)
 // (a névoa em fluido fica em assets/fluid.js)
 
 document.documentElement.classList.add('js');
@@ -76,8 +78,7 @@ document.querySelectorAll('[data-zoom]').forEach((btn) => {
     open(src.cloneNode(true));
   });
 });
-const trailer = document.querySelector('[data-trailer]');
-if (trailer) {
+document.querySelectorAll('[data-trailer]').forEach((trailer) => {
   trailer.addEventListener('click', () => {
     const video = document.createElement('video');
     [['webm', 'video/webm'], ['mp4', 'video/mp4']].forEach(([ext, type]) => {
@@ -93,7 +94,7 @@ if (trailer) {
     open(video);
     video.play().catch(() => {});
   });
-}
+});
 document.querySelector('[data-lb-close]').addEventListener('click', close);
 lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !lb.hidden) close(); });
@@ -111,4 +112,54 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
     });
   }, { threshold: 0.2 });
   loops.forEach((v) => vio.observe(v));
+}
+
+/* ---------- 7. menu ---------- */
+const nav = document.querySelector('[data-nav]');
+const progress = document.querySelector('[data-progress]');
+const burger = document.querySelector('[data-burger]');
+const navLinks = document.querySelector('[data-nav-links]');
+if (nav) {
+  let ticking = false;
+  const onScroll = () => {
+    ticking = false;
+    nav.classList.toggle('is-solid', scrollY > 40);
+    const max = document.documentElement.scrollHeight - innerHeight;
+    progress.style.transform = `scaleX(${max > 0 ? Math.min(scrollY / max, 1) : 0})`;
+  };
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
+
+  // seção ativa
+  const spies = [...document.querySelectorAll('[data-spy]')];
+  const targets = spies.map((a) => document.querySelector(a.getAttribute('href')));
+  if ('IntersectionObserver' in window) {
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const i = targets.indexOf(entry.target);
+        spies.forEach((a, k) => a.classList.toggle('is-active', k === i));
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    targets.forEach((t) => t && spy.observe(t));
+  }
+
+  // menu do celular
+  const setOpen = (open) => {
+    burger.setAttribute('aria-expanded', String(open));
+    nav.classList.toggle('is-open', open);
+  };
+  burger.addEventListener('click', () => setOpen(burger.getAttribute('aria-expanded') !== 'true'));
+  navLinks.addEventListener('click', (e) => { if (e.target.closest('a')) setOpen(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+}
+
+/* ---------- 8. pré-registro ---------- */
+const prereg = document.querySelector('[data-prereg]');
+if (prereg) {
+  prereg.addEventListener('submit', (e) => {
+    e.preventDefault();
+    prereg.querySelector('[data-prereg-ok]').hidden = false;
+    prereg.reset();
+  });
 }
