@@ -9,6 +9,7 @@ Portfólios e cases de projetos web.
 | `caso-02-psicologia-patricia-medronha/` | Case — site de psicologia |
 | `caso-03-fitness-metodo-inovfit/` | Case — fitness Método InovFit |
 | `caso-04-influenciadora-fitnesswave/` | Case — influenciadora FitnessWave |
+| `caso-05-estetica-jasmim/` | Case — landing page Jasmim Estética |
 | `portfolio-de-servicos/` | Portfólio de serviços (cases em markdown) |
 
 Cada site abre direto pelo `index.html` da pasta.

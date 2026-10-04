@@ -1,0 +1,561 @@
+/* ==========================================================================
+   Design System & Custom Properties - Jasmim Clínica Estética
+   ========================================================================== */
+
+:root {
+  /* Color Palette */
+  --green-olive-dark: #323d30;
+  --green-olive-base: #3f4d3c;
+  --green-olive-light: #4f614b;
+  
+  --taupe-beige-base: #bfa47e;
+  --taupe-beige-light: #d6c5aa;
+  --taupe-beige-dark: #a88d68;
+  
+  --bg-cream: #f7f4ef;
+  --bg-white: #ffffff;
+  
+  --text-dark: #1e261d;
+  --text-body: #4a5448;
+  --text-muted: #6b7569;
+  --text-light: #ffffff;
+  
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  
+  /* Radii & Shadows */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 50px;
+  
+  --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --shadow-green: 0 8px 24px rgba(63, 77, 60, 0.25);
+  
+  --transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset & Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-dark);
+}
+
+/* Buttons */
+.btn-olive {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  background: var(--green-olive-base);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-green);
+  transition: transform var(--transition), background var(--transition);
+  text-decoration: none;
+}
+
+.btn-olive:hover {
+  background: var(--green-olive-dark);
+  transform: translateY(-2px);
+}
+
+.btn-taupe {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  background: var(--taupe-beige-base);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition), background var(--transition);
+  text-decoration: none;
+}
+
+.btn-taupe:hover {
+  background: var(--taupe-beige-dark);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Header & Nav Section
+   ========================================================================== */
+
+.top-header {
+  background: var(--bg-cream);
+  padding: 20px 0 10px;
+}
+
+.top-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo-icon {
+  width: 36px;
+  height: 36px;
+  color: var(--taupe-beige-dark);
+}
+
+.brand-logo-text h2 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.brand-logo-text span {
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.top-phone {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.nav-bar-row {
+  background: var(--taupe-beige-base);
+  border-radius: var(--radius-sm);
+  padding: 12px 24px;
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+}
+
+.nav-link {
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity var(--transition);
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+.hero-section {
+  padding: 40px 0 60px;
+}
+
+.hero-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.hero-image-container {
+  width: 100%;
+  height: 420px;
+  position: relative;
+}
+
+.hero-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text-overlay {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  padding: 36px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.hero-title {
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+  color: var(--text-dark);
+}
+
+.hero-subtext {
+  font-size: 0.92rem;
+  color: var(--text-body);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+/* 4 Feature Cards */
+.hero-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.feature-card {
+  background: var(--green-olive-base);
+  color: #ffffff;
+  border-radius: var(--radius-sm);
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: var(--shadow-sm);
+}
+
+.feature-icon {
+  width: 28px;
+  height: 28px;
+  color: var(--taupe-beige-light);
+}
+
+.feature-card h4 {
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.feature-card p {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   Bio Section (Quem é Eleonor Jasmim?)
+   ========================================================================== */
+
+.bio-section {
+  background: #ffffff;
+  padding: 90px 0;
+}
+
+.bio-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.bio-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.bio-text {
+  font-size: 0.92rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.bio-media img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  box-shadow: var(--shadow-md);
+}
+
+/* ==========================================================================
+   Procedures Section (Nossos Procedimentos)
+   ========================================================================== */
+
+.procedures-section {
+  background: var(--taupe-beige-base);
+  padding: 90px 0;
+  text-align: center;
+  color: #ffffff;
+}
+
+.procedures-section h2 {
+  font-size: 2.4rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.procedures-subtitle {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+}
+
+.procedure-highlight-card {
+  background: var(--green-olive-base);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: var(--shadow-md);
+  text-align: left;
+}
+
+.procedure-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.procedure-info {
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.procedure-info h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.procedure-info p {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Testimonials Section
+   ========================================================================== */
+
+.testimonials-section {
+  background: #ffffff;
+  padding: 90px 0;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+.testimonials-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 48px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.testimonial-card {
+  background: var(--green-olive-base);
+  color: #ffffff;
+  border-radius: var(--radius-sm);
+  padding: 28px 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.testimonial-text {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--taupe-beige-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.author-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Contact & Map Section
+   ========================================================================== */
+
+.contact-section {
+  background: var(--taupe-beige-base);
+  padding: 90px 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.map-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: var(--shadow-md);
+}
+
+.map-card img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+.contact-info-list {
+  font-size: 0.88rem;
+  color: var(--text-body);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-form-card {
+  background: var(--green-olive-base);
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: var(--shadow-md);
+}
+
+.contact-form-card h3 {
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+.form-subtitle {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  border: none;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+textarea.contact-input {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .top-header-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .hero-features-grid, .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .procedure-highlight-card, .bio-grid, .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-text-overlay {
+    position: static;
+    transform: none;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-features-grid, .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nav-bar-row {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
