@@ -4,6 +4,8 @@ referência: reference.jpg (fundo branco, coluna central preta de tinta com resp
 
 +-------------------------------------------------------------------------------------+
 | ink (coluna preta com bordas irregulares e respingos sobre fundo branco)            |
+| smoke (canvas fixo: névoa vermelha no hero, fumaça preta/cinza nas bordas da tinta; |
+|        reage ao cursor/dedo, clique solta rajada, acompanha a rolagem)            |
 +-------------------------------------------------------------------------------------+
 | hero (vermelho-escuro)                                                               |
 | [ico: logo NECRÓPOLIS 2]                                                             |

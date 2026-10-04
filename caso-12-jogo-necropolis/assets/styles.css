@@ -120,7 +120,7 @@ a.btn3:hover { background: var(--red); color: #fff; }
 /* =========================================================
    HERO
    ========================================================= */
-.hero { position: relative; z-index: 1; height: clamp(560px, 70vw, 760px); overflow: hidden; }
+.hero { position: relative; height: clamp(560px, 70vw, 760px); overflow: hidden; }
 .game-logo { position: absolute; left: 50%; top: 10px; z-index: 6; transform: translateX(-50%); font-family: var(--f-head); font-weight: 700; font-size: 18px; letter-spacing: .04em; color: #e9e9e9; text-shadow: 0 2px 6px #000; white-space: nowrap; }
 .game-logo span { color: var(--red-glow); }
 .game-logo b { font-size: 1.3em; vertical-align: -2px; }
@@ -157,10 +157,15 @@ a.btn3:hover { background: var(--red); color: #fff; }
 .badge small { display: block; font-size: 9px; opacity: .75; letter-spacing: .05em; }
 .bio { display: grid; place-items: center; width: 34px; height: 34px; background: var(--red); font-size: 22px; }
 
+/* fumaça interativa: fica entre o fundo (tinta/arte do hero) e o conteúdo */
+.smoke { position: fixed; inset: 0; z-index: 2; width: 100%; height: 100%; pointer-events: none; }
+.smoke-hint { margin-top: 14px; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255, 255, 255, .45); animation: hint 3s ease-in-out infinite; }
+@keyframes hint { 50% { color: rgba(255, 80, 80, .8); } }
+
 /* =========================================================
    BLOCOS
    ========================================================= */
-.block { position: relative; z-index: 1; width: var(--col); margin: 0 auto; padding: clamp(48px, 7vw, 90px) 0; }
+.block { position: relative; z-index: 3; width: var(--col); margin: 0 auto; padding: clamp(48px, 7vw, 90px) 0; }
 
 /* painel em pincelada vermelha: o fundo é distorcido, o texto não */
 .brush { position: relative; isolation: isolate; display: flex; flex-direction: column; gap: 10px; padding: 26px 30px; }
@@ -238,7 +243,7 @@ a.btn3:hover { background: var(--red); color: #fff; }
 .zgal li:hover .mini { transform: scale(1.04); }
 .zgal .t3 { margin-top: 6px; color: #ccc; font-family: var(--f-head); text-transform: uppercase; letter-spacing: .06em; }
 
-.foot { position: relative; z-index: 1; display: flex; justify-content: center; align-items: center; gap: 16px; padding: 40px 16px 60px; }
+.foot { position: relative; z-index: 3; display: flex; justify-content: center; align-items: center; gap: 16px; padding: 40px 16px 60px; }
 .age { display: grid; place-items: center; width: 34px; height: 34px; background: #e0a800; color: #000; font-family: var(--f-head); font-weight: 700; }
 
 /* visualizador */

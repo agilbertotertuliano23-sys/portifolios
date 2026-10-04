@@ -54,6 +54,7 @@
         <button class="play" type="button" aria-label="Assistir ao trailer" data-trailer><span>▶</span></button>
         <p class="tagline">A equipe de elite se tornou o maior obstáculo da sobrevivência humana.<br>Comande a horda — ou seja comandado por ela.</p>
         <p class="badge"><span class="bio" aria-hidden="true">☣</span><span><small>Ataque bioquímico · primeira jogada</small>12 de dezembro</span></p>
+        <p class="smoke-hint">mova o cursor para agitar a fumaça · clique para uma rajada</p>
       </div>
     </header>
 
@@ -177,6 +178,9 @@
       <span class="age">16</span>
     </footer>
   </div>
+
+  <!-- fumaça interativa (app.js): segue a página, reage ao cursor/dedo; clique solta uma rajada -->
+  <canvas class="smoke" data-smoke aria-hidden="true"></canvas>
 
   <!-- visualizador de imagem ampliada -->
   <div class="lightbox" data-lightbox hidden>
