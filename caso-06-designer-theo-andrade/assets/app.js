@@ -1,10 +1,42 @@
 // Theo Andrade — caso-06
+// 0. título PORTFOLIO em fita (onda)
 // 1. roda de cards do hero (gira um card por vez)
 // 2. carrossel da tela de destaques
 // 3. sentido de rotação do livro 3D
 // 4. scroll da seção final (wordmark estica + nuvem de imagens)
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- 0. título em fita ---------- */
+// cada letra tem duas cópias (preenchida e vazada) que trocam de lugar em contrafase;
+// a fase avança letra a letra, então a troca corre pela palavra como uma onda.
+// perto do cruzamento a letra achata e inclina seguindo a curva da fita.
+const waveCols = [...document.querySelectorAll('.wave .col')];
+if (waveCols.length && !reduceMotion) {
+  const SPEED = 1.9;   // rad/s
+  const STEP = 0.42;   // defasagem entre letras (rad)
+  const AMP = 0.4;     // deslocamento vertical, em em
+  const rows = waveCols.map((col) => [col.querySelector('.row.a'), col.querySelector('.row.b')]);
+
+  const frame = (now) => {
+    const t = now / 1000;
+    const em = parseFloat(getComputedStyle(waveCols[0]).fontSize);
+    const w = waveCols[0].offsetWidth || em;
+    const y = (i, sign) => sign * -AMP * em * Math.cos(t * SPEED - i * STEP);
+
+    rows.forEach(([a, b], i) => {
+      [[a, 1], [b, -1]].forEach(([el, sign]) => {
+        const c = Math.cos(t * SPEED - i * STEP);
+        const sy = Math.max(Math.pow(Math.abs(c), 0.45), 0.06);
+        const slope = (y(i + 1, sign) - y(i - 1, sign)) / (2 * w);
+        const tilt = Math.atan(slope) * 0.9;
+        el.style.transform = `translateY(${y(i, sign).toFixed(2)}px) skewY(${tilt.toFixed(3)}rad) scaleY(${sy.toFixed(3)})`;
+      });
+    });
+    requestAnimationFrame(frame);
+  };
+  requestAnimationFrame(frame);
+}
 
 /* ---------- 1. roda de cards ---------- */
 const wheel = document.querySelector('[data-wheel]');

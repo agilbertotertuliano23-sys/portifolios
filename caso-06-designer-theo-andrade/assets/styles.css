@@ -169,40 +169,35 @@ svg { display: block; }
 .title-name { left: 7%; }
 .title-role { right: 4%; }
 
-/* PORTFOLIO em fita torcida: cada letra tem duas linhas que giram em X com fase deslocada */
+/* PORTFOLIO em fita: a linha preenchida e a linha vazada trocam de lugar numa onda
+   que corre da esquerda para a direita (posições calculadas no app.js) */
 .wave {
   position: relative; z-index: 2;
   display: flex;
-  margin-top: -4%;
+  margin-top: -3%;
   font-family: var(--f-wide);
-  font-weight: 900;
-  font-size: clamp(46px, 10.4vw, 150px);
-  line-height: .74;
-  letter-spacing: -.02em;
+  font-weight: 800;
+  font-size: clamp(34px, 7vw, 104px);
+  line-height: 1;
+  letter-spacing: -.01em;
+  transform: scaleX(1.32);
 }
-.wave .col { display: inline-flex; flex-direction: column; align-items: center; }
+.wave .col { position: relative; display: inline-block; }
 .wave .row {
   display: block;
   color: var(--ink);
-  -webkit-text-stroke: 0 var(--ink);
-  animation: twist 4.2s linear infinite;
-  animation-delay: calc(var(--i) * -.21s);
+  transform-origin: 50% 50%;
   will-change: transform;
 }
-.wave .row.b { animation-delay: calc(var(--i) * -.21s - 2.1s); }
-
-.wave .col:nth-child(1) { --i: 0; } .wave .col:nth-child(2) { --i: 1; } .wave .col:nth-child(3) { --i: 2; }
-.wave .col:nth-child(4) { --i: 3; } .wave .col:nth-child(5) { --i: 4; } .wave .col:nth-child(6) { --i: 5; }
-.wave .col:nth-child(7) { --i: 6; } .wave .col:nth-child(8) { --i: 7; } .wave .col:nth-child(9) { --i: 8; }
-
-@keyframes twist {
-  0%     { transform: rotateX(0deg);   color: var(--ink); -webkit-text-stroke-width: 0; }
-  24.9%  { color: var(--ink); -webkit-text-stroke-width: 0; }
-  25%    { transform: rotateX(90deg);  color: transparent; -webkit-text-stroke-width: 1.4px; }
-  74.9%  { color: transparent; -webkit-text-stroke-width: 1.4px; }
-  75%    { transform: rotateX(270deg); color: var(--ink); -webkit-text-stroke-width: 0; }
-  100%   { transform: rotateX(360deg); color: var(--ink); -webkit-text-stroke-width: 0; }
+.wave .row.b {
+  position: absolute; left: 0; top: 0;
+  color: transparent;
+  -webkit-text-stroke: 1.2px var(--ink);
+  z-index: -1;
 }
+/* posição de repouso (sem JS / movimento reduzido): preenchida em cima, vazada embaixo */
+.wave .row.a { transform: translateY(-.4em); }
+.wave .row.b { transform: translateY(.4em); }
 
 /* roda de cards */
 .wheel {
@@ -799,6 +794,7 @@ svg { display: block; }
   .title-block { height: 260px; margin-top: 40px; }
   .title-rect { top: 0; height: 86%; }
   .title-name, .title-role { bottom: 6%; }
+  .wave .row.b { -webkit-text-stroke-width: .8px; }
   .card-grow b { font-size: 30px; } .card-at b { font-size: 120px; } .card-dope b { font-size: 50px; }
   .card-ratio b { font-size: 46px; } .card-grid b { font-size: 34px; } .card-glitch b { font-size: 34px; }
   .card-impact b { font-size: 14px; } .card-casino b { font-size: 10px; }
