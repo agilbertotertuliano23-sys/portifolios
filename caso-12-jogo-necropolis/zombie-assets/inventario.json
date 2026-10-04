@@ -1,0 +1,115 @@
+{
+  "fonte": "download.png (referência visual)",
+  "nota": "Recriações produzidas com image_gen; não são extrações dos arquivos-fonte originais.",
+  "metodo": "ImageGen integrado",
+  "itens": [
+    {
+      "arquivo": "01-fundo-principal.png",
+      "nome": "Fundo principal com bordas de tinta",
+      "transparente": true,
+      "prompt": "Use case: background-extraction.\nInput image: the supplied long screenshot is a visual reference and extraction target.\nCreate one standalone reusable BACKGROUND LAYER from this reference: the long distressed black ink field with deep crimson painted accents, rough brush edges, ink drips, subtle smoky texture, and irregular transparent outer margins.\nThis deliverable is only the background paint layer for a dark game website, not the website screenshot.\nRemove all typography, logos, interface, buttons, cards, thumbnails, people, faces, hands, creatures and foreground illustrations. Reconstruct the paint texture behind those removed elements.\nComposition: a tall portrait PNG, about 1:3 aspect ratio, large continuous almost-black center covering 75 percent of the width, organic ragged black paint strokes along left and right, small deep-red strokes near the top and a broader crimson band in the lower third, matching the source palette. Keep the center quiet enough for later content placement. Do not reproduce the gray screenshot margins.\nTransparency: genuine alpha transparency outside the irregular ink boundary and in sparse edge splatters; not a white or checkerboard pattern. The ink itself should remain opaque. High resolution, clean reusable compositing asset, no text."
+    },
+    {
+      "arquivo": "02-rosto-e-maos-cabecalho.png",
+      "nome": "Rosto e mãos do cabeçalho",
+      "transparente": true,
+      "prompt": "Use case: compositing / reference-based asset reconstruction.\nInput image: the uploaded long game landing-page screenshot is the sole visual reference. Deliver exactly ONE standalone asset, not the entire screenshot. Preserve its dark game illustration style. This is a new high-resolution reconstruction of a flattened source; remove all overlaid website interface. Do not invent text.\nASSET: Recreate ONLY the enormous ominous pale gray undead face and its two large hands framing the top hero in the source. Frontal symmetric composition, close-cropped forehead, deep dark eye sockets with tiny crimson pupils, textured weathered skin, hands reaching inward from the lower left and right, fingers intact and clearly formed. Dark fantasy promotional game artwork, cold white rim lighting, deep shadows. This is one wide 3:2 foreground/background character overlay. Remove the woman, all lettering, logos, web UI and red background. Reconstruct anatomy obscured by other elements. Isolate the entire face-and-hands composition on genuine transparent alpha. Keep fingertips inside canvas. No extra subjects."
+    },
+    {
+      "arquivo": "03-personagem-feminina.png",
+      "nome": "Personagem central do cabeçalho",
+      "transparente": true,
+      "prompt": "Use case: compositing / reference-based asset reconstruction.\nInput image: the uploaded long game landing-page screenshot is the sole visual reference. Deliver exactly ONE standalone asset, not the entire screenshot. Preserve its dark game illustration style. This is a new high-resolution reconstruction of a flattened source; remove all overlaid website interface. Do not invent text.\nASSET: Recreate ONLY the adult female undead game character at the center of the top hero. Full body, long messy dark hair, pale gray face with an open-mouth dramatic expression, worn light gray short-sleeve shirt and dark distressed trousers, dark boots. Slight twisting three-quarter stance like the source, arms near the torso, windswept fabric and hair. Dark fantasy realistic videogame promotional illustration, desaturated gray palette and restrained red edge light. Reconstruct portions hidden behind the title and interface so the character is complete. No giant face, no hands behind her, no background or props, no words or logo. Entire character with head and both feet visible, generous clear border. Genuine transparent alpha PNG."
+    },
+    {
+      "arquivo": "04-grupo-silhuetas.png",
+      "nome": "Grupo de silhuetas do cabeçalho",
+      "transparente": true,
+      "prompt": "Use case: compositing / reference-based asset reconstruction.\nInput image: the uploaded long game landing-page screenshot is the sole visual reference. Deliver exactly ONE standalone asset, not the entire screenshot. Preserve its dark game illustration style. This is a new high-resolution reconstruction of a flattened source; remove all overlaid website interface. Do not invent text.\nASSET: Recreate ONLY the small shadowy group of background undead figures beneath the central woman in the top hero. A loose horizontal group of five distant adult humanoid game enemies, ragged silhouettes, muted charcoal clothing, sparse cold gray highlights, ominous fog-softened lower legs. This is a subtle background character layer, without the main woman, without the giant face or hands. Preserve the source's dark illustrated game aesthetic. Wide horizontal composition, distinct readable silhouettes, all bodies within the frame, no environment, no text, no UI. Genuine transparent alpha PNG."
+    },
+    {
+      "arquivo": "05-criatura-glacial-retrato.png",
+      "nome": "Criatura glacial da seção 01",
+      "transparente": true,
+      "prompt": "Use case: compositing / reference-based asset reconstruction.\nInput image: the uploaded long game landing-page screenshot is the sole visual reference. Deliver exactly ONE standalone asset, not the entire screenshot. Preserve its dark game illustration style. This is a new high-resolution reconstruction of a flattened source; remove all overlaid website interface. Do not invent text.\nASSET: Recreate ONLY the pale icy creature in the portrait card to the right of section 01. Head and upper torso of a fictional ice-armored alien beast: huge broad open toothy mouth, pointed crystalline bony crown ridges, thick layered frosty scales, blue-gray neck armor, three-quarter upward-facing pose. The distinctive creature silhouette should follow the source card. Polished dark fantasy game concept painting, cool steel-blue palette, diffuse icy top light. Isolate bust on genuine transparent alpha, include intact horns and shoulders with margin, no rectangular picture background, no card or typography. No injury or body damage."
+    },
+    {
+      "arquivo": "06-cenario-glacial.png",
+      "nome": "Cenário glacial da seção 02",
+      "transparente": false,
+      "prompt": "Use case: compositing / reference-based asset reconstruction.\nInput image: the uploaded long game landing-page screenshot is the sole visual reference. Deliver exactly ONE standalone asset, not the entire screenshot. Preserve its dark game illustration style. This is a new high-resolution reconstruction of a flattened source; remove all overlaid website interface. Do not invent text.\nASSET: Recreate the tall icy fantasy environment illustration visible in the narrow vertical card at the left of section 02 NEW MAP. A towering white-blue frozen cavern or glacial ravine with sharp sweeping ice formations above, a dark rocky icy path below, atmospheric mist and very small ominous creature silhouette in the lower distance as in the reference. Cold blue-gray concept art, dramatic vertical perspective, painterly videogame environment, enough fine rock and ice detail for standalone use. Tall portrait about 1:2. Full-bleed opaque environment image. Remove interface labels, text, card borders and all website elements."
+    },
+    {
+      "arquivo": "07-lobo-mutante.png",
+      "nome": "Lobo mutante da seção 02",
+      "transparente": true,
+      "prompt": "Use case: compositing / reference-based asset reconstruction.\nInput image: the uploaded long game landing-page screenshot is the sole visual reference. Deliver exactly ONE standalone asset, not the entire screenshot. Preserve its dark game illustration style. This is a new high-resolution reconstruction of a flattened source; remove all overlaid website interface. Do not invent text.\nASSET: Recreate ONLY the featured crouching werewolf-like mutant to the right of section 02. Full-body blue-gray muscular fantasy creature with large pointed ears, spiky shoulders, a wide toothy jaw, long clawed hands, long bent hind legs and a powerful hunched running or leaping stance. Match its position and three-quarter orientation in the source. High-quality realistic dark fantasy game render, cool silvery edge lighting, charcoal and steel-blue armor-like skin, restrained crimson accents in its mouth. Intact anatomy. Both hands, feet, ears and claws fully visible, generous margins. Genuine transparent alpha PNG. No floor, rubble, landscape, UI, text or other characters."
+    },
+    {
+      "arquivo": "08-cenario-torre.png",
+      "nome": "Cenário de torre e ruínas",
+      "transparente": false,
+      "prompt": "Use case: compositing / reference-based asset reconstruction.\nInput image: the uploaded long game landing-page screenshot is the sole visual reference. Deliver exactly ONE standalone asset, not the entire screenshot. Preserve its dark game illustration style. This is a new high-resolution reconstruction of a flattened source; remove all overlaid website interface. Do not invent text.\nASSET: Recreate the small narrow grayscale architectural environment card near the middle of section 02, left of the werewolf. Ancient dark stone tower or ruined castle corner seen from below, overcast pale gray sky, broken architectural fragments and a hint of purple-gray rocky foreground. Monochromatic moody videogame environment art with realistic stone relief. Tall portrait around 1:2, full-bleed opaque background. Reconstruct hidden scenery naturally. Absolutely no lettering, labels, black text boxes, interface or extra foreground character."
+    },
+    {
+      "arquivo": "09-soldado-blindado.png",
+      "nome": "Personagem blindado da seção 03",
+      "transparente": true,
+      "prompt": "Use case: compositing / reference-based asset reconstruction.\nInput image: the uploaded long game landing-page screenshot is the sole visual reference. Deliver exactly ONE standalone asset, not the entire screenshot. Preserve its dark game illustration style. This is a new high-resolution reconstruction of a flattened source; remove all overlaid website interface. Do not invent text.\nASSET: Recreate ONLY the large armored undead sci-fi game soldier featured in section 03 in the lower third of the source. Full body, pale intimidating face, heavy blue-gray futuristic shoulder armor, bulky chest plate with circular metallic details, reinforced forearms, dark navy combat pants and knee guards, boots. Dynamic forward-running pose, one huge gauntleted fist coming forward, the other arm bent, one leg forward and the other behind. Match the source character's dramatic silhouette. Polished videogame promotional render, desaturated teal-steel armor, subtle cyan highlights. Complete intact armor and body, no additional creature behind him, no backdrop, no typography, no card. Entire subject from head to both boots in frame with margin. Genuine transparent alpha PNG."
+    },
+    {
+      "arquivo": "10-painel-vermelho.png",
+      "nome": "Painel vermelho para títulos e cartões",
+      "transparente": true,
+      "prompt": "Use case: compositing / reference-based asset reconstruction.\nInput image: the uploaded long game landing-page screenshot is the sole visual reference. Deliver exactly ONE standalone asset, not the entire screenshot. Preserve its dark game illustration style. This is a new high-resolution reconstruction of a flattened source; remove all overlaid website interface. Do not invent text.\nASSET: Recreate one reusable red grunge panel inspired by the cards ZOMBIE COMMANDER and NEW MAP in the source. Rich deep crimson rectangular paint swatch, rough brushwork edges with small splatters, dark charcoal craggy-rock and smoky texture within, subtle layered abstract angular brush strokes. Landscape 3:2. Center moderately even and quiet for placing text later. No words, no UI, no people, no illustrations of monsters, no logos. A standalone graphic overlay with genuinely transparent exterior and opaque red painted interior, clean alpha PNG."
+    },
+    {
+      "arquivo": "11-faixa-vermelha.png",
+      "nome": "Faixa vermelha larga da seção 03",
+      "transparente": true,
+      "prompt": "Use case: compositing / reference-based asset reconstruction.\nInput image: the uploaded long game landing-page screenshot is the sole visual reference. Deliver exactly ONE standalone asset, not the entire screenshot. Preserve its dark game illustration style. This is a new high-resolution reconstruction of a flattened source; remove all overlaid website interface. Do not invent text.\nASSET: Recreate ONLY the wide crimson painted band spanning section 03 behind the armored character in the source. An ultra-wide horizontal strip around 3:1, layered deep red painterly rock texture, dark winding brush strokes, rough ink drips and weathered irregular upper and lower edges. Maintain broad quiet central area for content placement. This is a reusable background graphic, without soldier, typography, interface, hands, silhouettes or creature images. Genuine transparent alpha outside the red paint boundary. Opaque crimson and charcoal inside."
+    },
+    {
+      "arquivo": "12-painel-cinza-habilidades.png",
+      "nome": "Fundo cinza da seção de habilidades",
+      "transparente": false,
+      "prompt": "Use case: compositing / reference-based asset reconstruction.\nInput image: the uploaded long game landing-page screenshot is the sole visual reference. Deliver exactly ONE standalone asset, not the entire screenshot. Preserve its dark game illustration style. This is a new high-resolution reconstruction of a flattened source; remove all overlaid website interface. Do not invent text.\nASSET: Recreate the dark charcoal illustrated card background behind the HUMAN SKILLS / STRONG ZOMBIE content near the bottom of the source. Landscape 2:1 monochrome gray dark-fantasy mural with shadowy adult humanoid mutant silhouettes, a large hooded shape toward one side and broad gestural creature shapes. Low contrast for overlaying readable text later. Stylized painterly game illustration, charcoal, slate gray and black only, no saturated color. Full-bleed opaque image, no words, no numbered markers, no buttons, no icons and no UI. This is a background illustration, not a screenshot."
+    },
+    {
+      "arquivo": "13-painel-sombra.png",
+      "nome": "Ilustração sombria do cartão intermediário",
+      "transparente": false,
+      "prompt": "Use case: compositing / reference-based asset reconstruction.\nInput image: the uploaded long game landing-page screenshot is the sole visual reference. Deliver exactly ONE standalone asset, not the entire screenshot. Preserve its dark game illustration style. This is a new high-resolution reconstruction of a flattened source; remove all overlaid website interface. Do not invent text.\nASSET: Recreate the small monochrome dark illustrated card just below the red section 03 band in the source. A charcoal gray fantasy humanoid shadow in an expressive diagonal reaching pose against smoky gray layered silhouettes, moody low-key painterly game art. Landscape 3:2 crop. Very dark low-contrast composition suitable behind text. Since the source is small, interpret uncertain details conservatively. No text, logo, card framing, interface or added detailed horror injuries. Full-bleed opaque background."
+    },
+    {
+      "arquivo": "14-icone-rosto.png",
+      "nome": "Ícone de rosto sombrio",
+      "transparente": true,
+      "prompt": "Use case: game-interface character portrait icon. Create one original, non-graphic dark-fantasy game icon portrait of an ominous shadow commander: intact slate-gray face, steady glowing crimson eyes, closed mouth, sculpted dark hood or high collar, matte charcoal and crimson armor. Symmetrical front-facing head-and-shoulders portrait, centered inside a simple weathered charcoal metal circular rim. Strong readable silhouette for a tiny game selection icon. Square 1024x1024 PNG. Genuine transparent alpha outside the circular portrait. Keep the face completely intact, no exposed bones, no blood, no wounds, no gore, no text, no logo, no UI."
+    },
+    {
+      "arquivo": "15-icone-gelo.png",
+      "nome": "Ícone de criatura glacial",
+      "transparente": true,
+      "prompt": "Use case: precise-object-edit / game interface portrait icon.\nUse the supplied character artwork as the identity reference. Create ONE standalone circular character portrait icon for the five tiny selection portraits visible in the source game's HUMAN SKILLS area. This is an approximate reconstruction of an unreadably small source icon, using the already reconstructed character for consistency.\nPreserve the supplied character's face, palette and game-render aesthetic. Crop to head and upper shoulders only. Center inside a simple thin weathered charcoal metal circular rim. Subject and a dark neutral disk behind the head remain inside the circle. Transparent background outside the circle, genuine alpha, no square background. Square PNG canvas, 1024 x 1024, circle occupies 85% of canvas so it is not clipped. Clear facial silhouette and readable at small scale. No hands or other characters, no words, numbers or logos."
+    },
+    {
+      "arquivo": "16-icone-lobo.png",
+      "nome": "Ícone de lobo mutante",
+      "transparente": true,
+      "prompt": "Use case: precise-object-edit / game interface portrait icon.\nUse the supplied character artwork as the identity reference. Create ONE standalone circular character portrait icon for the five tiny selection portraits visible in the source game's HUMAN SKILLS area. This is an approximate reconstruction of an unreadably small source icon, using the already reconstructed character for consistency.\nPreserve the supplied character's face, palette and game-render aesthetic. Crop to head and upper shoulders only. Center inside a simple thin weathered charcoal metal circular rim. Subject and a dark neutral disk behind the head remain inside the circle. Transparent background outside the circle, genuine alpha, no square background. Square PNG canvas, 1024 x 1024, circle occupies 85% of canvas so it is not clipped. Clear facial silhouette and readable at small scale. No hands or other characters, no words, numbers or logos."
+    },
+    {
+      "arquivo": "17-icone-blindado.png",
+      "nome": "Ícone de personagem blindado",
+      "transparente": true,
+      "prompt": "Use case: precise-object-edit / game interface portrait icon.\nUse the supplied character artwork as the identity reference. Create ONE standalone circular character portrait icon for the five tiny selection portraits visible in the source game's HUMAN SKILLS area. This is an approximate reconstruction of an unreadably small source icon, using the already reconstructed character for consistency.\nPreserve the supplied character's face, palette and game-render aesthetic. Crop to head and upper shoulders only. Center inside a simple thin weathered charcoal metal circular rim. Subject and a dark neutral disk behind the head remain inside the circle. Transparent background outside the circle, genuine alpha, no square background. Square PNG canvas, 1024 x 1024, circle occupies 85% of canvas so it is not clipped. Clear facial silhouette and readable at small scale. No hands or other characters, no words, numbers or logos."
+    },
+    {
+      "arquivo": "18-icone-personagem.png",
+      "nome": "Ícone de personagem feminina",
+      "transparente": true,
+      "prompt": "Use case: game-interface character portrait icon. Create one original, non-graphic dark-fantasy game character portrait of an adult female survivor commander: pale but natural healthy skin, expressive alert eyes, long tousled dark hair, simple worn gray shirt, strong determined closed-mouth expression, restrained crimson rim light. Symmetrical shoulders-up portrait, centered inside a simple weathered charcoal metal circular rim. Square 1024x1024 PNG. Genuine transparent alpha outside the circular portrait. Keep face and clothing intact and non-graphic, no blood, no bruises, no wounds, no gore, no text, no logo, no UI."
+    }
+  ]
+}

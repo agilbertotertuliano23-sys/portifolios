@@ -1,0 +1,7 @@
+Pacote de imagens recriadas a partir da captura download.png.
+
+As imagens são recriações, não arquivos originais recuperados do site.
+A captura termina no início da área ZOMBIE PRESENTATION; partes abaixo desse corte não aparecem no pacote.
+Personagens e sobreposições: PNG com transparência. Cenários: PNG com fundo completo.
+Geração: ferramenta integrada image_gen, usando a captura como referência.
+O inventário de arquivos e os prompts completos estão em inventario.json.
