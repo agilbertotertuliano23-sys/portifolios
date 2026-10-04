@@ -4,6 +4,8 @@ referência: reference.jpg (fundo branco, coluna central preta de tinta com resp
 
 +-------------------------------------------------------------------------------------+
 | ink (coluna preta com bordas irregulares e respingos sobre fundo branco)            |
+| ink-live (ink.js — bordas desenhadas ao vivo: ondulam, esticam até o cursor no     |
+|        branco, ondas ao passar rápido, clique solta tranco + gotas de tinta)         |
 | smoke (fluid.js — simulação de fluido WebGL: as bordas da tinta soltam névoa preta |
 |        sozinhas; no centro o cursor arrasta névoa vermelha; clique solta rajada)    |
 +-------------------------------------------------------------------------------------+

@@ -141,6 +141,10 @@ a.btn3:hover { background: var(--red); color: #fff; }
 .badge small { display: block; font-size: 9px; opacity: .75; letter-spacing: .05em; }
 .bio { display: grid; place-items: center; width: 34px; height: 34px; background: var(--red); font-size: 22px; }
 
+/* bordas de tinta ao vivo (ink.js): o canvas desenha a borda, a coluna fica lisa e recuada */
+.ink-canvas { position: fixed; inset: 0; z-index: 1; width: 100%; height: 100%; pointer-events: none; }
+.ink-live .ink-body { filter: none; left: calc(clamp(10px, 3.5vw, 72px) + 30px); right: calc(clamp(10px, 3.5vw, 72px) + 30px); }
+
 /* fumaça interativa: fica entre o fundo (tinta/arte do hero) e o conteúdo */
 .smoke { position: fixed; inset: 0; z-index: 2; width: 100%; height: 100%; pointer-events: none; }
 .smoke-hint { margin-top: 14px; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255, 255, 255, .45); animation: hint 3s ease-in-out infinite; }
