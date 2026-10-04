@@ -1,0 +1,402 @@
+/* =========================================================
+   Helena Moraes — portfólio de fotografia (caso-07)
+   creme + vermelho vinho; títulos largos em caixa alta
+   ========================================================= */
+
+:root {
+  --cream: #f4ede2;
+  --cream-2: #ebe2d4;
+  --red: #9e0f17;
+  --red-deep: #7d0b12;
+  --ink: #1b1514;
+  --ink-soft: #4b403c;
+
+  --f-display: "Archivo", "Arial Black", sans-serif;
+  --f-text: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  --pad: clamp(16px, 4vw, 56px);
+  --max: 1240px;
+  --gap: clamp(12px, 2vw, 24px);
+
+  /* granulação de filme sobre as composições */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- reset curto ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--f-text);
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+svg { display: block; }
+figure { margin: 0; }
+
+/* ---------- tags tipadas ---------- */
+.h1, .h2, .h3 {
+  font-family: var(--f-display);
+  font-weight: 900;
+  font-stretch: 125%;
+  font-variation-settings: "wdth" 125;
+  text-transform: uppercase;
+  line-height: .9;
+  letter-spacing: -.025em;
+}
+.h2 { font-size: clamp(30px, 8.4vw, 118px); }
+.h3 { font-size: clamp(26px, 3.2vw, 42px); }
+.t1 { font-size: clamp(14px, 1.15vw, 16px); line-height: 1.6; }
+.t2 {
+  font-family: var(--f-display); font-weight: 800;
+  font-stretch: 112%; font-variation-settings: "wdth" 112;
+  text-transform: uppercase; font-size: clamp(14px, 1.3vw, 17px); line-height: 1.1; letter-spacing: .01em;
+}
+.t3 { font-size: 12px; line-height: 1.45; letter-spacing: .01em; }
+.lnk { font-weight: 500; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 16px 26px;
+  background: var(--red); color: var(--cream);
+  font-family: var(--f-display); font-weight: 800; font-stretch: 112%; font-variation-settings: "wdth" 112;
+  font-size: 15px; text-transform: uppercase; letter-spacing: .02em;
+  transition: background .25s ease, transform .25s ease;
+}
+.btn:hover { background: var(--red-deep); transform: translateY(-2px); }
+
+.arrow { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: square; flex: none; }
+.arrow-lg { width: clamp(28px, 3vw, 42px); height: clamp(28px, 3vw, 42px); stroke-width: 2; }
+
+.red { background: var(--red); color: var(--cream); }
+.cream { color: var(--cream); }
+.cream-bg { background: var(--cream); }
+.red-text { color: var(--red); }
+.center { text-align: center; }
+
+/* barra fina que abre cada seção */
+.bar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 0;
+  opacity: .85;
+}
+.bar .t3 { font-size: 11px; }
+
+/* ---------- seções ---------- */
+.hero, .section, .footer {
+  padding-left: max(var(--pad), calc((100vw - var(--max)) / 2));
+  padding-right: max(var(--pad), calc((100vw - var(--max)) / 2));
+}
+.section { padding-top: clamp(20px, 3vw, 36px); padding-bottom: clamp(48px, 7vw, 96px); }
+
+/* =========================================================
+   FOTOS — composições em CSS (trocadas por arquivo real via app.js)
+   ========================================================= */
+.ph {
+  position: relative;
+  overflow: hidden;
+  background-color: #2a2220;
+  background-size: cover;
+  background-position: center;
+  isolation: isolate;
+}
+.ph::before, .ph::after { content: ""; position: absolute; inset: 0; pointer-events: none; }
+.ph:not(.is-loaded) { box-shadow: inset 0 0 80px rgba(0, 0, 0, .35); }
+.ph.is-loaded::before, .ph.is-loaded::after, .ph.is-loaded .ph-tag { display: none; }
+.ph-tag {
+  position: absolute; left: 8px; bottom: 8px; z-index: 2;
+  padding: 2px 6px;
+  background: rgba(0, 0, 0, .35); color: rgba(255, 255, 255, .75);
+  font: 500 9px/1.4 var(--f-text); letter-spacing: .04em;
+  opacity: 0; transition: opacity .2s ease;
+}
+.ph:hover .ph-tag { opacity: 1; }
+
+/* retrato genérico: cabelo, rosto e ombros desenhados com gradientes, posicionados por variáveis */
+.portrait::before {
+  background:
+    radial-gradient(ellipse var(--fw, 13%) var(--fh, 17%) at calc(var(--x, 50%) - 2%) calc(var(--fy, 44%) - 3%),
+      color-mix(in srgb, var(--skin, #c99a7b) 70%, #fff) 0%, var(--skin, #c99a7b) 45%, color-mix(in srgb, var(--skin, #c99a7b) 45%, #000) 85%, transparent 100%),
+    radial-gradient(ellipse calc(var(--fw, 13%) * 1.5) calc(var(--fh, 17%) * 1.35) at var(--x, 50%) calc(var(--fy, 44%) - 3%), var(--hair, #2a1a14) 0 80%, transparent 100%),
+    radial-gradient(ellipse var(--bw, 40%) 32% at var(--x, 50%) 104%, var(--body, #1a1514) 0 85%, transparent 100%);
+  filter: blur(7px);
+  opacity: .92;
+}
+
+/* hero — retrato com flores no cabelo, luz quente */
+.ph-flores {
+  --x: 46%; --fy: 50%; --fw: 17%; --fh: 23%; --bw: 46%;
+  --skin: #e2b48e; --hair: #7a3418; --body: #c98f62;
+  background-image:
+    var(--grain),
+    radial-gradient(circle at 70% 25%, rgba(255, 236, 200, .9) 0 8%, transparent 30%),
+    linear-gradient(115deg, #3a2213 0%, #9a6338 40%, #e9c79a 75%, #f5e3c4 100%);
+}
+.ph-flores::after { /* florzinhas brancas no cabelo */
+  background:
+    radial-gradient(circle, #fff7ea 0 2.4px, transparent 3.4px) 0 0 / 23px 17px,
+    radial-gradient(circle, #fff1dc 0 1.6px, transparent 2.6px) 9px 7px / 19px 21px;
+  filter: blur(1.1px);
+  opacity: .8;
+  -webkit-mask: radial-gradient(ellipse 30% 22% at 40% 28%, #000 40%, transparent 72%);
+          mask: radial-gradient(ellipse 30% 22% at 40% 28%, #000 40%, transparent 72%);
+}
+.ph-buque {
+  background-image:
+    var(--grain),
+    radial-gradient(circle at 20% 30%, rgba(255, 245, 225, .95) 0 5%, transparent 9%),
+    radial-gradient(circle at 45% 60%, rgba(255, 240, 215, .85) 0 6%, transparent 11%),
+    radial-gradient(circle at 70% 35%, rgba(255, 230, 190, .8) 0 4%, transparent 9%),
+    radial-gradient(circle at 85% 70%, rgba(255, 245, 225, .9) 0 5%, transparent 10%),
+    radial-gradient(circle at 30% 80%, rgba(240, 200, 150, .7) 0 7%, transparent 12%),
+    linear-gradient(135deg, #5c3a20, #b9875a 55%, #e4c49b);
+}
+.ph-buque::before { background: radial-gradient(circle, rgba(255, 255, 255, .85) 0 1.5px, transparent 2.5px) 0 0 / 14px 12px; opacity: .55; filter: blur(1.4px); }
+
+/* sobre — fotógrafa com câmera, contraluz */
+.ph-camera {
+  background-image:
+    var(--grain),
+    radial-gradient(ellipse 30% 40% at 82% 40%, #c39072 0 55%, transparent 80%),
+    linear-gradient(90deg, #120d0c 0%, #2b211e 55%, #5b463d 100%);
+}
+.ph-camera::before { /* corpo da câmera + lente */
+  background:
+    radial-gradient(circle at 34% 50%, #0b0b0b 0 9%, #3a3a3a 9.5% 11%, #090909 11.5% 17%, #4d4d4d 17.5% 18.5%, #111 19% 24%, transparent 24.5%),
+    linear-gradient(#1a1a1a, #1a1a1a) 52% 46% / 30% 34% no-repeat;
+  border-radius: 6px;
+}
+.ph-camera::after { /* mãos */
+  background:
+    radial-gradient(ellipse 12% 9% at 58% 72%, #b98366 0 80%, transparent 100%),
+    radial-gradient(ellipse 9% 12% at 22% 70%, #a77257 0 80%, transparent 100%);
+  filter: blur(1px);
+}
+
+/* prêmios */
+.ph-noiva {
+  background-image:
+    var(--grain),
+    linear-gradient(180deg, transparent 60%, rgba(0, 0, 0, .55)),
+    linear-gradient(90deg, #2c3236 0 14%, #4c555a 14% 16%, #1f2427 16% 70%, #3c4549 70% 72%, #262b2e 72%),
+    linear-gradient(#1e2326, #1e2326);
+}
+.ph-noiva::before { /* vestido branco */
+  background: linear-gradient(180deg, #f3f1ec, #cfcac2);
+  clip-path: polygon(54% 30%, 60% 30%, 64% 48%, 78% 92%, 40% 92%, 52% 48%);
+}
+.ph-noiva::after { /* noivo + rosto */
+  background:
+    radial-gradient(ellipse 5% 6% at 57% 26%, #d1a386 0 90%, transparent 100%),
+    radial-gradient(ellipse 5% 6% at 38% 30%, #b88a6e 0 90%, transparent 100%),
+    linear-gradient(#141414, #141414) 34% 36% / 10% 54% no-repeat;
+}
+.ph-verde {
+  background-image:
+    var(--grain),
+    radial-gradient(ellipse 60% 50% at 50% 30%, #3fb39a 0%, #137a66 55%, #08443a 100%);
+}
+.ph-verde::before {
+  background: linear-gradient(180deg, #c7d7a0, #8fa968 60%, #5f7a45);
+  clip-path: polygon(46% 26%, 56% 26%, 58% 44%, 72% 96%, 30% 96%, 44% 44%);
+}
+.ph-verde::after { background: radial-gradient(ellipse 5.5% 6.5% at 51% 19%, #e0b493 0 90%, transparent 100%), radial-gradient(ellipse 7% 8% at 51% 16%, #3a2016 0 90%, transparent 100%); }
+.ph-casaco {
+  background-image:
+    var(--grain),
+    radial-gradient(ellipse 50% 60% at 50% 45%, #3b3d42, #17181b 75%);
+}
+.ph-casaco::before {
+  background: linear-gradient(160deg, #c3262b, #7d0c12 70%);
+  clip-path: polygon(40% 30%, 62% 28%, 80% 60%, 70% 96%, 26% 96%, 22% 58%);
+}
+.ph-casaco::after { background: radial-gradient(ellipse 6% 7% at 52% 22%, #c99073 0 90%, transparent 100%), radial-gradient(ellipse 8% 9% at 52% 19%, #120c0a 0 90%, transparent 100%); }
+.ph-montanha {
+  background-image:
+    var(--grain),
+    radial-gradient(ellipse 50% 30% at 35% 25%, rgba(255, 170, 140, .9), transparent 70%),
+    linear-gradient(180deg, #e7a08a 0%, #a8738d 30%, #3e5a85 70%, #1d2c48 100%);
+}
+.ph-montanha::before {
+  background:
+    linear-gradient(180deg, #f6f1ee 0 26%, #5b6b85 26%) ;
+  clip-path: polygon(0 100%, 0 78%, 28% 52%, 46% 30%, 56% 40%, 66% 34%, 100% 70%, 100% 100%);
+}
+.ph-montanha::after { background: linear-gradient(180deg, transparent 70%, rgba(10, 15, 30, .7)); }
+
+/* trabalhos selecionados — P&B */
+.pb { filter: grayscale(1) contrast(1.08); }
+.pb.portrait::before { filter: blur(9px); }
+.pb1 { --x: 40%; --fy: 40%; --skin: #8a8a8a; --hair: #2b2b2b; --body: #3a3a3a; background-image: var(--grain), linear-gradient(120deg, #cfcfcf, #6d6d6d); }
+.pb2 { --x: 58%; --fy: 48%; --fw: 18%; --fh: 26%; --skin: #a5a5a5; --hair: #111; --body: #1c1c1c; background-image: var(--grain), linear-gradient(200deg, #3d3d3d, #121212); }
+.pb3 { --x: 50%; --fy: 38%; --skin: #9a9a9a; --hair: #444; --body: #f0f0f0; background-image: var(--grain), linear-gradient(160deg, #777, #2c2c2c); }
+.pb4 { --x: 32%; --fy: 50%; --fw: 20%; --fh: 28%; --skin: #b3b3b3; --hair: #191919; --body: #2a2a2a; background-image: var(--grain), radial-gradient(circle at 70% 40%, #e6e6e6, #5a5a5a 70%); }
+.pb5 { --x: 50%; --fy: 46%; --skin: #7c7c7c; --hair: #0d0d0d; --body: #0d0d0d; background-image: var(--grain), linear-gradient(180deg, #9a9a9a, #2a2a2a); }
+.pb6 { --x: 62%; --fy: 42%; --skin: #a0a0a0; --hair: #303030; --body: #505050; background-image: var(--grain), linear-gradient(90deg, #1b1b1b 0 40%, #8d8d8d); }
+.pb7 { --x: 35%; --fy: 44%; --skin: #929292; --hair: #222; --body: #111; background-image: var(--grain), linear-gradient(140deg, #dadada, #8a8a8a); }
+.pb8 { --x: 55%; --fy: 52%; --fw: 16%; --fh: 22%; --skin: #b0b0b0; --hair: #0f0f0f; --body: #262626; background-image: var(--grain), radial-gradient(circle at 30% 30%, #6d6d6d, #151515); }
+.pb9 { --x: 45%; --fy: 40%; --skin: #8f8f8f; --hair: #3a3a3a; --body: #dcdcdc; background-image: var(--grain), linear-gradient(200deg, #b5b5b5, #3d3d3d); }
+
+/* série em cor — luz vermelha */
+.ph-cor1 { --x: 44%; --fy: 46%; --fw: 18%; --fh: 25%; --skin: #d27a4c; --hair: #2a0f08; --body: #1a0806; background-image: var(--grain), radial-gradient(ellipse 50% 60% at 30% 40%, #ff6a3d55, transparent 70%), linear-gradient(160deg, #3a0d08, #0e0303); }
+.ph-cor2 { --x: 52%; --fy: 44%; --fw: 17%; --fh: 24%; --skin: #e0905f; --hair: #1d0a06; --body: #2a0a07; background-image: var(--grain), radial-gradient(circle at 50% 30%, #ff4a2e, #a0130c 50%, #3b0604 90%); }
+.ph-cor3 { --x: 58%; --fy: 40%; --skin: #f0a070; --hair: #160604; --body: #120403; background-image: var(--grain), radial-gradient(ellipse 30% 40% at 30% 55%, #ff7b5c, transparent 70%), linear-gradient(200deg, #1c0716, #4a0b1c 50%, #0b0306); }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero { padding-bottom: clamp(32px, 5vw, 64px); }
+.hero-title {
+  display: flex; justify-content: space-between;
+  color: var(--red);
+  font-size: clamp(34px, 11.6vw, 160px);
+  line-height: .86;
+  margin: clamp(4px, 1vw, 14px) 0 clamp(16px, 2.4vw, 32px);
+  overflow: hidden;
+}
+.hero-title span { display: inline-block; animation: rise .9s cubic-bezier(.2, .8, .2, 1) both; }
+.hero-title span:nth-child(2) { animation-delay: .05s; } .hero-title span:nth-child(3) { animation-delay: .1s; }
+.hero-title span:nth-child(4) { animation-delay: .15s; } .hero-title span:nth-child(5) { animation-delay: .2s; }
+.hero-title span:nth-child(6) { animation-delay: .25s; } .hero-title span:nth-child(7) { animation-delay: .3s; }
+.hero-title span:nth-child(8) { animation-delay: .35s; } .hero-title span:nth-child(9) { animation-delay: .4s; }
+@keyframes rise { from { transform: translateY(105%); } }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(20px, 3vw, 48px);
+}
+.ph-flores { aspect-ratio: 16 / 10; }
+.hero-side { display: flex; flex-direction: column; justify-content: space-between; gap: 24px; padding-top: 4px; }
+.hero-copy { max-width: 36ch; font-style: italic; color: var(--ink-soft); }
+.hero-sign { display: grid; grid-template-columns: 1fr 1.25fr; align-items: end; gap: 16px; }
+.sign { display: flex; align-items: center; gap: 12px; color: var(--red); }
+.sign .arrow { transition: transform .3s ease; }
+.sign:hover .arrow { transform: translate(3px, 3px); }
+.ph-buque { aspect-ratio: 16 / 10; }
+
+/* =========================================================
+   SOBRE
+   ========================================================= */
+.title-row { display: flex; justify-content: space-between; align-items: flex-start; padding-top: clamp(12px, 2vw, 24px); margin-bottom: clamp(24px, 4vw, 48px); }
+.about-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(24px, 4vw, 64px); align-items: stretch; }
+.about-text { display: flex; flex-direction: column; justify-content: space-between; gap: 36px; }
+.about-text .t1 { max-width: 42ch; opacity: .92; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 3vw, 40px) 24px; }
+.stat dd { margin-top: 6px; opacity: .8; }
+.ph-camera { aspect-ratio: 4 / 3; }
+
+/* =========================================================
+   EXPERIÊNCIAS
+   ========================================================= */
+#experiencias .h2 { margin: clamp(20px, 3vw, 40px) 0 clamp(24px, 4vw, 48px); }
+.exp-list { max-width: 960px; margin: 0 auto; }
+.exp {
+  display: grid;
+  grid-template-columns: 40px 1fr 1.2fr;
+  gap: 16px 24px;
+  align-items: start;
+  padding: clamp(18px, 2.4vw, 28px) 0;
+  border-bottom: 1.5px solid var(--ink);
+}
+.exp .arrow { color: var(--red); margin-top: 2px; transition: transform .3s ease; }
+.exp:hover .arrow { transform: translate(3px, 3px); }
+.exp .t3 { color: var(--ink-soft); }
+.exp .t2 + .t3 { margin-top: 4px; }
+
+/* =========================================================
+   PRÊMIOS
+   ========================================================= */
+#premios .h2 { margin: clamp(12px, 2vw, 24px) 0 clamp(24px, 3vw, 40px); }
+.awards { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(8px, 1.2vw, 16px); }
+.award { position: relative; overflow: hidden; }
+.award .ph { aspect-ratio: 3 / 4; transition: transform .8s cubic-bezier(.2, .7, .2, 1); }
+.award:hover .ph { transform: scale(1.05); }
+.award-cap {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 3;
+  display: grid; grid-template-columns: auto 1fr; gap: 2px 8px; align-items: end;
+  padding: 28px 12px 12px;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, .7));
+  color: #fff;
+}
+.award-cap .arrow { width: 16px; height: 16px; grid-row: span 2; align-self: start; margin-top: 2px; }
+.award-cap .t3 { font-family: var(--f-display); font-weight: 800; font-stretch: 112%; font-variation-settings: "wdth" 112; text-transform: uppercase; font-size: 11px; line-height: 1.15; }
+.award-cap .year { font-family: var(--f-text); font-weight: 400; opacity: .8; }
+
+/* =========================================================
+   TRABALHOS SELECIONADOS
+   ========================================================= */
+.selected { position: relative; background: #111; overflow: hidden; }
+.collage {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1.1fr;
+  grid-template-rows: repeat(3, clamp(160px, 18vw, 250px));
+  gap: 6px;
+  padding: 6px;
+}
+.collage .ph { transition: transform 1.2s cubic-bezier(.2, .7, .2, 1), filter .4s ease; }
+.collage .ph:hover { filter: grayscale(0) contrast(1.05); }
+.selected-title {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex; flex-direction: column; align-items: center;
+  color: #fff;
+  font-size: clamp(42px, 9.4vw, 136px);
+  text-shadow: 0 6px 40px rgba(0, 0, 0, .45);
+  pointer-events: none;
+  white-space: nowrap;
+}
+.selected-arrow { position: absolute; right: clamp(16px, 3vw, 40px); bottom: clamp(16px, 3vw, 40px); color: #fff; }
+
+/* =========================================================
+   SÉRIE EM COR
+   ========================================================= */
+.series-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(8px, 1.2vw, 16px); margin-top: clamp(8px, 1.4vw, 16px); }
+.series-row .ph { aspect-ratio: 4 / 5; }
+.series-cap { margin-top: 14px; opacity: .8; }
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+.footer { padding-bottom: 48px; }
+.footer .h2 { margin: clamp(24px, 4vw, 48px) 0 clamp(24px, 3vw, 40px); }
+.footer-row { display: flex; flex-wrap: wrap; align-items: center; gap: 24px 40px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-row > .t3 { margin-left: auto; color: var(--ink-soft); }
+
+/* =========================================================
+   ENTRADA AO ROLAR
+   ========================================================= */
+.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .9s cubic-bezier(.2, .7, .2, 1); }
+.js .reveal.is-in { opacity: 1; transform: none; }
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+@media (max-width: 900px) {
+  .awards { grid-template-columns: repeat(2, 1fr); }
+  .about-grid { grid-template-columns: 1fr; }
+  .ph-camera { order: -1; }
+}
+
+@media (max-width: 640px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .ph-flores { aspect-ratio: 4 / 5; }
+  .exp { grid-template-columns: 28px 1fr; }
+  .exp-desc { grid-column: 2; }
+  .collage { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(4, 150px); }
+  .pb9 { display: none; }
+  .selected-title { font-size: 7.4vw; }
+  .series-row { grid-template-columns: 1fr 1fr; }
+  .series-row .ph:first-child { grid-column: 1 / -1; aspect-ratio: 4 / 3; }
+  .footer-row > .t3 { margin-left: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; }
+}

@@ -1,0 +1,38 @@
+caso-08 · Lívia Sato — portfólio de design gráfico
+referência: reference.jpg (hero escuro com brilho neon, objetos cromados, "sobre mim" claro, hard skills + fita VHS)
+5 seções: 1 hero · 2 sobre mim · 3 hard skills · 4 projetos (novo) · 5 contato (novo)
+
++-------------------------------------------------------------------------------------+
+| hero (preto texturizado)                                                             |
+| nav [t3: SÃO PAULO (26)] [t3: LIVIASATO.DESIGN]  [t3: PORTFÓLIO ©]  [ico:marca]  [lnk: PROJETOS ↘] |
+| [t3: DESIGN GRÁFICO] ───────────────────────────────                                 |
+| [h1: PORTFOLIO] (branco com brilho azul)                                             |
+| [btn2: PÔSTERES] [btn2: ILUSTRAÇÕES] [btn2: LOGOTIPOS] [btn2: BRANDING] [btn2: SOCIAL] [h3: 2026] |
+| [img: cromo nós] (esq.)                                       [img: cromo espiral] (dir.) |
++-------------------------------------------------------------------------------------+
+| section (claro) — sobre mim                                                          |
+| [lnk: PROJETOS ↘]                                                                    |
+| [h2: SOBRE MIM] (pílula com brilho)                                                  |
+| polaroid [img: retrato] + [img: cromo estrela] + tag [t3: Hello my name is] [t2: Lívia Sato] |
+| [h3: OI!] [t1: Sou a Lívia, designer gráfica...]                                     |
+| [h3: FORMAÇÃO]  [t2: 2024 –] [t1: Escola de design gráfico "Digital School"]         |
+|                 [t2: 2026 –] [t1: Curso "E aí, como é o design?"]                    |
+| [h3: EXPERIÊNCIA] [t2: 2025 –] [t1: Social media freelancer]                         |
+| [h3: SOFT SKILLS] [btn: Criatividade] [btn2: Composição e estilo] [btn2: Prazos] [btn2: Comunicação] |
++-------------------------------------------------------------------------------------+
+| section2 (escuro) — hard skills                                                      |
+| [h3: HARD SKILLS]                                                                    |
+| [ico:Figma] [chart: barra 85%]   +---------------------------------------------+     |
+| [ico:Ps]    [chart: barra 80%]   | vhs [img: fita VHS, rolos girando]          |     |
+| [ico:Ai]    [chart: barra 70%]   |     [t2: Minhas skills?] [t2: Nível nos programas] | |
+| [ico:Ae]    [chart: barra 55%]   +---------------------------------------------+     |
++-------------------------------------------------------------------------------------+
+| section3 (claro) — projetos                                                          |
+| [h2: PROJETOS] [btn: Todos] [btn2: Pôsteres] [btn2: Branding] [btn2: Ilustração]     |
+| card [img: pôster] [t2: nome] [t3: categoria · ano]  × 6                             |
++-------------------------------------------------------------------------------------+
+| section4 (escuro) — contato                                                          |
+| [h1: VAMOS CRIAR?] (brilho)   [img: cromo]                                           |
+| [btn: oi@liviasato.design] [lnk: Behance] [lnk: Instagram] [lnk: Telegram]           |
+| [t3: © 2026 Lívia Sato]                                                              |
++-------------------------------------------------------------------------------------+

@@ -1,0 +1,38 @@
+caso-10 · Augusto Landau — página editorial (biografia de fotógrafo de moda, P&B)
+referência: reference.jpg (página de revista branca sobre fundo cinza; serifa fina em caixa alta + palavras em script)
+5 seções: 1 capa · 2 biografia · 3 a câmera (galeria) · 4 colaborações · 5 exposições 2026
+
++-------------------------------------------------------------------------------------+
+| page (coluna branca centralizada sobre fundo cinza texturizado)                      |
+| top [lnk: augustolandau.foto] [lnk: exposições] [lnk: coleções]                      |
++-------------------------------------------------------------------------------------+
+| 1 capa                                                                               |
+| [h1: AUGUSTO]                         [img: faixa de fotos]                          |
+| [img: lábios]  [h1 script: Ferreira]                                                 |
+|                [h1: LANDAU]           [t3: retratos. moda. luz.]                      |
+| [t2: Augusto Landau — provocador e criador de estilo...] (centralizado)              |
+| quote [h2: O DESEJO DE SER] [script: o melhor] [h2: ME QUEIMAVA POR DENTRO]          |
+| [img: retrato grande]                                                                |
++-------------------------------------------------------------------------------------+
+| 2 biografia                                                                          |
+| [h3: JUVENTUDE EM PORTO ALEGRE] ───────                                              |
+| [img: estúdio]  [t2: texto…]                                                         |
+| [t2: texto…]                                                                         |
+| [h3: SÃO PAULO] ─── [t2: texto] [t2: texto]                                          |
+| [h3: PARIS] ─── [t2: texto] [t2: texto]                                              |
++-------------------------------------------------------------------------------------+
+| 3 a câmera                                                                           |
+| quote [h2: A CÂMERA PODE SERVIR COMO UMA] [script: barreira] [h2: ENTRE MIM E A REALIDADE] |
+| [img: fotógrafo na galeria]  [t2: col] [t2: col]                                     |
+| [img: praia P&B] [t2: texto]                             [img: pequena]              |
++-------------------------------------------------------------------------------------+
+| 4 colaborações                                                                       |
+| [h3: COLABORAÇÕES]                                                                   |
+| [h2: ATELIÊ BRASIL] [h2: MODA & LUZ] [h2: REVISTA PARIS-SUL] … (uma letra em script) |
+| [img: pequena esq.]                                         [img: pequena dir.]      |
++-------------------------------------------------------------------------------------+
+| 5 exposições 2026                                                                    |
+| [h3: EXPOSIÇÕES EM 2026]                                                             |
+| card [img] [t2: título] [t3: texto] [t3: data] [t3: local] [lnk: Comprar ingresso] × 3 |
+| footer [t3: © 2026 …]                                                                |
++-------------------------------------------------------------------------------------+

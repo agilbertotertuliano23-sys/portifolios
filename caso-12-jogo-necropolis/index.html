@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NECRÓPOLIS 2 — Comandante Zumbi</title>
+  <meta name="description" content="Comandante Zumbi: o novo modo de NECRÓPOLIS 2. Ataque bioquímico em 12 de dezembro.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
+  <script src="assets/ink.js" defer></script>
+  <script src="assets/fluid.js" defer></script>
+</head>
+<body>
+
+  <!-- filtro SVG: borda irregular de tinta -->
+  <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <filter id="ink" x="-10%" y="-2%" width="120%" height="104%">
+      <feTurbulence type="fractalNoise" baseFrequency=".012 .03" numOctaves="4" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="90" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="brush" x="-8%" y="-15%" width="116%" height="130%">
+      <feTurbulence type="fractalNoise" baseFrequency=".04 .18" numOctaves="3" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="34" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </svg>
+
+  <!--
+    IMAGENS: arquivos .webp em assets/fotos/ (geradas no Codex, convertidas e otimizadas).
+  -->
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" data-nav>
+    <a class="nav-logo" href="#inicio" aria-label="NECRÓPOLIS 2 — início">NECRÓP<span>☠</span>LIS <b>2</b></a>
+    <nav class="nav-links" id="menu" data-nav-links aria-label="Seções">
+      <a href="#introducao" data-spy><i>01</i>Introdução</a>
+      <a href="#novo-mapa" data-spy><i>02</i>Novo mapa</a>
+      <a href="#oito-zumbis" data-spy><i>03</i>Oito zumbis</a>
+      <a href="#habilidades" data-spy><i>04</i>Habilidades</a>
+      <a href="#apresentacao" data-spy><i>☠</i>Zumbis</a>
+    </nav>
+    <div class="nav-cta">
+      <button class="nav-trailer" type="button" data-trailer>▶ Trailer</button>
+      <a class="nav-pre" href="#pre-registro">Pré-registro</a>
+      <button class="nav-burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu" data-burger><i></i><i></i><i></i></button>
+    </div>
+    <span class="nav-progress" data-progress aria-hidden="true"></span>
+  </header>
+
+  <div class="wrap">
+    <!-- coluna de tinta preta com respingos -->
+    <div class="ink" aria-hidden="true"><i class="ink-body"></i><i class="drips"></i><i class="splat s1"></i><i class="splat s2"></i><i class="splat s3"></i></div>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero" id="inicio">
+      <figure class="hero-art">
+        <video class="h-video" poster="assets/videos/abertura.jpg" muted loop playsinline preload="metadata" data-autoplay aria-hidden="true">
+          <source src="assets/videos/abertura.webm" type="video/webm">
+          <source src="assets/videos/abertura.mp4" type="video/mp4">
+        </video>
+        <img class="h-face" src="assets/fotos/hero-zumbi.webp" alt="Rosto de zumbi com olhos vermelhos e mãos com garras" decoding="async">
+        <i class="x-slash" aria-hidden="true"></i>
+        <img class="h-survivor" src="assets/fotos/hero-sobrevivente.webp" alt="Sobrevivente gritando" decoding="async">
+        <img class="h-horde" src="assets/fotos/hero-horda.webp" alt="Horda de zumbis" decoding="async">
+      </figure>
+      <div class="hero-title">
+        <h1><span class="red">ZUMBI</span><span class="grey">COMANDANTE</span></h1>
+        <button class="play" type="button" aria-label="Assistir ao trailer" data-trailer><span>▶</span></button>
+        <p class="tagline">A equipe de elite se tornou o maior obstáculo da sobrevivência humana.<br>Comande a horda — ou seja comandado por ela.</p>
+        <p class="badge"><span class="bio" aria-hidden="true">☣</span><span><small>Ataque bioquímico · primeira jogada</small>12 de dezembro</span></p>
+        <p class="smoke-hint">aproxime o cursor das bordas da tinta · passe pelo centro para mover a névoa · clique para uma rajada</p>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- ============ 01 · INTRODUÇÃO ============ -->
+      <section class="block b01" id="introducao" aria-labelledby="t01">
+        <div class="b01-left">
+          <div class="brush reveal">
+            <h2 class="h2" id="t01">Comandante<br>Zumbi</h2>
+            <p class="t3">A equipe original de elite virou o maior obstáculo da sobrevivência humana.</p>
+            <a class="btn2" href="#novo-mapa">Ler mais</a>
+          </div>
+          <div class="num-row reveal">
+            <span class="btn3">Introdução ao jogo</span>
+            <span class="num">01</span>
+          </div>
+          <p class="t3 red-line reveal">Comandante Zumbi é jogado com um líder que controla os zumbis, num modo de estratégia em tempo real.</p>
+          <p class="t3 reveal"><b class="red">Zumbis:</b> o comandante é escolhido entre os jogadores e controla a horda. Conforme o tipo de mapa, surgem tarefas diferentes. <b class="red">Humanos:</b> os sobreviventes restantes se unem contra os zumbis…</p>
+          <button class="btn2 grey" type="button" data-zoom>Ver imagem maior</button>
+        </div>
+        <div class="b01-right reveal">
+          <div class="slider" data-slider>
+            <figure class="ph pic beast is-on fit-cover"><img src="assets/fotos/criatura-gelo.webp" alt="Fera de gelo com a boca aberta" decoding="async"></figure>
+            <figure class="ph pic beast fit-contain"><img src="assets/fotos/lobisomem.webp" alt="Lobisomem zumbi agachado" decoding="async"></figure>
+            <figure class="ph pic beast fit-cover"><img src="assets/fotos/espectro.webp" alt="Espectro de fumaça estendendo as garras" decoding="async"></figure>
+            <p class="t3 cap"><b class="red">Comandante zumbi:</b> até 32 jogadores no modo comandante. Depois que o comandante entra, a horda inteira passa a seguir as ordens dele — e a próxima onda já está a caminho.</p>
+          </div>
+          <div class="dots" role="tablist" aria-label="Imagens">
+            <button type="button" class="is-on" aria-label="Imagem 1" data-dot="0"></button>
+            <button type="button" aria-label="Imagem 2" data-dot="1"></button>
+            <button type="button" aria-label="Imagem 3" data-dot="2"></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 02 · NOVO MAPA ============ -->
+      <section class="block b02" id="novo-mapa" aria-labelledby="t02">
+        <div class="b02-top">
+          <figure class="ph pic beast-tall reveal fit-cover"><img src="assets/fotos/mapa-caverna.webp" alt="Caverna de gelo do novo mapa" loading="lazy" decoding="async"></figure>
+          <span class="num">02</span>
+          <div class="brush reveal">
+            <h2 class="h2" id="t02">Novo mapa</h2>
+            <p class="t3">Para romper o ponto mais alto do último jogo, o mapa Comandante Zumbi foi transformado. Os jogadores podem tirar vantagem do terreno.</p>
+          </div>
+        </div>
+        <p class="t3 lead reveal"><b class="red">Zumbis</b> nas mãos do comandante: o grupo vai dobrar de tamanho, e os zumbis ficarão mais fortes.</p>
+        <figure class="cine reveal">
+          <video poster="assets/videos/guerreiro.jpg" muted loop playsinline preload="metadata" data-autoplay>
+          <source src="assets/videos/guerreiro.webm" type="video/webm">
+          <source src="assets/videos/guerreiro.mp4" type="video/mp4">
+        </video>
+          <figcaption class="t3"><span class="rec">● CINEMÁTICO</span> O guerreiro encontra o gigante da horda — novo mapa “Campo das Cinzas”</figcaption>
+        </figure>
+        <div class="b02-bottom">
+          <div class="b02-side reveal">
+            <button class="btn2 outline" type="button" data-zoom>Ver imagem maior</button>
+            <div class="share">
+              <p class="t3 red">Compartilhe com o esquadrão</p>
+              <div class="share-icons"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="X">𝕏</a></div>
+            </div>
+          </div>
+          <figure class="ph pic ruin reveal fit-cover"><img src="assets/fotos/mapa-ruina.webp" alt="Ruínas de um castelo sob nuvens" loading="lazy" decoding="async"></figure>
+          <p class="t2 tag-box">Resistiu, matou<br>e morreu de vez</p>
+          <figure class="ph pic beast-wolf reveal fit-contain"><img src="assets/fotos/lobisomem.webp" alt="Lobisomem zumbi" loading="lazy" decoding="async"></figure>
+        </div>
+      </section>
+
+      <!-- ============ 03 · OITO ZUMBIS ============ -->
+      <section class="block b03" id="oito-zumbis" aria-labelledby="t03">
+        <div class="red-band">
+          <figure class="ph pic soldier reveal fit-contain"><img src="assets/fotos/soldado.webp" alt="Soldado zumbi de armadura avançando" loading="lazy" decoding="async"></figure>
+          <div class="b03-text reveal">
+            <span class="num">03</span>
+            <h2 class="h2" id="t03">Oito zumbis,<br>um a um, abrem<br>a porta para<br>a aventura</h2>
+            <p class="t3">A equipe original de elite se tornou o maior obstáculo da sobrevivência humana…</p>
+            <a class="btn2 grey" href="#habilidades">Ler mais</a>
+          </div>
+        </div>
+        <div class="dark-card reveal">
+          <p class="t3">Cada zumbi tem habilidades únicas: <b class="red">salto longo, regeneração, camuflagem, grito</b> — escolha qual liberar no momento certo do ataque.</p>
+        </div>
+      </section>
+
+      <!-- ============ 04 · HABILIDADES HUMANAS ============ -->
+      <section class="block b04" id="habilidades" aria-labelledby="t04">
+        <h2 class="h2 b04-title" id="t04"><span class="num">04</span><span>Habilidades<br>humanas</span></h2>
+        <div class="b04-grid">
+          <div class="skill-card reveal">
+            <div class="skill-head">
+              <img class="skill-avatar" src="assets/fotos/medalhao-couraca.webp" alt="" loading="lazy" decoding="async" data-skill-img>
+              <div><p class="t3 skill-kicker" data-skill-role>Couraça · tanque</p><h3 class="h3 red" data-skill-name>Zumbi forte</h3></div>
+            </div>
+            <p class="t3" data-skill-text>Habilidade de proteção: absorve dano por alguns segundos. Ideal para segurar o corredor.</p>
+            <p class="t3 strong">Enquanto a produção de fogo continua, a vida diminui.</p>
+            <div class="skills" role="tablist" aria-label="Habilidades">
+              <span class="skill-bar"></span>
+              <button type="button" class="is-on" data-skill="Zumbi forte" data-role="Couraça · tanque" data-img="assets/fotos/medalhao-couraca.webp" data-text="Habilidade de proteção: absorve dano por alguns segundos. Ideal para segurar o corredor." aria-label="Zumbi forte"><img src="assets/fotos/sel-blindado.webp" alt="" loading="lazy" decoding="async"></button>
+              <button type="button" data-skill="Corredor" data-role="Uivo · caçador" data-img="assets/fotos/medalhao-uivo.webp" data-text="Velocidade dobrada por 5 segundos. Perfeito para flanquear sobreviventes isolados." aria-label="Corredor"><img src="assets/fotos/sel-lobo.webp" alt="" loading="lazy" decoding="async"></button>
+              <button type="button" data-skill="Saltador" data-role="Mandíbula · emboscada" data-img="assets/fotos/medalhao-mandibula.webp" data-text="Salto longo que alcança telhados e janelas altas do mapa." aria-label="Saltador"><img src="assets/fotos/sel-gelo.webp" alt="" loading="lazy" decoding="async"></button>
+              <button type="button" data-skill="Gritador" data-role="Comandante · controle" data-img="assets/fotos/medalhao-comandante.webp" data-text="Grito que atordoa humanos num raio de 6 metros e reorganiza a horda." aria-label="Gritador"><img src="assets/fotos/sel-comandante.webp" alt="" loading="lazy" decoding="async"></button>
+              <button type="button" data-skill="Líder humana" data-role="Sobrevivente · suporte" data-img="assets/fotos/medalhao-sobrevivente.webp" data-text="Do lado humano: reagrupa o esquadrão, marca alvos e cura aliados próximos." aria-label="Líder humana"><img src="assets/fotos/sel-sobrevivente.webp" alt="" loading="lazy" decoding="async"></button>
+            </div>
+          </div>
+          <div class="brush tall reveal">
+            <p class="t3">O súbito surgimento dos zumbis. O acampamento humano se armou até os dentes, naturalmente.</p>
+            <a class="btn3" href="#apresentacao">Ver detalhes</a>
+            <p class="t3">Cada zumbi também ganha uma pontuação de acordo com a variedade de sobreviventes que alcançar.</p>
+          </div>
+        </div>
+
+        <div class="present" id="apresentacao">
+          <span class="btn3">Apresentação dos zumbis</span>
+          <figure class="cine wide reveal">
+            <video poster="assets/videos/monstro.jpg" muted loop playsinline preload="metadata" data-autoplay>
+          <source src="assets/videos/monstro.webm" type="video/webm">
+          <source src="assets/videos/monstro.mp4" type="video/mp4">
+        </video>
+            <figcaption class="t3"><span class="rec">● CINEMÁTICO</span> O Comandante desperta — olhos vermelhos na névoa</figcaption>
+          </figure>
+          <ul class="zgal">
+            <li class="reveal"><figure class="ph pic mini fit-contain"><img src="assets/fotos/medalhao-mandibula.webp" alt="Mandíbula" loading="lazy" decoding="async"></figure><p class="t3">Mandíbula</p></li>
+            <li class="reveal"><figure class="ph pic mini fit-cover"><img src="assets/fotos/espectro.webp" alt="Espectro" loading="lazy" decoding="async"></figure><p class="t3">Espectro</p></li>
+            <li class="reveal"><figure class="ph pic mini fit-contain"><img src="assets/fotos/medalhao-couraca.webp" alt="Couraça" loading="lazy" decoding="async"></figure><p class="t3">Couraça</p></li>
+            <li class="reveal"><figure class="ph pic mini fit-contain"><img src="assets/fotos/medalhao-uivo.webp" alt="Uivo" loading="lazy" decoding="async"></figure><p class="t3">Uivo</p></li>
+            <li class="reveal"><figure class="ph pic mini fit-cover"><img src="assets/fotos/criatura-gelo.webp" alt="Gelo" loading="lazy" decoding="async"></figure><p class="t3">Gelo</p></li>
+            <li class="reveal"><figure class="ph pic mini fit-cover-top"><img src="assets/fotos/hero-sobrevivente.webp" alt="Carniça" loading="lazy" decoding="async"></figure><p class="t3">Carniça</p></li>
+            <li class="reveal"><figure class="ph pic mini fit-cover"><img src="assets/fotos/lobisomem.webp" alt="Sombra" loading="lazy" decoding="async"></figure><p class="t3">Sombra</p></li>
+            <li class="reveal"><figure class="ph pic mini fit-contain"><img src="assets/fotos/medalhao-comandante.webp" alt="Comandante encapuzado de olhos vermelhos" loading="lazy" decoding="async"></figure><p class="t3">Comandante</p></li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ============ RODAPÉ ============ -->
+    <footer class="site-foot" id="pre-registro">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <p class="foot-logo">NECRÓP<span>☠</span>LIS <b>2</b></p>
+          <p class="foot-slogan">Comande a horda.<br><span>Ou seja comandado por ela.</span></p>
+          <p class="t3">Modo Comandante Zumbi · ataque bioquímico em 12 de dezembro.</p>
+        </div>
+        <form class="foot-form" data-prereg>
+          <p class="h3">Pré-registro</p>
+          <p class="t3">Ganhe a skin <b class="red">“Couraça Sangrenta”</b> e acesso ao teste fechado.</p>
+          <div class="foot-field">
+            <label class="sr-only" for="pre-email">Seu e-mail</label>
+            <input id="pre-email" type="email" placeholder="seu e-mail" required>
+            <button class="btn3" type="submit">Quero jogar</button>
+          </div>
+          <p class="t3 foot-ok" data-prereg-ok hidden>Inscrição confirmada. A horda vai te encontrar.</p>
+        </form>
+      </div>
+
+      <div class="foot-cols">
+        <div><p class="t2">Jogo</p><ul><li><a href="#introducao">Modo Comandante</a></li><li><a href="#novo-mapa">Novo mapa</a></li><li><a href="#apresentacao">Os zumbis</a></li><li><a href="#habilidades">Habilidades humanas</a></li></ul></div>
+        <div><p class="t2">Comunidade</p><ul><li><a href="#">Discord</a></li><li><a href="#">YouTube</a></li><li><a href="#">Instagram</a></li><li><a href="#">X</a></li></ul></div>
+        <div><p class="t2">Suporte</p><ul><li><a href="#">Perguntas frequentes</a></li><li><a href="#">Requisitos do sistema</a></li><li><a href="#">Reportar um bug</a></li><li><a href="#">Contato</a></li></ul></div>
+        <div><p class="t2">Plataformas</p><ul class="platforms"><li>PC</li><li>PlayStation 5</li><li>Xbox Series X|S</li></ul></div>
+      </div>
+
+      <div class="foot-bottom">
+        <span class="age">16</span>
+        <p class="t3">Violência, sangue e medo. © 2026 Estúdio Ferrugem · NECRÓPOLIS é uma obra de ficção.</p>
+        <a class="to-top" href="#inicio">Voltar ao topo ↑</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- névoa em fluido (fluid.js): bordas soltam fumaça sozinhas; no centro o cursor arrasta névoa vermelha; clique solta uma rajada -->
+  <!-- bordas de tinta interativas (ink.js): ondulam, esticam até o cursor, clique solta gotas -->
+  <canvas class="ink-canvas" data-ink aria-hidden="true"></canvas>
+  <canvas class="smoke" data-smoke aria-hidden="true"></canvas>
+
+  <!-- visualizador de imagem ampliada -->
+  <div class="lightbox" data-lightbox hidden>
+    <button class="lb-close" type="button" aria-label="Fechar" data-lb-close>×</button>
+    <div class="lb-frame" data-lb-frame></div>
+  </div>
+
+</body>
+</html>

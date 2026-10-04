@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reflexo | Estúdio de Fotografia</title>
+  <meta name="description" content="Reflexo — estúdio de fotografia experimental: casamentos, casais, família, retrato e moda.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+
+  <!--
+    FOTOS: cada .ph tem data-photo="assets/fotos/<nome>.jpg". Coloque o arquivo com esse
+    nome em assets/fotos/ e ele substitui a composição em CSS automaticamente (app.js).
+  -->
+
+  <!-- ============ 1 · HERO ============ -->
+  <header class="hero" id="inicio">
+    <nav class="nav">
+      <a class="logo" href="#inicio" aria-label="Reflexo — início">
+        <svg viewBox="0 0 40 32" aria-hidden="true"><path d="M4 10h8l3-4h10l3 4h8v18H4z"/><circle cx="20" cy="18" r="6"/><path d="M6 6h6"/></svg>
+        <span>Reflexo</span>
+      </a>
+      <button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu><i></i><i></i></button>
+      <ul class="nav-links" data-links>
+        <li><a class="lnk" href="#projetos">Portfólio</a></li>
+        <li><a class="lnk" href="#sobre">Sobre nós</a></li>
+        <li><a class="lnk" href="#categorias">Serviços</a></li>
+        <li><a class="lnk" href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-stage">
+      <h1 class="h1 hero-top" aria-label="Fotógrafa">
+        <span>FOT</span><span class="o">ÓGR</span><span>AFA</span>
+      </h1>
+
+      <figure class="ph pb ph-jornal reveal" data-photo="assets/fotos/hero-jornal.jpg"><i class="cam"></i><i class="lens"></i><span class="ph-tag">hero-jornal.jpg</span></figure>
+      <figure class="ph pb ph-fotografa reveal" data-photo="assets/fotos/hero-fotografa.jpg">
+        <span class="p"></span><i class="cam-front"></i>
+        <span class="ph-tag">hero-fotografa.jpg</span>
+      </figure>
+      <figure class="ph pb ph-maos reveal" data-photo="assets/fotos/hero-fotos.jpg"><i class="prints"></i><span class="ph-tag">hero-fotos.jpg</span></figure>
+
+      <p class="h1 hero-mid" aria-hidden="true"><span>CAP</span><span class="o">TURA</span><span>NDO</span></p>
+      <p class="h1 hero-bot" aria-hidden="true"><span>MOM</span><span class="o">EN</span><span>TOS</span></p>
+      <p class="sr-only">Capturando momentos</p>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ 2 · SOBRE NÓS ============ -->
+    <section class="section about" id="sobre" aria-labelledby="sobre-title">
+      <div class="about-text">
+        <h2 class="h2" id="sobre-title">Sobre nós</h2>
+        <p class="t3 kicker">Olá, somos fotógrafos experimentais<br>apaixonados por levar o storytelling visual além do óbvio.</p>
+        <p class="t1 reveal">Nosso trabalho gira em torno de conceitos ousados e abstratos que exploram a relação entre luz, sombra e textura. Buscamos inspiração nos detalhes invisíveis e nos momentos passageiros que costumam passar despercebidos — e os capturamos de um jeito que provoca pensamento e emoção.</p>
+        <dl class="stats">
+          <div class="stat reveal"><dt class="h3" data-count="6" data-suffix="+">6+</dt><dd class="t3">Anos de experiência</dd></div>
+          <div class="stat reveal"><dt class="h3" data-count="62" data-suffix="+">62+</dt><dd class="t3">Ensaios</dd></div>
+          <div class="stat reveal"><dt class="h3" data-count="300" data-suffix="+">300+</dt><dd class="t3">Clientes</dd></div>
+        </dl>
+      </div>
+      <figure class="ph ph-equipe reveal" data-photo="assets/fotos/equipe.jpg">
+        <span class="sofa"></span>
+        <span class="p"></span><span class="p"></span><span class="p"></span><span class="p"></span>
+        <span class="p"></span><span class="p"></span><span class="p"></span>
+        <span class="ph-tag">equipe.jpg</span>
+      </figure>
+    </section>
+
+    <!-- ============ 3 · PROJETOS MAIS POPULARES ============ -->
+    <section class="section" id="projetos" aria-labelledby="proj-title">
+      <h2 class="h3 sec-title" id="proj-title">Projetos mais populares</h2>
+      <ul class="cards">
+        <li class="card reveal">
+          <figure class="ph ph-casamento" data-photo="assets/fotos/projeto-casamento.jpg"><span class="p"></span><span class="p"></span><span class="ph-tag">projeto-casamento.jpg</span></figure>
+          <p class="t2 card-label">Casamento</p>
+        </li>
+        <li class="card reveal">
+          <figure class="ph ph-casal" data-photo="assets/fotos/projeto-casal.jpg"><span class="p"></span><span class="p"></span><span class="ph-tag">projeto-casal.jpg</span></figure>
+          <p class="t2 card-label">Ensaio de casal</p>
+        </li>
+        <li class="card reveal">
+          <figure class="ph ph-familia" data-photo="assets/fotos/projeto-familia.jpg"><span class="p"></span><span class="p"></span><span class="p"></span><span class="ph-tag">projeto-familia.jpg</span></figure>
+          <p class="t2 card-label">Família</p>
+        </li>
+        <li class="card reveal">
+          <figure class="ph ph-retrato" data-photo="assets/fotos/projeto-retrato.jpg"><span class="p"></span><i class="flowers"></i><span class="ph-tag">projeto-retrato.jpg</span></figure>
+          <p class="t2 card-label">Retrato</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ 4 · CATEGORIAS ============ -->
+    <section class="section" id="categorias" aria-labelledby="cat-title">
+      <h2 class="h3 sec-title" id="cat-title">Categorias que atendemos</h2>
+      <ul class="cats">
+        <li class="cat reveal">
+          <figure class="ph ph-moda" data-photo="assets/fotos/categoria-moda.jpg"><span class="p"></span><span class="ph-tag">categoria-moda.jpg</span></figure>
+          <div class="cat-info"><p class="t2">Moda</p><p class="t3">24 ensaios</p></div>
+        </li>
+        <li class="cat reveal">
+          <figure class="ph ph-urbano" data-photo="assets/fotos/categoria-urbano.jpg"><i class="bldg"></i><span class="p"></span><span class="ph-tag">categoria-urbano.jpg</span></figure>
+          <div class="cat-info"><p class="t2">Urbano</p><p class="t3">18 ensaios</p></div>
+        </li>
+        <li class="cat reveal">
+          <figure class="ph ph-produto" data-photo="assets/fotos/categoria-produto.jpg"><i class="spheres"></i><span class="ph-tag">categoria-produto.jpg</span></figure>
+          <div class="cat-info"><p class="t2">Produto</p><p class="t3">31 ensaios</p></div>
+        </li>
+        <li class="cat reveal">
+          <figure class="ph ph-still" data-photo="assets/fotos/categoria-still.jpg"><i class="vase"></i><span class="ph-tag">categoria-still.jpg</span></figure>
+          <div class="cat-info"><p class="t2">Still life</p><p class="t3">12 ensaios</p></div>
+        </li>
+      </ul>
+
+      <ol class="services">
+        <li class="service reveal"><span class="t3 num">01</span><p class="t2">Ensaio individual</p><p class="t3">2h de estúdio · 30 fotos tratadas</p><p class="price">a partir de <b>R$ 650</b></p></li>
+        <li class="service reveal"><span class="t3 num">02</span><p class="t2">Casal &amp; família</p><p class="t3">externo ou estúdio · 50 fotos</p><p class="price">a partir de <b>R$ 980</b></p></li>
+        <li class="service reveal"><span class="t3 num">03</span><p class="t2">Casamento</p><p class="t3">cobertura completa · álbum</p><p class="price">a partir de <b>R$ 6.400</b></p></li>
+      </ol>
+    </section>
+
+  </main>
+
+  <!-- ============ 5 · CONTATO ============ -->
+  <footer class="section contact" id="contato">
+    <h2 class="h1 contact-title"><span>VAMOS</span> <span class="o">FOTO</span><span>GRAFAR?</span></h2>
+    <div class="contact-grid">
+      <form class="form" data-form>
+        <label class="field"><span class="t3">Nome</span><input class="in" type="text" name="nome" placeholder="Seu nome" required></label>
+        <label class="field"><span class="t3">E-mail</span><input class="in" type="email" name="email" placeholder="voce@email.com" required></label>
+        <label class="field"><span class="t3">Tipo de ensaio</span>
+          <select class="in" name="tipo">
+            <option>Retrato</option><option>Casal</option><option>Família</option><option>Casamento</option><option>Moda / produto</option>
+          </select>
+        </label>
+        <label class="field full"><span class="t3">Mensagem</span><textarea class="in" name="mensagem" rows="4" placeholder="Conte a sua ideia"></textarea></label>
+        <button class="btn" type="submit">Enviar</button>
+        <p class="t3 form-ok" data-form-ok hidden>Recebido! Respondemos em até 24h.</p>
+      </form>
+      <address class="info">
+        <p class="t3">Estúdio</p><p class="t1">Rua Fradique Coutinho, 1200<br>Pinheiros — São Paulo</p>
+        <p class="t3">Contato</p><p class="t1"><a href="tel:+5511999990000">(11) 99999-0000</a><br><a href="mailto:oi@reflexo.foto">oi@reflexo.foto</a></p>
+        <p class="t3">Redes</p><p class="t1"><a class="lnk" href="#">Instagram</a> · <a class="lnk" href="#">Pinterest</a></p>
+      </address>
+    </div>
+    <div class="foot">
+      <span class="logo"><svg viewBox="0 0 40 32" aria-hidden="true"><path d="M4 10h8l3-4h10l3 4h8v18H4z"/><circle cx="20" cy="18" r="6"/><path d="M6 6h6"/></svg><span>Reflexo</span></span>
+      <p class="t3">© 2026 Reflexo Estúdio de Fotografia</p>
+    </div>
+  </footer>
+
+</body>
+</html>

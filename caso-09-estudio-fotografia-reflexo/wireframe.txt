@@ -1,0 +1,34 @@
+caso-09 · Reflexo — estúdio de fotografia
+referência: reference.jpg (preto + laranja #e8531c, títulos largos, fotos P&B no hero)
+5 seções: 1 hero · 2 sobre nós · 3 projetos populares · 4 categorias (completada) · 5 contato (nova)
+
++-------------------------------------------------------------------------------------+
+| nav  [ico:câmera] [t2: Reflexo]     [lnk: PORTFÓLIO] [lnk: SOBRE NÓS] [lnk: SERVIÇOS] [lnk: CONTATO] |
++-------------------------------------------------------------------------------------+
+| hero                                                                                 |
+| [h1: FOTÓGRAFA] (laranja; letras do meio vazadas)                                    |
+| [img: câmera sobre jornal] [img: fotógrafa com câmera] [img: mão com fotos]  (P&B)   |
+| [h1: CAPTURANDO]  (sobre as fotos, letras do meio vazadas)                           |
+|                [h1: MOMENTOS]                                                        |
++-------------------------------------------------------------------------------------+
+| section — sobre nós                                                                  |
+| [h2: SOBRE NÓS]                                          +------------------------+  |
+| [t3: OLÁ, SOMOS FOTÓGRAFOS EXPERIMENTAIS...]             | [img: equipe no sofá]  |  |
+| [t1: Nosso trabalho gira em torno de conceitos...]       |                        |  |
+| stat [h3: 6+] [t3: ANOS]  [h3: 62+] [t3: ENSAIOS]  [h3: 300+] [t3: CLIENTES]        |  |
++-------------------------------------------------------------------------------------+
+| section2 — projetos mais populares                                                   |
+| [h3: PROJETOS MAIS POPULARES]                                                        |
+| card [img] [t2: CASAMENTO] · card [img] [t2: CASAL] · card [img] [t2: FAMÍLIA] · card [img] [t2: RETRATO] |
++-------------------------------------------------------------------------------------+
+| section3 — categorias que atendemos                                                  |
+| [h3: CATEGORIAS QUE ATENDEMOS]                                                       |
+| tile [img] [t2: MODA] [t3: 24 ensaios] · [t2: URBANO] · [t2: PRODUTO] · [t2: EVENTOS] |
+| serviços: [t2: Ensaio individual] [t3: a partir de R$ 650] … × 3                     |
++-------------------------------------------------------------------------------------+
+| section4 — contato                                                                   |
+| [h1: VAMOS FOTOGRAFAR?]                                                              |
+| form [in: Nome] [in: E-mail] [in: Tipo de ensaio] [in: Mensagem] [btn: ENVIAR]       |
+| info [t3: Rua…] [t3: (11)…] [t3: oi@reflexo.foto]                                    |
+| footer [ico] [t2: Reflexo] [t3: © 2026]                                              |
++-------------------------------------------------------------------------------------+

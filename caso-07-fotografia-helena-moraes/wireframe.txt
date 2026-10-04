@@ -1,0 +1,45 @@
+caso-07 · Helena Moraes — portfólio de fotografia
+referência: reference.jpg (mock vertical: creme #f4ede2 + vermelho vinho #9e0f17)
+
++-------------------------------------------------------------------------------------+
+| bar (repete no topo de cada seção)                                                   |
+| [t3: Portfólio Criativo]                 [t3: 2026]                       [t3: 01]   |
++-------------------------------------------------------------------------------------+
+| hero (creme)                                                                         |
+| [h1: PORTFOLIO]  (vermelho, largo, ocupa a largura)                                  |
+| +-------------------------------------+ +-----------------------------------------+ |
+| | [img: retrato com flores]           | | [t1: Uma jornada visual onde cada foto...] | |
+| |                                     | | [ico:seta ↘] [t2: HELENA MORAES]  [img:…] | |
+| +-------------------------------------+ +-----------------------------------------+ |
++-------------------------------------------------------------------------------------+
+| section (vermelho) — sobre                                                           |
+| [h2: SOBRE MIM]                                                      [ico:seta ↘]   |
+| +-------------------------------------+ +-----------------------------------------+ |
+| | [t1: Sou fotógrafa dedicada a...]   | | [img: fotógrafa com câmera]             | |
+| | stat [h3: 10K+] [t3: Fotos entregues] stat [h3: 250+] [t3: Eventos]          | |
+| | stat [h3: 10+]  [t3: Anos]            stat [h3: 150+] [t3: Clientes felizes]  | |
+| +-------------------------------------+ +-----------------------------------------+ |
++-------------------------------------------------------------------------------------+
+| section2 (creme) — experiências                                                      |
+| bar                                                                                  |
+| [h2: EXPERIÊNCIAS]                                                                   |
+| row [ico:↘] [t2: ESTÚDIO LENTE VIVA] [t3: Fotógrafa de retrato] [t3: descrição…]     |
+| row [ico:↘] [t2: MOMENTOS CRIATIVOS] [t3: Fotógrafa de eventos]  [t3: descrição…]    |
+| row [ico:↘] [t2: MÍDIA INSTANTE]     [t3: Fotógrafa de eventos]  [t3: descrição…]    |
++-------------------------------------------------------------------------------------+
+| section3 (vermelho) — prêmios                                                        |
+| bar                                                                                  |
+| [h2: PRÊMIOS]                                                                        |
+| card [img] [ico:↗] [t3: Melhor fotógrafa de casamento] [t3: 2023]   × 4              |
++-------------------------------------------------------------------------------------+
+| section4 (P&B) — trabalhos selecionados                                              |
+| collage [img] × 9 (grade P&B)                                                        |
+| [h2: TRABALHOS] [h2: SELECIONADOS] (branco, sobre a colagem)          [ico:↘]       |
++-------------------------------------------------------------------------------------+
+| section5 (vermelho) — série em cor                                                   |
+| bar                                                                                  |
+| [img] [img] [img]  (retratos com luz vermelha)                                       |
++-------------------------------------------------------------------------------------+
+| footer (creme)                                                                       |
+| [h2: VAMOS CONVERSAR?] [btn: oi@helenamoraes.foto] [lnk: Instagram] [lnk: Behance]   |
++-------------------------------------------------------------------------------------+

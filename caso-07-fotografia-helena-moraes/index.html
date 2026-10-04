@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helena Moraes | Fotografia — Portfólio</title>
+  <meta name="description" content="Helena Moraes — fotógrafa de retratos e eventos. Uma jornada visual onde cada foto conta uma história.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,100,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+
+  <!--
+    FOTOS: cada .ph tem data-photo="assets/fotos/<nome>.jpg".
+    Coloque um arquivo com esse nome na pasta assets/fotos/ e ele entra no lugar
+    da composição em CSS automaticamente (app.js). Sem o arquivo, a composição aparece.
+  -->
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="inicio">
+    <div class="bar">
+      <span class="t3">Portfólio Criativo</span><span class="t3">2026</span><span class="t3">01</span>
+    </div>
+
+    <h1 class="h1 hero-title" aria-label="Portfolio">
+      <span>P</span><span>O</span><span>R</span><span>T</span><span>F</span><span>O</span><span>L</span><span>I</span><span>O</span>
+    </h1>
+
+    <div class="hero-grid">
+      <figure class="ph portrait ph-flores reveal" data-photo="assets/fotos/hero-retrato.jpg">
+        <span class="ph-tag">hero-retrato.jpg</span>
+      </figure>
+      <div class="hero-side">
+        <p class="t1 hero-copy reveal">Uma jornada visual onde cada fotografia conta uma história, guardando a beleza passageira dos momentos da vida com arte e paixão.</p>
+        <div class="hero-sign reveal">
+          <a class="sign" href="#sobre">
+            <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 8v10H8"/></svg>
+            <span class="t2">Helena<br>Moraes</span>
+          </a>
+          <figure class="ph ph-buque" data-photo="assets/fotos/hero-detalhe.jpg">
+            <span class="ph-tag">hero-detalhe.jpg</span>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ SOBRE ============ -->
+    <section class="section red" id="sobre" aria-labelledby="sobre-title">
+      <div class="title-row">
+        <h2 class="h2 cream" id="sobre-title">Sobre mim</h2>
+        <svg class="arrow arrow-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 8v10H8"/></svg>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="t1 reveal">Sou uma fotógrafa apaixonada por capturar emoções genuínas e momentos inesquecíveis. Pela minha lente, procuro criar imagens que contam a sua história com beleza e criatividade.</p>
+          <dl class="stats">
+            <div class="stat reveal"><dt class="h3" data-count="10" data-suffix="K+">10K+</dt><dd class="t3">Fotos entregues</dd></div>
+            <div class="stat reveal"><dt class="h3" data-count="250" data-suffix="+">250+</dt><dd class="t3">Eventos registrados</dd></div>
+            <div class="stat reveal"><dt class="h3" data-count="10" data-suffix="+">10+</dt><dd class="t3">Anos de experiência</dd></div>
+            <div class="stat reveal"><dt class="h3" data-count="150" data-suffix="+">150+</dt><dd class="t3">Clientes felizes</dd></div>
+          </dl>
+        </div>
+        <figure class="ph ph-camera reveal" data-photo="assets/fotos/sobre-fotografa.jpg">
+          <span class="ph-tag">sobre-fotografa.jpg</span>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIÊNCIAS ============ -->
+    <section class="section cream-bg" id="experiencias" aria-labelledby="exp-title">
+      <div class="bar">
+        <span class="t3">Portfólio Criativo</span><span class="t3">2026</span><span class="t3">02</span>
+      </div>
+      <h2 class="h2 red-text" id="exp-title">Experiências</h2>
+      <ol class="exp-list">
+        <li class="exp reveal">
+          <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 8v10H8"/></svg>
+          <div><p class="t2">Estúdio Lente Viva</p><p class="t3">Fotógrafa de retrato</p></div>
+          <p class="t3 exp-desc">Especializada em retratos individuais e de família, incluindo ensaios de estilo de vida e em estúdio.</p>
+        </li>
+        <li class="exp reveal">
+          <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 8v10H8"/></svg>
+          <div><p class="t2">Momentos Criativos</p><p class="t3">Fotógrafa de eventos</p></div>
+          <p class="t3 exp-desc">Parte de uma equipe profissional cobrindo eventos de alto padrão e grandes encontros corporativos.</p>
+        </li>
+        <li class="exp reveal">
+          <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 8v10H8"/></svg>
+          <div><p class="t2">Mídia Instante</p><p class="t3">Fotógrafa de eventos</p></div>
+          <p class="t3 exp-desc">Cobertura ao vivo de eventos corporativos, shows e ações beneficentes, com foco em momentos espontâneos.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ PRÊMIOS ============ -->
+    <section class="section red" id="premios" aria-labelledby="premios-title">
+      <div class="bar">
+        <span class="t3">Portfólio Criativo</span><span class="t3">2026</span><span class="t3">03</span>
+      </div>
+      <h2 class="h2 cream center" id="premios-title">Prêmios</h2>
+      <ul class="awards">
+        <li class="award reveal">
+          <figure class="ph ph-noiva" data-photo="assets/fotos/premio-casamento.jpg"><span class="ph-tag">premio-casamento.jpg</span></figure>
+          <div class="award-cap"><svg class="arrow up" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg><p class="t3">Melhor fotógrafa<br>de casamento</p><p class="t3 year">2023</p></div>
+        </li>
+        <li class="award reveal">
+          <figure class="ph ph-verde" data-photo="assets/fotos/premio-publico.jpg"><span class="ph-tag">premio-publico.jpg</span></figure>
+          <div class="award-cap"><svg class="arrow up" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg><p class="t3">Prêmio<br>do público</p><p class="t3 year">2022</p></div>
+        </li>
+        <li class="award reveal">
+          <figure class="ph ph-casaco" data-photo="assets/fotos/premio-retrato.jpg"><span class="ph-tag">premio-retrato.jpg</span></figure>
+          <div class="award-cap"><svg class="arrow up" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg><p class="t3">Ouro — fotografia<br>de retrato</p><p class="t3 year">2024</p></div>
+        </li>
+        <li class="award reveal">
+          <figure class="ph ph-montanha" data-photo="assets/fotos/premio-natureza.jpg"><span class="ph-tag">premio-natureza.jpg</span></figure>
+          <div class="award-cap"><svg class="arrow up" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg><p class="t3">Top 10 finalista —<br>natureza</p><p class="t3 year">2024</p></div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ TRABALHOS SELECIONADOS ============ -->
+    <section class="selected" id="trabalhos" aria-labelledby="sel-title">
+      <div class="collage" aria-hidden="true">
+        <figure class="ph pb portrait pb1" data-photo="assets/fotos/pb-01.jpg"><span class="ph-tag">pb-01.jpg</span></figure>
+        <figure class="ph pb portrait pb2" data-photo="assets/fotos/pb-02.jpg"><span class="ph-tag">pb-02.jpg</span></figure>
+        <figure class="ph pb portrait pb3" data-photo="assets/fotos/pb-03.jpg"><span class="ph-tag">pb-03.jpg</span></figure>
+        <figure class="ph pb portrait pb4" data-photo="assets/fotos/pb-04.jpg"><span class="ph-tag">pb-04.jpg</span></figure>
+        <figure class="ph pb portrait pb5" data-photo="assets/fotos/pb-05.jpg"><span class="ph-tag">pb-05.jpg</span></figure>
+        <figure class="ph pb portrait pb6" data-photo="assets/fotos/pb-06.jpg"><span class="ph-tag">pb-06.jpg</span></figure>
+        <figure class="ph pb portrait pb7" data-photo="assets/fotos/pb-07.jpg"><span class="ph-tag">pb-07.jpg</span></figure>
+        <figure class="ph pb portrait pb8" data-photo="assets/fotos/pb-08.jpg"><span class="ph-tag">pb-08.jpg</span></figure>
+        <figure class="ph pb portrait pb9" data-photo="assets/fotos/pb-09.jpg"><span class="ph-tag">pb-09.jpg</span></figure>
+      </div>
+      <h2 class="h2 selected-title" id="sel-title"><span>Trabalhos</span><span>Selecionados</span></h2>
+      <svg class="arrow arrow-lg selected-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 8v10H8"/></svg>
+    </section>
+
+    <!-- ============ SÉRIE EM COR ============ -->
+    <section class="section red series" id="serie" aria-label="Série em cor">
+      <div class="bar">
+        <span class="t3">Portfólio Criativo</span><span class="t3">2026</span><span class="t3">04</span>
+      </div>
+      <div class="series-row">
+        <figure class="ph portrait ph-cor1 reveal" data-photo="assets/fotos/cor-01.jpg"><span class="ph-tag">cor-01.jpg</span></figure>
+        <figure class="ph portrait ph-cor2 reveal" data-photo="assets/fotos/cor-02.jpg"><span class="ph-tag">cor-02.jpg</span></figure>
+        <figure class="ph portrait ph-cor3 reveal" data-photo="assets/fotos/cor-03.jpg"><span class="ph-tag">cor-03.jpg</span></figure>
+      </div>
+      <p class="t3 series-cap">Série “Vermelho Vivo” — retratos com luz contínua, 2025</p>
+    </section>
+
+  </main>
+
+  <!-- ============ RODAPÉ ============ -->
+  <footer class="footer" id="contato">
+    <div class="bar">
+      <span class="t3">Portfólio Criativo</span><span class="t3">2026</span><span class="t3">05</span>
+    </div>
+    <h2 class="h2 red-text">Vamos conversar?</h2>
+    <div class="footer-row">
+      <a class="btn" href="mailto:oi@helenamoraes.foto">oi@helenamoraes.foto
+        <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg>
+      </a>
+      <ul class="footer-links">
+        <li><a class="lnk" href="#">Instagram</a></li>
+        <li><a class="lnk" href="#">Behance</a></li>
+        <li><a class="lnk" href="#">WhatsApp</a></li>
+      </ul>
+      <p class="t3">© 2026 Helena Moraes — Fotografia · São Paulo</p>
+    </div>
+  </footer>
+
+</body>
+</html>

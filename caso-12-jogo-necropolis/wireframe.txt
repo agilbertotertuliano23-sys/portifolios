@@ -1,0 +1,43 @@
+caso-12 · NECRÓPOLIS: Comandante Zumbi — página de modo de jogo
+referência: reference.jpg (fundo branco, coluna central preta de tinta com respingos, painéis em pincelada vermelha, numeração 01–04)
+5 seções: 1 hero · 01 introdução · 02 novo mapa · 03 oito zumbis · 04 habilidades humanas + apresentação dos zumbis
+
++-------------------------------------------------------------------------------------+
+| ink (coluna preta com bordas irregulares e respingos sobre fundo branco)            |
+| ink-live (ink.js — bordas desenhadas ao vivo: ondulam, esticam até o cursor no     |
+|        branco, ondas ao passar rápido, clique solta tranco + gotas de tinta)         |
+| smoke (fluid.js — simulação de fluido WebGL: as bordas da tinta soltam névoa preta |
+|        sozinhas; no centro o cursor arrasta névoa vermelha; clique solta rajada)    |
++-------------------------------------------------------------------------------------+
+| nav (fixo; transparente no hero, escuro ao rolar; barra de progresso; menu no celular) |
+| [ico: logo] [lnk: 01 INTRODUÇÃO] [lnk: 02 NOVO MAPA] [lnk: 03 OITO ZUMBIS] [lnk: 04 HABILIDADES] [lnk: ZUMBIS] [btn2: ▶ TRAILER] [btn: PRÉ-REGISTRO] |
++-------------------------------------------------------------------------------------+
+| hero (tela cheia, vermelho-escuro)                                                               |
+| [ico: logo NECRÓPOLIS 2]                                                             |
+| [img: rosto de zumbi com olhos vermelhos + mãos com garras + sobrevivente]           |
+| [img: X vermelho]  [h1: ZUMBI] [h1: COMANDANTE]  [btn: ▶]                            |
+| [t3: frase em vermelho]   badge [ico: risco biológico] [t3: ATAQUE BIOQUÍMICO · 12 DE DEZEMBRO] |
++-------------------------------------------------------------------------------------+
+| 01 — introdução                                                                      |
+| panel(pincel) [h2: COMANDANTE ZUMBI] [t3: …] [btn2: LER MAIS]   card [img: criatura] |
+| [btn3: INTRODUÇÃO AO JOGO] [h2: 01]                              [t3: legenda]       |
+| [t3: texto] [btn2: VER IMAGEM MAIOR]                             [• • • • •]         |
++-------------------------------------------------------------------------------------+
+| 02 — novo mapa                                                                       |
+| [img: criatura alta] [h2: 02] panel(pincel) [h2: NOVO MAPA] [t3: …]                  |
+| [• • •] [btn2: VER IMAGEM MAIOR]   [img: ruína] [t3: RESISTIU, MATOU E MORREU] [img: lobisomem] |
+| [ico: facebook] [ico: x]                                                             |
++-------------------------------------------------------------------------------------+
+| 03 — oito zumbis (faixa vermelha larga)                                              |
+| [img: soldado blindado] [h2: 03] [h2: OITO ZUMBIS, UM A UM, ABREM A PORTA PARA A AVENTURA] [btn2: LER MAIS] |
+| card escuro [t3: texto com destaques vermelhos]                                      |
++-------------------------------------------------------------------------------------+
+| 04 — habilidades humanas                                                             |
+| [h2: 04] [h2: HABILIDADES HUMANAS]                                                   |
+| card [h3: ZUMBI FORTE] [t3: …] [ico×5 habilidades]   panel(pincel) [t3: …] [btn3: VER DETALHES] |
+| [btn3: APRESENTAÇÃO DOS ZUMBIS]  galeria [img] × 8 com nomes                         |
+| footer [h1: NECRÓPOLIS 2] [h2: COMANDE A HORDA. OU SEJA COMANDADO POR ELA.]         |
+|        form [h3: PRÉ-REGISTRO] [in: seu e-mail] [btn: QUERO JOGAR]                   |
+|        colunas [t2: JOGO] [t2: COMUNIDADE] [t2: SUPORTE] [t2: PLATAFORMAS] + links   |
+|        [ico: 16] [t3: © 2026 …] [lnk: VOLTAR AO TOPO ↑]                              |
++-------------------------------------------------------------------------------------+
