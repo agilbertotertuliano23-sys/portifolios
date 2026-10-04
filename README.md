@@ -11,6 +11,7 @@ Portfólios e cases de projetos web.
 | `caso-04-influenciadora-fitnesswave/` | Case — influenciadora FitnessWave |
 | `caso-05-estetica-jasmim/` | Case — landing page Jasmim Estética |
 | `caso-06-designer-theo-andrade/` | Case — portfólio do designer multimídia Theo Andrade |
+| `caso-07-fotografia-helena-moraes/` | Case — portfólio da fotógrafa Helena Moraes |
 | `portfolio-de-servicos/` | Portfólio de serviços (cases em markdown) |
 
 Cada site abre direto pelo `index.html` da pasta.
